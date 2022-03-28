@@ -166,9 +166,9 @@ while True:
                     print("Returning to main install terminal...")
                     print("")
 
-            if ins_ans==("eyndos_1_41.zip info"):
+            if ins_ans==("eyndos_1_4.zip info"):
                 print("")
-                print("eyndos_1_41 is the 1st package installation file for EYN-DOS 1.4")
+                print("eyndos_1_4 is the 1st package installation file for EYN-DOS 1.4")
                 print("")
 
             if ins_ans=="install eyndos_1_41.zip":
@@ -244,7 +244,7 @@ while True:
             if ins_corr1==("y"): 
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 15 FILES: ")
+                    print("DIR1 - eyndos_1_41.zpd - 15 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -267,7 +267,7 @@ while True:
                 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 14 FILES: ")
+                    print("DIR1 - eyndos_1_41.zpd - 14 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -290,7 +290,7 @@ while True:
             if ins_corr1==("n"):
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 14 FILES: ")
+                    print("DIR1 - eyndos_1_41.zpd - 14 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -312,7 +312,7 @@ while True:
 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 13 FILES: ")
+                    print("DIR1 - eyndos_1_41.zpd - 13 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -335,7 +335,7 @@ while True:
             if ins_corr2==("y"):
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 16 FILES: ")
+                    print("DIR1 - eyndos_1_41 - 16 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -359,7 +359,7 @@ while True:
 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 15 FILES: ")
+                    print("DIR1 - eyndos_1_41 - 15 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -383,7 +383,7 @@ while True:
             if ins_corr2==("n"):
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 15 FILES: ")
+                    print("DIR1 - eyndos_1_41 - 15 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -406,7 +406,7 @@ while True:
                 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 14 FILES: ")
+                    print("DIR1 - eyndos_1_41 - 14 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -438,13 +438,13 @@ while True:
         
     if command_line=="run calculator.py":
         print("")
-        os.system('py calculator.py')
+        os.system('python3 calculator.py')
         print("")
         command_list="122333444455555code1"
 
     if command_line==("run minesweeper.py"):
         print("")
-        os.system('py minesweeper.py')
+        os.system('python3 minesweeper.py')
         print("")
         command_list=="122333444455555code1"
 
@@ -503,7 +503,7 @@ while True:
 
     if command_line==("run notebook.py"):
         print("")
-        os.system("py notebook.py")
+        os.system("python3 notebook.py")
         print("")
     
     if command_line==("lgr"):
@@ -527,29 +527,29 @@ while True:
     if command_line==("run solitaire.py"):
         "Credit to 'shomikj' on GitHub for this code!"
         print("")
-        os.system('py solitaire.py')
+        os.system('python3 solitaire.py')
         print("")
         command_list=="122333444455555code1"
 
     if command_line==("run test1.py"):
         print("")
-        os.system("py test1.py")
+        os.system("python3 test1.py")
         print("")
 
     if command_line==("run kg_lbs_weight_converter.py"):
         print("")
-        os.system("py weight_converter.py")
+        os.system("python3 weight_converter.py")
         print("")
         command_list=="122333444455555code1"
 
     if command_line==("run gui_calculator.py"):
         print("")
-        os.system('py gui_calculator.py')
+        os.system('python3 gui_calculator.py')
         print("")
     
     if command_line==("run clock.py"):
         print("")
-        os.system('py clock.py')
+        os.system('python3 clock.py')
         print("")
     
     if command_line==("count"):
@@ -559,7 +559,7 @@ while True:
         
         if count_1==("y"):
             print("")
-            os.system('py counter.py')
+            os.system('python3 counter.py')
             print("")
         
         if count_1==("n"):
@@ -577,9 +577,9 @@ while True:
         print("Coming soon...")
         print("")
 
-    if command_line==("run insert.py"):
+    if command_line==("run insert1.py"):
         print("")
-        os.system('py insert.py')
+        os.system('python3 insert1.py')
         print("")
 
     if command_line==("troll"):
@@ -604,34 +604,34 @@ while True:
 
     if command_line==("run oregon_trail.py"):
         print("")
-        os.system('py oregon_trail.py')
+        os.system('python3 oregon_trail.py')
         print("")
 
     if command_line==("run snake.py"):
         print("")
-        os.system('py snake.py')
+        os.system('python3 snake.py')
         print("")
 
     if command_line==("run pong.py"):
         print("")
-        os.system('py pong.py')
+        os.system('python3 pong.py')
         print("")
 
     if command_line==("run tetris.py"):
         print("")
         print("Use A to go left, D to go right and spacebar to rotate.")
-        os.system('py tetris.py')
+        os.system('python3 tetris.py')
         print("")
 
     if command_line==('run invaders.py'):
         print("")
         print("Use the left arrow to go left, the right arrow to go right, and spacebar to shoot.")
-        os.system('py invaders.py')
+        os.system('python3 invaders.py')
         print("")
 
     if command_line==("run paintbrush.py"):
         print("")
-        os.system('py paintbrush.py')
+        os.system('python3 paintbrush.py')
         print("")
 
     if command_line==("!devdebug1!"):
@@ -727,7 +727,7 @@ while True:
                     print("                     A nostalgic, yet modern")
                     print("                      O.S...")
                     print("")
-                    os.system('py eyn_os_0_1.py')
+                    os.system('python3 eyn_os_0_1.py')
                     print("")
     
                 if command_line1==("calculate"):
@@ -736,17 +736,17 @@ while True:
 
                     if gc1==("g"):
                         print("")
-                        os.system('py gui_calculator.py')
+                        os.system('python3 gui_calculator.py')
                         print("")
                     
                     if gc1==("c"):
                         print("")
-                        os.system('py calculator.py')
+                        os.system('python3 calculator.py')
                         print("")
                 
                 if command_line1==("time"):
                     print("")
-                    os.system('py clock.py')
+                    os.system('python3 clock.py')
                     print("")
                 
                 if command_line1==("coder"):
@@ -765,7 +765,7 @@ while True:
 
                     if countperm==("y"):
                         print("")
-                        os.system('py counter.py')
+                        os.system('python3 counter.py')
                         print("")
 
                 if command_line1==("eynos01 files"):
@@ -815,52 +815,34 @@ while True:
 
                 if command_line1==("run mouse_detection.py"):
                     print("")
-                    os.system('py mouse_detection.py')
+                    os.system('python3 mouse_detection.py')
                     print("")
 
     if command_line==("B:" or "b:"):
         print("")
         while True:
-            command_line2=input("B:\DIR2\eyndos_1_4\eyndos.py> ")
+            command_line2=input("B:\> ")
 
-            if command_line2==("A:" or "a:"):
-                print("")
-                while True:
-                    command_line5=("A:\>")
-
-                    if command_line5==("return"):
-                        print("")
-                        print("Returning to the main EYN-DOS terminal...")
-                        print("")
-            
             if command_line2==("return"):
                 print("")
                 print("Returning to the main EYN-DOS terminal...")
                 print("")
+                break
 
     if command_line==("C:" or "c:"):
         print("")
         while True:
             command_line3=input("C:\> ")
 
-            if command_line3==("A:" or "a:"):
-                print("")
-                while True:
-                    command_line4=("A:\>")
-
-                    if command_line4==("return"):
-                        print("")
-                        print("Returning to the main EYN-DOS terminal...")
-                        print("")
-            
             if command_line3==("return"):
                 print("")
                 print("Returning to the main EYN-DOS terminal...")
                 print("")
+                break
 
     if command_line==("ver"):
         print("")
-        print("EYN-DOS 1.41 (Windows) (2022)")
+        print("EYN-DOS 1.41 (Linux) (2022)")
         print("")
 
     if command_line==("credits"):
@@ -913,42 +895,42 @@ while True:
 
     if command_line==("run insert2.py"):
         print("")
-        os.system("py insert2.py")
+        os.system("python3 insert2.py")
         print("")
 
     if command_line==("run insert3.py"):
         print("")
-        os.system("py insert3.py")
+        os.system("python3 insert3.py")
         print("")
 
     if command_line==("run insert4.py"):
         print("")
-        os.system("py insert4.py")
+        os.system("python3 insert4.py")
         print("")
     
     if command_line==("run insert5.py"):
         print("")
-        os.system("py insert5.py")
+        os.system("python3 insert5.py")
         print("")
     
     if command_line==("run insert6.py"):
         print("")
-        os.system("py insert6.py")
+        os.system("python3 insert6.py")
         print("")
     
     if command_line==("run insert7.py"):
         print("")
-        os.system("py insert7.py")
+        os.system("python3 insert7.py")
         print("")
     
     if command_line==("run insert8.py"):
         print("")
-        os.system("py insert8.py")
+        os.system("python3 insert8.py")
         print("")
     
     if command_line==("run insert9.py"):
         print("")
-        os.system("py insert9.py")
+        os.system("python3 insert9.py")
         print("")
 
     if command_line==("cd EYNOS01"):
@@ -982,5 +964,5 @@ while True:
 
     if command_line==("browser"):
         print("")
-        os.system("py browser.py")
+        os.system("python3 browser.py")
         print("")

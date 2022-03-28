@@ -31,8 +31,8 @@ while True:
         print("")
         webbrowser.open("https://discord.com")
 
-    if browser_line==("return"):
-        print("")
-        print("Returning to the main EYN-DOS terminal...")
-        print("")
-        exit()
+        if browser_line==("return"):
+            print("")
+            print("Returning to the main EYN-DOS terminal...")
+            print("")
+            exit()
