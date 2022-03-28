@@ -1,6 +1,4 @@
 import os
-import tkinter as tk
-from tkinter.ttk import *
 
 organiser_1="placeholder"
 
@@ -116,7 +114,7 @@ print("█████████       ███       ███      ██�
 print("")
 print("Type 'help' for a list of commands.")
 print("")
-print("In order for EYN-DOS to work as intended, please type 'install' and install 'eyndos_1_4.zip' and 'eyn_os_0_1.py'.")
+print("In order for EYN-DOS to work as intended, please type 'install' and install 'eyndos_1_41.zip' and 'eyn_os_0_1.py'.")
 print("")
 
 command_list="122333444455555code1"
@@ -125,7 +123,7 @@ if command_list!="122333444455555code1":
     print("Bad command")
 
 while True:
-    command_line=input("A:\DIR1\eyndos_1_4\eyndos.py> ")
+    command_line=input("A:\DIR1\eyndos_1_41\eyndos.py> ")
 
     if command_line=="help":
         print("")
@@ -142,11 +140,11 @@ while True:
         print("Searching...")
         print("")
         print("2 INSTALL FILES FOUND:")
-        print("     eyndos_1_4.zip")
+        print("     eyndos_1_41.zip")
         print("     eyn_os_0_1.py")
         print("")
         while True:
-            ins_ans=input("A:\DIR1\eyndos_1_4\eyndos.py\install> ")
+            ins_ans=input("A:\DIR1\eyndos_1_41\eyndos.py\install> ")
 
             if ins_ans==("install eyn_os_0_1.py"):
                 print("")
@@ -168,16 +166,16 @@ while True:
                     print("Returning to main install terminal...")
                     print("")
 
-            if ins_ans==("eyndos_1_4.zip info"):
+            if ins_ans==("eyndos_1_41.zip info"):
                 print("")
-                print("eyndos_1_4 is the 1st package installation file for EYN-DOS 1.4")
+                print("eyndos_1_41 is the 1st package installation file for EYN-DOS 1.4")
                 print("")
 
-            if ins_ans=="install eyndos_1_4.zip":
+            if ins_ans=="install eyndos_1_41.zip":
                 print("")
                 print("Installing...")
                 print("")
-                ins_ans2=input("eyndos_1_4.zip already exists. Replace? (y/n) ")
+                ins_ans2=input("eyndos_1_41.zip already exists. Replace? (y/n) ")
 
                 if ins_ans2=="y":
                     print("")
@@ -505,53 +503,8 @@ while True:
 
     if command_line==("run notebook.py"):
         print("")
-        print("█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████")
-        print("██Notebook█-█Input████████████████████████████████████████████████████████████ Hold the 'Enter' key to end the notebook session██████")
-        print("█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-        words=input("")
-
-        next_page=words*37
-        word2=input("To create a new page, type 'np'.")
-        if word2==("np"):
-            print("Error has occured. Contact EYN-DOS Support#9295 via Discord or eyndos@gmail.com via electronic mail for further support.")
-        command_list=="122333444455555code1"
+        os.system("py notebook.py")
+        print("")
     
     if command_line==("lgr"):
         print("")
@@ -579,19 +532,9 @@ while True:
         command_list=="122333444455555code1"
 
     if command_line==("run test1.py"):
-        root= tk.Tk()
-
-        canvas1 = tk.Canvas(root, width = 300, height = 300)
-        canvas1.pack()
-
-        def hello ():  
-            label1 = tk.Label(root, text= "test", fg='black', font=('Ariel', 12, 'bold'))
-            canvas1.create_window(150, 200, window=label1)
-    
-        button1 = tk.Button(text='test',command=hello, bg='brown',fg='grey')
-        canvas1.create_window(150, 150, window=button1)
-
-        root.mainloop()
+        print("")
+        os.system("py test1.py")
+        print("")
 
     if command_line==("run kg_lbs_weight_converter.py"):
         print("")
@@ -882,20 +825,42 @@ while True:
 
             if command_line2==("A:" or "a:"):
                 print("")
-                break
+                while True:
+                    command_line5=("A:\>")
+
+                    if command_line5==("return"):
+                        print("")
+                        print("Returning to the main EYN-DOS terminal...")
+                        print("")
+            
+            if command_line2==("return"):
+                print("")
+                print("Returning to the main EYN-DOS terminal...")
+                print("")
 
     if command_line==("C:" or "c:"):
         print("")
         while True:
-            command_line3=input("C:\DIR3\eyndos_1_4\eyndos.py> ")
+            command_line3=input("C:\> ")
 
             if command_line3==("A:" or "a:"):
                 print("")
-                break
+                while True:
+                    command_line4=("A:\>")
+
+                    if command_line4==("return"):
+                        print("")
+                        print("Returning to the main EYN-DOS terminal...")
+                        print("")
+            
+            if command_line3==("return"):
+                print("")
+                print("Returning to the main EYN-DOS terminal...")
+                print("")
 
     if command_line==("ver"):
         print("")
-        print("EYN-DOS 1.4 (2022)")
+        print("EYN-DOS 1.41 (Windows) (2022)")
         print("")
 
     if command_line==("credits"):
@@ -944,4 +909,78 @@ while True:
         print("")
         print("")
         print("         Thank you for using EYN-DOS!")
+        print("")
+
+    if command_line==("run insert2.py"):
+        print("")
+        os.system("py insert2.py")
+        print("")
+
+    if command_line==("run insert3.py"):
+        print("")
+        os.system("py insert3.py")
+        print("")
+
+    if command_line==("run insert4.py"):
+        print("")
+        os.system("py insert4.py")
+        print("")
+    
+    if command_line==("run insert5.py"):
+        print("")
+        os.system("py insert5.py")
+        print("")
+    
+    if command_line==("run insert6.py"):
+        print("")
+        os.system("py insert6.py")
+        print("")
+    
+    if command_line==("run insert7.py"):
+        print("")
+        os.system("py insert7.py")
+        print("")
+    
+    if command_line==("run insert8.py"):
+        print("")
+        os.system("py insert8.py")
+        print("")
+    
+    if command_line==("run insert9.py"):
+        print("")
+        os.system("py insert9.py")
+        print("")
+
+    if command_line==("cd EYNOS01"):
+        print("")
+        print("This directory is used exclusively for the unreleased operating system, EYN-OS 0.1")
+        print("")
+        while True:
+            eynos_cdcl=input("A:\EYNOS01> ")
+
+            if eynos_cdcl==("dir"):
+                print("")
+                print(" EYNOS01 - 3kb/1mb")
+                print("--------------------")
+                print(" DIR1 - 219kb/1mb")
+                print("")
+            
+            if eynos_cdcl==("files"):
+                print("")
+                print(" EYNOS01 - 1 FILE, 1 FOLDER: ")
+                print("")
+                print(" eyn_os_0_1.py - 3kb")
+                print(" user.fld - 0kb")
+                print("")
+                print("TOTALS: 3kb/10mb - 2 DISPLAY FILES")
+            
+            if eynos_cdcl==("return"):
+                print("")
+                print("Returning to the main EYN-DOS terminal...")
+                print("")
+                break
+
+    if command_line==("browser"):
+        print("")
+        os.system("py browser.py")
         print("")
