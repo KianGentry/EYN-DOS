@@ -1,4 +1,4 @@
-# EYN-DOS 1.41 (Most recent)
+# EYN-DOS 1.5 (Most recent)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The modern DOS Operating Environment for PC's with pre-existing operating systems. A nostalgia train.
@@ -28,4 +28,4 @@ We hope you have a wonderful time using EYN-DOS!
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(Current development version: EYN-DOS 1.42)
+(Current development version: EYN-DOS 1.51)
