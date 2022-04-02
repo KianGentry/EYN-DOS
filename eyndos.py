@@ -28,9 +28,11 @@ print("            ████░░░░░░░░░░░░░░░░�
 print("               ███░░░░░░░░░░░░░░░░███")
 print("                  ████████████████")
 print("")
-print("     EYN-DOS is a trademarked title owned by J.K Incorporated / J.K Robotics.")
+print("     EYN-DOS is a title owned by J.K Incorporated / J.K Robotics and protected under the BSD-3 Clause 'New' or 'Revised' License.")
 print("")
 print("     J.K Incorporated (1983 - Present)   J.K Incorporated(R) 2022")
+print("")
+print("     Copyright (C) J.K Incorporated.")
 print("")
 input("Press the 'Enter' key to continue.")
 print("")
@@ -101,6 +103,11 @@ if keyboard_select==("2"):
     print("Keyboard layout 2 applied.")
     print("")
 
+if keyboard_select==(""):
+    print("")
+    print("Host system default applied.")
+    print("")
+
 print("Loading...")
 print("")
 command_line=input("Press the 'Enter' key to enter EYN-DOS.")
@@ -114,7 +121,7 @@ print("█████████       ███       ███      ██�
 print("")
 print("Type 'help' for a list of commands.")
 print("")
-print("In order for EYN-DOS to work as intended, please type 'install' and install 'eyndos_1_41.zip' and 'eyn_os_0_1.py'.")
+print("In order for EYN-DOS to work as intended, please type 'install' and install 'eyndos_1_5.zip' and 'eyn_os_0_1.py'.")
 print("")
 
 command_list="122333444455555code1"
@@ -123,11 +130,26 @@ if command_list!="122333444455555code1":
     print("Bad command")
 
 while True:
-    command_line=input("A:\DIR1\eyndos_1_41\eyndos.py> ")
+    command_line=input("A:\DIR1\eyndos_1_5\eyndos.py> ")
 
     if command_line=="help":
         print("")
-        print("help = Displays commands currently usable, dir = Shows available directories, files = Shows available files, run = Runs an executable file, end = Ends code, settings = Shows settings for EYN-DOS, install = Searches for installables. Attempting to execute an unkown command results in a blank response. For further support, contact EYN-DOS Support#9295 via Discord or eyndos@gmail.com via electronic mail. To insert your own python code into EYN-DOS, insert the code into the folder eyndos.py is in and rename the inserted python file to 'insert.py' and then run EYN-DOS and type the command 'run insert.py'.")
+        print("help = Prints commands currently usable, ")
+        print("dir = Prints a list of available directories, ")
+        print("files = Prints a list of all available files, ")
+        print("run (file) = Executes the file entered, ")
+        print("end = Closes and resets the EYN-DOS terminal, ")
+        print("install = Takes you to the EYN-DOS install terminal, ")
+        print("browser = Takes you to the EYN-DOS browser terminal, ")
+        print("B: = Takes you to the B partition, ")
+        print("C: = Takes you to the C partition, ")
+        print("ver = Prints the EYN-DOS version that is running.")
+        print("credits = Prints a list of all the people who worked on EYN-DOS, ")
+        print("cd (File/Folder location) = Takes you to the directory entered, ")
+        print("")
+        print("Misc:")
+        print("")
+        print(" insert(1-9).py = You can add a custom Python file into the EYN-DOS folder and execute it by typing 'run insert(Number in the filename (1-9)).py, ")
         print("")
         command_list=="122333444455555code1"
     
@@ -144,7 +166,7 @@ while True:
         print("     eyn_os_0_1.py")
         print("")
         while True:
-            ins_ans=input("A:\DIR1\eyndos_1_41\eyndos.py\install> ")
+            ins_ans=input("A:\DIR1\eyndos_1_5\eyndos.py\install> ")
 
             if ins_ans==("install eyn_os_0_1.py"):
                 print("")
@@ -166,16 +188,16 @@ while True:
                     print("Returning to main install terminal...")
                     print("")
 
-            if ins_ans==("eyndos_1_41.zip info"):
+            if ins_ans==("eyndos_1_5.zip info"):
                 print("")
-                print("eyndos_1_41 is the 1st package installation file for EYN-DOS 1.4")
+                print("eyndos_1_5 is the 1st package installation file for EYN-DOS 1.5")
                 print("")
 
-            if ins_ans=="install eyndos_1_41.zip":
+            if ins_ans=="install eyndos_1_5.zip":
                 print("")
                 print("Installing...")
                 print("")
-                ins_ans2=input("eyndos_1_41.zip already exists. Replace? (y/n) ")
+                ins_ans2=input("eyndos_1_5.zip already exists. Replace? (y/n) ")
 
                 if ins_ans2=="y":
                     print("")
@@ -244,7 +266,7 @@ while True:
             if ins_corr1==("y"): 
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 15 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 15 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -252,7 +274,7 @@ while True:
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
                     print("     eyn_os_0_1.py - 3kb")
@@ -267,7 +289,7 @@ while True:
                 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 14 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 14 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -275,7 +297,7 @@ while True:
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
                     print("     oregon_trail.py - 8kb")
@@ -290,14 +312,14 @@ while True:
             if ins_corr1==("n"):
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 14 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 14 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
                     print("     eyn_os_0_1.py - 3kb")
@@ -312,14 +334,14 @@ while True:
 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4.zpd - 13 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 13 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
                     print("     oregon_trail.py - 8kb")
@@ -335,7 +357,7 @@ while True:
             if ins_corr2==("y"):
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 16 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 16 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -343,7 +365,7 @@ while True:
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     eyndos.py - 29kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
@@ -359,7 +381,7 @@ while True:
 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 15 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 15 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
@@ -367,7 +389,7 @@ while True:
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     eyndos.py - 29kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
@@ -383,14 +405,14 @@ while True:
             if ins_corr2==("n"):
                 if os_exp==("y"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 15 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 15 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     eyndos.py - 29kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
@@ -406,14 +428,14 @@ while True:
                 
                 if os_exp==("n"):
                     print("")
-                    print("DIR1 - eyndos_1_4 - 14 FILES: ")
+                    print("DIR1 - eyndos_1_5 - 14 FILES: ")
                     print("")
                     print("     eyndos.py - 29kb")
                     print("     calculator.py - 1kb")
                     print("     notebook.py - 1kb")
                     print("     solitaire.py - 12kb")
                     print("     test1.py - 1kb")
-                    print("     kg_lbs_weight_converter.py - 1kb")
+                    print("     weight_converter.py - 1kb")
                     print("     eyndos.py - 29kb")
                     print("     gui_calculator.py - 4kb")
                     print("     clock.py - 1kb")
@@ -447,59 +469,6 @@ while True:
         os.system('py minesweeper.py')
         print("")
         command_list=="122333444455555code1"
-
-    if command_line==("settings"):
-        print(" █████  ██████  ██████  ██████  ██████  ██    ██   █████   █████")
-        print("█       █         ██      ██      ██    ███   ██  █       █")
-        print(" ████   ██████    ██      ██      ██    ██ ██ ██  █  ███   ████")
-        print("     █  █         ██      ██      ██    ██   ███  █   ██       █")
-        print(" ████   ██████    ██      ██    ██████  ██    ██   ████    ████")
-        print("")
-        print("Type the setting name to edit that setting's configuration. Type enter to disband settings.")
-        print("")
-        print("█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████")
-        print("██mono█-█True███test2█-█True███test3█-█True██████████████████████████████████████████████████████████████████████████████████████████")
-        print("█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████")
-        setting_line=input("")
-        if setting_line==("mono"):
-            print("")
-            setting_yn_1=input("test1 is set to True. Change? (Y/N)")
-            if setting_yn_1==("y"):
-                print("")
-                print("Error has occured. Contact EYN-DOS Support#9295 via Discord or eyndos@gmail.com via electronic mail for further support.")
-                print("")
-            
-            if setting_yn_1==("n"):
-                print("")
-                print("test1 is now True.")
-                print("")
-        
-        if setting_line==("test2"):
-            print("")
-            setting_yn_2=input("test2 is set to True. Change? (Y/N)")
-            if setting_yn_2==("y"):
-                print("")
-                print("Error has occured. Contact EYN-DOS Support#9295 via Discord or eyndos@gmail.com via electronic mail for further support.")
-                print("")
-            
-            if setting_yn_2==("n"):
-                print("")
-                print("test2 is now True.")
-                print("")
-            command_list=="122333444455555code1"
-    
-        if setting_line==("test3"):
-            print("")
-            setting_yn_3=input("test3 is set to True. Change? (Y/N)")
-            if setting_yn_3==("y"):
-                print("")
-                print("Error has occured. Contact EYN-DOS Support#9295 via Discord or eyndos@gmail.com via electronic mail for further support.")
-                print("")
-            
-            if setting_yn_3==("n"):
-                print("")
-                print("test3 is now True.")
-                print("")
 
     if command_line==("run notebook.py"):
         print("")
@@ -536,7 +505,7 @@ while True:
         os.system("py test1.py")
         print("")
 
-    if command_line==("run kg_lbs_weight_converter.py"):
+    if command_line==("run weight_converter.py"):
         print("")
         os.system("py weight_converter.py")
         print("")
@@ -569,7 +538,7 @@ while True:
     
     if command_line==("setup"):
         print("")
-        print("Comming soon... In the meantime, try playing some games bundled with EYN-DOS.")
+        print("Coming soon... In the meantime, try playing some games bundled with EYN-DOS.")
         print("")
 
     if command_line==("create dir"):
@@ -697,7 +666,7 @@ while True:
                 exit()
 
             while True:
-                command_line1=input("A:\DIR1\eyndos_1_4\eyndos.py\devdebug_1>  ")
+                command_line1=input("A:\DIR1\eyndos_1_5\eyndos.py\devdebug_1>  ")
 
                 if command_line1==("debug"):
                     print("")
@@ -818,7 +787,7 @@ while True:
                     os.system('py mouse_detection.py')
                     print("")
 
-    if command_line==("B:" or "b:"):
+    if command_line==("B:", "b:"):
         print("")
         while True:
             command_line2=input("B:\DIR2\eyndos_1_4\eyndos.py> ")
@@ -838,7 +807,7 @@ while True:
                 print("Returning to the main EYN-DOS terminal...")
                 print("")
 
-    if command_line==("C:" or "c:"):
+    if command_line==("C:", "c:"):
         print("")
         while True:
             command_line3=input("C:\> ")
@@ -860,7 +829,7 @@ while True:
 
     if command_line==("ver"):
         print("")
-        print("EYN-DOS 1.41 (Windows) (2022)")
+        print("EYN-DOS 1.5 (Windows) (2022)")
         print("")
 
     if command_line==("credits"):
@@ -881,6 +850,8 @@ while True:
         print("")
         print("    EYN-OS Lead Coder: Kian Gentry")
         print("")
+        print("    Box art & Logo design: Kamil M.")
+        print("")
         print("    Staff commander: Kian Gentry")
         print("")
         print("    Everyone involved: Kian Gentry, Ian Greeves and other J.K Incorporated employees.")
@@ -895,7 +866,7 @@ while True:
         print("")
         print("         Cayden Jackson: Supporter.")
         print("")
-        print("         Kamil (Unknown): Supporter.")
+        print("         Kamil M: Supporter & artist.")
         print("")
         print("         Github & StackOverflow: Saver of countless hours of research.")
         print("")
@@ -983,4 +954,9 @@ while True:
     if command_line==("browser"):
         print("")
         os.system("py browser.py")
+        print("")
+
+    if command_line==(""):
+        print("")
+        print("Invalid command")
         print("")
