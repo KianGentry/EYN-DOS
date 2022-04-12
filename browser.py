@@ -5,7 +5,7 @@ print("Welcome to the EYN-DOS browser terminal! This terminal requires a web bro
 print("")
 
 while True:
-    browser_line=input("A:\DIR1\eyndos_1_5\eyndos.py> browser.py> ")
+    browser_line=input("C:\DIR1\eyndos_1_51\eyndos.py> browser.py> ")
 
     if browser_line==("https://www.google.com", "www.google.com"):
         print("")

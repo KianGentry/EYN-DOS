@@ -216,7 +216,7 @@ class Game:
 
         if not (self.valid_col(from_col) and self.valid_col(to_col) and self.valid_row(from_row) and self.valid_row(to_row)):
             print("Invalid Command: format error")
-            return True
+            return False
 
         if (from_row == 'R0') and (from_col == 'D0') and (to_row == 'R0') and (to_col == 'D0'):
             self.deck.increment()
@@ -350,7 +350,7 @@ def main():
     print("(3) Tableau to Tableau: R7 T1 R7 T2 (supports multiple cards)")
     print("(4) Deck to Foundation: R0 D0 R0 F1")
     print("(5) Tableau to Foundation: R7 T1 R0 F1 (supports 1 card only)")
-    print("(6) Quit: quit")
+    print("(6) Return to EYN-DOS main terminal: return")
     print()
     print(game)
 
@@ -358,10 +358,9 @@ def main():
         print()
         command = input("What is your move?: ")
 
-        if (command == 'quit'):
+        if (command == 'return'):
             print()
-            print("See you next time!")
-            print()
+            print("Returning to the EYN-DOS main terminal...")
             break
 
         result = False

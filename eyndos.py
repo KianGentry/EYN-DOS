@@ -1,6 +1,20 @@
 import os
+from os import listdir
+from os.path import isfile, join
 
-organiser_1="placeholder"
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+filesys = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
+
+def get_dir_size(path=dir_path):
+    total = 0
+    with os.scandir(dir_path) as it:
+        for entry in it:
+            if entry.is_file():
+                total += entry.stat().st_size
+            elif entry.is_dir():
+                total += get_dir_size(entry.path)
+    return total
 
 print("Starting EYN-DOS...")
 print("")
@@ -28,11 +42,7 @@ print("            ████░░░░░░░░░░░░░░░░�
 print("               ███░░░░░░░░░░░░░░░░███")
 print("                  ████████████████")
 print("")
-print("     EYN-DOS is a title owned by J.K Incorporated / J.K Robotics and protected under the BSD-3 Clause 'New' or 'Revised' License.")
-print("")
-print("     J.K Incorporated (1983 - Present)   J.K Incorporated(R) 2022")
-print("")
-print("     Copyright (C) J.K Incorporated.")
+print("             J.K Incorporated (1983 - 2022)")
 print("")
 input("Press the 'Enter' key to continue.")
 print("")
@@ -121,16 +131,9 @@ print("█████████       ███       ███      ██�
 print("")
 print("Type 'help' for a list of commands.")
 print("")
-print("In order for EYN-DOS to work as intended, please type 'install' and install 'eyndos_1_5.zip' and 'eyn_os_0_1.py'.")
-print("")
-
-command_list="122333444455555code1"
-
-if command_list!="122333444455555code1":
-    print("Bad command")
 
 while True:
-    command_line=input("A:\DIR1\eyndos_1_5\eyndos.py> ")
+    command_line=input("C:\DIR1\eyndos_1_51\eyndos.py> ")
 
     if command_line=="help":
         print("")
@@ -151,324 +154,40 @@ while True:
         print("")
         print(" insert(1-9).py = You can add a custom Python file into the EYN-DOS folder and execute it by typing 'run insert(Number in the filename (1-9)).py, ")
         print("")
-        command_list=="122333444455555code1"
-    
-    if command_line==("install"):
-        print("")
-        print("Type 'install (file)' to install that file.")
-        print("Type 'return' to return to the EYN-DOS Main Terminal.")
-        print("")
-        print("")
-        print("Searching...")
-        print("")
-        print("2 INSTALL FILES FOUND:")
-        print("     eyndos_1_41.zip")
-        print("     eyn_os_0_1.py")
-        print("")
-        while True:
-            ins_ans=input("A:\DIR1\eyndos_1_5\eyndos.py\install> ")
-
-            if ins_ans==("install eyn_os_0_1.py"):
-                print("")
-                os_exp=input("WARNING: EYN-OS 0.1 IS IN A HIGHLY EXPERIMENTAL STATE AND SHOULD NOT BE EXPECTED TO BE BUG-FREE OR FINISHED. CONTINUE? (y/n) ")
-                print("")
-
-                if os_exp==("y"):
-                    print("")
-                    print("Installing...")
-                    print("")
-                    print("        (3kb/3kb)")
-                    print("[||||||||||||||||||||||||]")
-                    print("")
-                    print("Installation complete.")
-                    print("")
-            
-                if os_exp==("n"):
-                    print("")
-                    print("Returning to main install terminal...")
-                    print("")
-
-            if ins_ans==("eyndos_1_5.zip info"):
-                print("")
-                print("eyndos_1_5 is the 1st package installation file for EYN-DOS 1.5")
-                print("")
-
-            if ins_ans=="install eyndos_1_5.zip":
-                print("")
-                print("Installing...")
-                print("")
-                ins_ans2=input("eyndos_1_5.zip already exists. Replace? (y/n) ")
-
-                if ins_ans2=="y":
-                    print("")
-                    print("     (109kb/156kb)")
-                    print("[|||||||||||||||||-------]")
-                    print("")
-                    ins_corr1=input("minesweeper.py is corrupted. Install anyway? (y/n) ")
-                    if ins_corr1==("y"):
-                        print("")
-                        print("     (156kb/156kb)")
-                        print("[||||||||||||||||||||||||]")
-                        print("")
-                        print("Installation complete.")
-                        print("")
-                
-                    if ins_corr1==("n"):
-                        print("")
-                        print("minesweeper.py will not be included.")
-                        print("")
-                        print("     (147kb/147kb)")
-                        print("[||||||||||||||||||||]")
-                        print("")
-                        print("Installation complete.")
-                        print("")
-        
-                if ins_ans2=="n":
-                    print("")
-                    print("     (109kb/156kb)")
-                    print("[|||||||||||||||||-------]")
-                    print("")
-                    ins_corr2=input("minesweeper.py is corrupted. Install anyway? (y/n)")
-                    if ins_corr2==("y"):
-                        print("")
-                        print("     (156kb/156kb)")
-                        print("[||||||||||||||||||||||||]")
-                        print("")
-                        print("Installation complete.")
-                        print("")
-                
-                    if ins_corr2==("n"):
-                        print("")
-                        print("minesweeper.py will not be included.")
-                        print("")
-                        print("     (147kb/147kb)")
-                        print("[||||||||||||||||||||]")
-                        print("")
-                        print("Installation complete.")
-                        print("")
-                
-            if ins_ans=="return":
-                print("")
-                print("Returning to main terminal...")
-                print("")
-                break
 
     if command_line=="dir":
         print("")
-        print("DIR1 (Max Storage: 1mb)")
+        print("DIR1 (Max Storage: 10mb)")
         print("- - - - - - - - - - - - - - - - - -")
         print("EYNOS01 (Max Storage: 10mb)")
         print("")
-        command_list=="122333444455555code1"
     
     if command_line=="files":
-        if ins_ans2=="y":
-            if ins_corr1==("y"): 
-                if os_exp==("y"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 15 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     minesweeper.py - 9kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     eyn_os_0_1.py - 3kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 87kb")
-                    print("")
-                
-                if os_exp==("n"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 14 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     minesweeper.py - 9kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 84kb")
-                    print("")
-            
-            if ins_corr1==("n"):
-                if os_exp==("y"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 14 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     eyn_os_0_1.py - 3kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 78kb")
-                    print("")
-
-                if os_exp==("n"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 13 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 75kb")
-                    print("")
-
-        if ins_ans2=="n":
-            if ins_corr2==("y"):
-                if os_exp==("y"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 16 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     minesweeper.py - 9kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     eyndos.py - 29kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     eyn_os_0_1.py - 3kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 116kb")
-                    print("")
-
-                if os_exp==("n"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 15 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     minesweeper.py - 9kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     eyndos.py - 29kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 113kb")
-                    print("")
-
-            if ins_corr2==("n"):
-                if os_exp==("y"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 15 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     eyndos.py - 29kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     eyn_os_0_1 - 3kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 103kb")
-                    print("")
-                
-                if os_exp==("n"):
-                    print("")
-                    print("DIR1 - eyndos_1_5 - 14 FILES: ")
-                    print("")
-                    print("     eyndos.py - 29kb")
-                    print("     calculator.py - 1kb")
-                    print("     notebook.py - 1kb")
-                    print("     solitaire.py - 12kb")
-                    print("     test1.py - 1kb")
-                    print("     weight_converter.py - 1kb")
-                    print("     eyndos.py - 29kb")
-                    print("     gui_calculator.py - 4kb")
-                    print("     clock.py - 1kb")
-                    print("     oregon_trail.py - 8kb")
-                    print("     snake.py - 4kb")
-                    print("     pong.py - 3kb")
-                    print("     tetris.py - 7kb")
-                    print("     paintbrush.py - 3kb")
-                    print("")
-                    print(" Total: 103kb")
-                    print("")
-        command_list=="122333444455555code1"
+        print("")
+        print(filesys)
+        print("")
+        print(get_dir_size('data/src')) 
+        print(" | Bytes")
+        print("")
         
     if command_line=="run eyndos.py":
         print("")
         print("This is already running!")
         print("")
-        command_list=="122333444455555code1"
         
     if command_line=="end":
+        print("")
         exit()
         
     if command_line=="run calculator.py":
         print("")
         os.system('py calculator.py')
         print("")
-        command_list="122333444455555code1"
 
     if command_line==("run minesweeper.py"):
         print("")
         os.system('py minesweeper.py')
         print("")
-        command_list=="122333444455555code1"
 
     if command_line==("run notebook.py"):
         print("")
@@ -479,37 +198,27 @@ while True:
         print("")
         print("Hey, that's a good YouTube channel!")
         print("")
-        command_list=="122333444455555code1"
     
     if command_line==("fdisk"):
         print("")
         print("The disk is already formatted. Command disbanded.")
         print("")
-        command_list=="122333444455555code1"
     
     if command_line==("win"):
         print("")
         print("No.")
         print("")
-        command_list=="122333444455555code1"
     
     if command_line==("run solitaire.py"):
         "Credit to 'shomikj' on GitHub for this code!"
         print("")
         os.system('py solitaire.py')
         print("")
-        command_list=="122333444455555code1"
-
-    if command_line==("run test1.py"):
-        print("")
-        os.system("py test1.py")
-        print("")
 
     if command_line==("run weight_converter.py"):
         print("")
         os.system("py weight_converter.py")
         print("")
-        command_list=="122333444455555code1"
 
     if command_line==("run gui_calculator.py"):
         print("")
@@ -790,12 +499,12 @@ while True:
     if command_line==("B:", "b:"):
         print("")
         while True:
-            command_line2=input("B:\DIR2\eyndos_1_4\eyndos.py> ")
+            command_line2=input("B:\> ")
 
-            if command_line2==("A:" or "a:"):
+            if command_line2==("C:" or "c:"):
                 print("")
                 while True:
-                    command_line5=("A:\>")
+                    command_line5=("C:\>")
 
                     if command_line5==("return"):
                         print("")
@@ -807,15 +516,15 @@ while True:
                 print("Returning to the main EYN-DOS terminal...")
                 print("")
 
-    if command_line==("C:", "c:"):
+    if command_line==("A:", "a:"):
         print("")
         while True:
-            command_line3=input("C:\> ")
+            command_line3=input("A:\> ")
 
-            if command_line3==("A:" or "a:"):
+            if command_line3==("C:" or "c:"):
                 print("")
                 while True:
-                    command_line4=("A:\>")
+                    command_line4=("C:\>")
 
                     if command_line4==("return"):
                         print("")
@@ -829,7 +538,20 @@ while True:
 
     if command_line==("ver"):
         print("")
-        print("EYN-DOS 1.5 (Windows) (2022)")
+        print("█████████   ███     ███   ███      ███            ██████       ██████      ██████")
+        print("███           ███ ███     ██████   ███            ███   ███  ███    ███  ███")
+        print("█████████       ███       ███  ███ ███   ██████   ███   ███  ███    ███    ██████")
+        print("███             ███       ███    █████            ███   ███  ███    ███        ███")
+        print("█████████       ███       ███      ███            ██████       ██████     ██████")
+        print("")
+        print("                                  ████         ██████")
+        print("                               ███ ███        ███     ")
+        print("                                   ███        ███████  ")
+        print("                                   ███        ███  ███")
+        print("                                   ███        ███  ███")
+        print("                                ████████  ██   ██████ ")
+        print("")
+        print("EYN-DOS 1.6 (Windows) (2022)")
         print("")
 
     if command_line==("credits"):
@@ -927,13 +649,13 @@ while True:
         print("This directory is used exclusively for the unreleased operating system, EYN-OS 0.1")
         print("")
         while True:
-            eynos_cdcl=input("A:\EYNOS01> ")
+            eynos_cdcl=input("C:\EYNOS01> ")
 
             if eynos_cdcl==("dir"):
                 print("")
-                print(" EYNOS01 - 3kb/1mb")
+                print(" EYNOS01 - 3kb/10mb")
                 print("--------------------")
-                print(" DIR1 - 219kb/1mb")
+                print(" DIR1 - 219kb/10mb")
                 print("")
             
             if eynos_cdcl==("files"):
@@ -956,7 +678,79 @@ while True:
         os.system("py browser.py")
         print("")
 
-    if command_line==(""):
+    if command_line==("run cli_notebook.py"):
         print("")
-        print("Invalid command")
+        print("Loading the EYN-DOS notebook terminal...")
         print("")
+        os.system('py cli_notebook.py')
+        print("")
+
+    if command_line==("cdate"):
+        print("")
+        os.system("py c-date.py")
+        print("")
+
+    if command_line==("read"):
+        print("")
+        txt_name=input("Enter the name of the file you want to read. (Including extension): ")
+        print("")
+        with open(txt_name) as f:
+            contents = f.read()
+            print(contents)
+            f.close
+    
+    if command_line==("find"):
+        print("")
+        file_find=input("What file do you want to find? (Including extension): ")
+        print("")
+        print(os.path.abspath(file_find))
+        print("")
+
+    if command_line==("keytest"):
+        if keyboard_select==("1"):
+            print("")
+            os.system("py keytest-q.py")
+            print("")
+
+        if keyboard_select==("2"):
+            print("")
+            os.system("py keytest-a.py")
+            print("")
+        
+        if keyboard_select==(""):
+            print("")
+            os.system("py keytest-q.py")
+            print("")
+
+    if command_line==("write"):
+        print("")
+        wri_name=input("What do you want to call your new file? (Extension included): ")
+        print("")
+        print("Type what you want your file to contain! (1 line): ")
+        print("")
+        wri_con=input("> ")
+        print("")
+        print("Saving...")
+        print("")
+        with open((wri_name), 'w') as f:
+            f.write(wri_con)
+        print("Saved.")
+        print("")
+
+    if command_line==("del"):
+        print("")
+        del_file=input("What file do you want to delete? (Including extension): ")
+        print("")
+        if del_file==(wri_name):
+            print("")
+            print("Deleting file...")
+            os.remove(wri_name)
+            print("")
+            print("File deleted.")
+            print("")
+        else:
+            print("")
+            print("This is a file bundled with EYN-DOS (Critical system file or included software).")
+            print("")
+            print("No action will be taken.")
+            print("")
