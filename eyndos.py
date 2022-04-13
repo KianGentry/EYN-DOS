@@ -14,7 +14,17 @@ def get_dir_size(path=dir_path):
                 total += entry.stat().st_size
             elif entry.is_dir():
                 total += get_dir_size(entry.path)
-    return total
+    return total/1024
+
+size=0
+for path, dirs, files in os.walk(dir_path):
+    for f in files:
+        fp = os.path.join(path, f)
+        size += os.path.getsize(fp)
+ 
+homeDir = os.path.expanduser('~/')
+searchDir2 = os.path.join(homeDir, 'EYN-DOS-eyndos-1-61-windows-', 'DIR2')
+searchDir3 = os.path.join(homeDir, 'EYN-DOS-eyndos-1-61-windows-', 'DIR3')
 
 print("Starting EYN-DOS...")
 print("")
@@ -43,6 +53,9 @@ print("               ███░░░░░░░░░░░░░░░░�
 print("                  ████████████████")
 print("")
 print("             J.K Incorporated (1983 - 2022)")
+print("")
+print("Copyright (c) 2022, J.K Incorporated")
+print("All rights reserved.")
 print("")
 input("Press the 'Enter' key to continue.")
 print("")
@@ -123,6 +136,9 @@ print("")
 command_line=input("Press the 'Enter' key to enter EYN-DOS.")
 
 print("")
+print("Copyright (c) 2022, J.K Incorporated")
+print("All rights reserved.")
+print("")
 print("█████████   ███     ███   ███      ███            ██████       ██████      ██████")
 print("███           ███ ███     ██████   ███            ███   ███  ███    ███  ███")
 print("█████████       ███       ███  ███ ███   ██████   ███   ███  ███    ███    ██████")
@@ -133,7 +149,7 @@ print("Type 'help' for a list of commands.")
 print("")
 
 while True:
-    command_line=input("C:\DIR1\eyndos_1_51\eyndos.py> ")
+    command_line=input("C:\DIR1\eyndos_1_61\eyndos.py> ")
 
     if command_line=="help":
         print("")
@@ -157,17 +173,19 @@ while True:
 
     if command_line=="dir":
         print("")
-        print("DIR1 (Max Storage: 10mb)")
-        print("- - - - - - - - - - - - - - - - - -")
-        print("EYNOS01 (Max Storage: 10mb)")
+        print("DIR1 - ", float(size)/1024, " Kilobytes")
         print("")
-    
+        print("DIR2 - ", "0.0", " Kilobytes")
+        print("")
+        print("DIR3 - ", "0.0", " Kilobytes")
+        print("")
+   
     if command_line=="files":
         print("")
         print(filesys)
         print("")
         print(get_dir_size('data/src')) 
-        print(" | Bytes")
+        print(" | Kilobytes")
         print("")
         
     if command_line=="run eyndos.py":
@@ -198,12 +216,7 @@ while True:
         print("")
         print("Hey, that's a good YouTube channel!")
         print("")
-    
-    if command_line==("fdisk"):
-        print("")
-        print("The disk is already formatted. Command disbanded.")
-        print("")
-    
+
     if command_line==("win"):
         print("")
         print("No.")
@@ -244,16 +257,6 @@ while True:
             print("")
             print("Command disbanded")
             print("")
-    
-    if command_line==("setup"):
-        print("")
-        print("Coming soon... In the meantime, try playing some games bundled with EYN-DOS.")
-        print("")
-
-    if command_line==("create dir"):
-        print("")
-        print("Coming soon...")
-        print("")
 
     if command_line==("run insert.py"):
         print("")
@@ -544,33 +547,26 @@ while True:
         print("███             ███       ███    █████            ███   ███  ███    ███        ███")
         print("█████████       ███       ███      ███            ██████       ██████     ██████")
         print("")
-        print("                                  ████         ██████")
-        print("                               ███ ███        ███     ")
-        print("                                   ███        ███████  ")
-        print("                                   ███        ███  ███")
-        print("                                   ███        ███  ███")
-        print("                                ████████  ██   ██████ ")
+        print("                             ████          ██████     ████")
+        print("                          ███ ███         ███      ███ ███")
+        print("                              ███         ███████      ███")
+        print("                              ███         ███  ███     ███")
+        print("                              ███         ███  ███     ███")
+        print("                           █████████  ██   ██████   █████████")
         print("")
-        print("EYN-DOS 1.6 (Windows) (2022)")
+        print("EYN-DOS 1.61 (Windows) (2022)")
+        print("")
+        print("Copyright (c) 2022, J.K Incorporated")
+        print("All rights reserved.")
         print("")
 
     if command_line==("credits"):
-        print("")
-        print("  ████████   ████████    ████████    ████████    ██████████  ██████████    ██████")
-        print("██           ██      ██  ██          ██      ██      ██          ██      ██")
-        print("██           ██      ██  ██          ██      ██      ██          ██        ███")
-        print("██           ████████    ████████    ██      ██      ██          ██           ███")
-        print("██           ██ ███      ██          ██      ██      ██          ██       █████")
-        print("██           ██   ███    ██          ██      ██      ██          ██      ")
-        print("  ████████   ██     ██   ████████    ████████    ██████████      ██      ")
         print("")
         print("The Team:")
         print("")
         print("    Primary coder: Kian Gentry (Founder and CEO of J.K Incorporated)")
         print("")
         print("    Secondary coder: Ian Greeves (Musician and Lead Artist of J.K Incorporated.")
-        print("")
-        print("    EYN-OS Lead Coder: Kian Gentry")
         print("")
         print("    Box art & Logo design: Kamil M.")
         print("")
@@ -706,22 +702,6 @@ while True:
         print(os.path.abspath(file_find))
         print("")
 
-    if command_line==("keytest"):
-        if keyboard_select==("1"):
-            print("")
-            os.system("py keytest-q.py")
-            print("")
-
-        if keyboard_select==("2"):
-            print("")
-            os.system("py keytest-a.py")
-            print("")
-        
-        if keyboard_select==(""):
-            print("")
-            os.system("py keytest-q.py")
-            print("")
-
     if command_line==("write"):
         print("")
         wri_name=input("What do you want to call your new file? (Extension included): ")
@@ -754,3 +734,83 @@ while True:
             print("")
             print("No action will be taken.")
             print("")
+
+    if command_line==("cd DIR2"):
+        print("")
+        while True: 
+            dir2_line=input("C:\DIR2\> ")
+
+            if dir2_line==("cd"):
+                print("")
+                print("Returning to the EYN-DOS main terminal...")
+                print("")
+                break
+            
+            if dir2_line==("files"):
+                print("")
+                print("No files found!")
+                print("")
+            
+            if dir2_line=="dir":
+                print("")
+                print("DIR1 - ", float(size)/1024, " Kilobytes")
+                print("")
+                print("DIR2 - ", "0.0", " Kilobytes")
+                print("")
+                print("DIR3 - ", "0.0", " Kilobytes")
+                print("")
+            
+            if dir2_line==("write"):
+                print("")
+                print("Unsupported command for DIR2 in EYN-DOS 1.61.")
+                print("")
+            
+            if dir2_line==("del"):
+                print("")
+                print("No files to delete.")
+                print("")
+            
+            if dir2_line==("read"):
+                print("")
+                print("No files to read.")
+                print("")
+
+    if command_line==("cd DIR3"):
+        print("")
+        while True: 
+            dir3_line=input("C:\DIR3\> ")
+
+            if dir3_line==("cd"):
+                print("")
+                print("Returning to the EYN-DOS main terminal...")
+                print("")
+                break
+            
+            if dir3_line==("files"):
+                print("")
+                print("No files found!")
+                print("")
+            
+            if dir3_line=="dir":
+                print("")
+                print("DIR1 - ", float(size)/1024, " Kilobytes")
+                print("")
+                print("DIR2 - ", "0.0", " Kilobytes")
+                print("")
+                print("DIR3 - ", "0.0", " Kilobytes")
+                print("")
+            
+            if dir3_line==("write"):
+                print("")
+                print("Unsupported command for DIR3 in EYN-DOS 1.61.")
+                print("")
+            
+            if dir3_line==("del"):
+                print("")
+                print("No files to delete.")
+                print("")
+            
+            if dir3_line==("read"):
+                print("")
+                print("No files to read.")
+                print("")
