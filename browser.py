@@ -5,7 +5,7 @@ print("Welcome to the EYN-DOS browser terminal! This terminal requires a web bro
 print("")
 
 while True:
-    browser_line=input("C:\DIR1\eyndos_1_51\eyndos.py> browser.py> ")
+    browser_line=input("C:\BROWSER.PY\> ")
 
     if browser_line==("https://www.google.com", "www.google.com"):
         print("")
@@ -31,8 +31,8 @@ while True:
         print("")
         webbrowser.open("https://discord.com")
 
-        if browser_line==("return"):
-            print("")
-            print("Returning to the main EYN-DOS terminal...")
-            print("")
-            exit()
+    if browser_line==("return"):
+        print("")            
+        print("Returning to the main EYN-DOS terminal...")
+        print("")
+        exit()
