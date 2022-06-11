@@ -1,5 +1,5 @@
 import os
-from os import listdir
+from os import chdir, listdir
 from os.path import isfile, join
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -23,24 +23,24 @@ for path, dirs, files in os.walk(dir_path):
         size += os.path.getsize(fp)
 
 while True:
-    command_lineD=input("D:\> ")
+    command_lineD=input("D/} ")
 
-    if command_lineD==("A:"):
+    if command_lineD==("A"):
         print("")
         os.system("python3 A.py")
         print("")
 
-    if command_lineD==("B:"):
+    if command_lineD==("B"):
         print("")
         os.system("python3 B.py")
         print("")
     
-    if command_lineD==("C:"):
+    if command_lineD==("C"):
         print("")
         os.system("python3 C.py")
         print("")
 
-    if command_lineD==("E:"):
+    if command_lineD==("E"):
         print("")
         os.system("python3 E.py")
         print("")
@@ -58,3 +58,22 @@ while True:
     if command_lineD==("end"):
         print("")
         exit()
+
+    if command_lineD==("run"):
+        print("")
+        run_name=input("What file do you want to run? (extension included): ")
+        print("")
+        os.system("python3 " + run_name)
+        print("")
+
+    if command_lineD==("cd"):
+        print("")
+        cd_line=input("What directory do you want to go to?: ")
+        print("")
+        chdir(cd_line)
+
+    if command_lineD==("cwd"):
+        print("")
+        cwd=os.getcwd()
+        print(cwd)
+        print("")

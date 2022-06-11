@@ -1,14 +1,13 @@
+import shutil
 import os
-from os import listdir
+from os import chdir, listdir, mkdir
 from os.path import isfile, join
-
-# File system
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 filesys = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
-def get_dir_size(path=dir_path):
+def get_dir_size(dir_path):
     total = 0
     with os.scandir(dir_path) as it:
         for entry in it:
@@ -25,79 +24,53 @@ for path, dirs, files in os.walk(dir_path):
         size += os.path.getsize(fp)
 
 while True:
-    command_line=input("C:\> ")
+    command_line=input("C/} ")
 
-    if command_line=="help":
+    if command_line==("help"):
         print("")
         print("help = Prints commands currently usable, ")
         print("listdir = Prints a list of available directories, ")
         print("dir = Prints a list of all available files in the current directory, ")
-        print("run (file) = Executes the file entered, ")
+        print("run = Executes the file entered, ")
         print("end = Closes and resets the EYN-DOS terminal, ")
-        print("browser = Takes you to the EYN-DOS browser terminal, ")
         print("ver = Prints the EYN-DOS version that is running, ")
         print("credits = Prints a list of all the people who worked on EYN-DOS, ")
         print("cd (File/Folder location) = Takes you to the directory entered, ")
         print("cdate = Prints the current date and time, ")
         print("read = Prints the contents of the file entered, ")
         print("find = Prints the directory path of the file entered, ")
-        print("write = Writes 1 line of custom text to the file entered (creates new file), ")
+        print("write = Writes 25 lines of custom text to the file entered (creates new file), ")
         print("del = Deletes any newly writtten file entered, ")
         print("size = Prints the size of the file entered, ")
         print("clear = Clears the screen of all previously printed lines, ")
         print("errorlist = Prints all error codes and their meanings.")
-        print("A: = Takes you to the A drive (Floppy disk drive 1)")
-        print("B: = Takes you to the B drive (Floppy disk drive 2)")
-        print("C: = Takes you to the C drive (Hard drive)")
-        print("D: = Takes you to the D drive (Recovery drive)")
-        print("E: = Takes you to the E drive (Compact Disc drive)")
-        print("")
-        print("Misc:")
-        print("")
-        print(" insert(1-9).py = You can add a custom Python file into the EYN-DOS folder and execute it by typing 'run insert(Number in the filename (1-9)).py, ")
-        print("")
-
-    if command_line=="listdir":
-        print("")
-        print("DIR1 - ", float(size)/1024, " Kilobytes")
-        print("")
-        print("DIR2 - ", "0.0", " Kilobytes")
-        print("")
-        print("DIR3 - ", "0.0", " Kilobytes")
+        print("A = Takes you to the A drive (Floppy disk drive 1)")
+        print("B = Takes you to the B drive (Floppy disk drive 2)")
+        print("C = Takes you to the C drive (Hard drive)")
+        print("D = Takes you to the D drive (Recovery drive)")
+        print("E = Takes you to the E drive (Compact Disc drive)")
+        print("md = Makes a directory with the name entered.")
+        print("copy = Copy and pastes the file selected in the path entered.")
+        print("echo = Prints the text entered.")
         print("")
 
-    if command_line=="dir":
+    if command_line==("listdir"):
+        print("")
+        print("temp", " - ", float(size)/1024, " Kilobytes")
+        print("")
+
+    if command_line==("dir"):
         print("")
         print(filesys)
         print("")
-        print(get_dir_size('data/src')) 
+        print(get_dir_size(dir_path)) 
         print(" | Kilobytes")
         print("")
-        
-    if command_line=="run eyndos.py":
-        print("")
-        print("This is already running!")
-        print("")
-        
-    if command_line=="end":
+
+    if command_line==("end"):
         print("")
         exit()
-        
-    if command_line=="run calculator.py":
-        print("")
-        os.system('python3 calculator.py')
-        print("")
 
-    if command_line==("run minesweeper.py"):
-        print("")
-        os.system('python3 minesweeper.py')
-        print("")
-
-    if command_line==("run notebook.py"):
-        print("")
-        os.system("python3 notebook.py")
-        print("")
-    
     if command_line==("lgr"):
         print("")
         print("Hey, that's a good YouTube channel!")
@@ -112,28 +85,7 @@ while True:
         print("")
         print("No.")
         print("")
-    
-    if command_line==("run solitaire.py"):
-        "Credit to 'shomikj' on GitHub for this code!"
-        print("")
-        os.system('python3 solitaire.py')
-        print("")
 
-    if command_line==("run weight_converter.py"):
-        print("")
-        os.system("python3 weight_converter.py")
-        print("")
-
-    if command_line==("run gui_calculator.py"):
-        print("")
-        os.system('python3 gui_calculator.py')
-        print("")
-    
-    if command_line==("run clock.py"):
-        print("")
-        os.system('python3 clock.py')
-        print("")
-    
     if command_line==("count"):
         print("")
         count_1=input("WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n) ")
@@ -148,11 +100,6 @@ while True:
             print("")
             print("Command disbanded")
             print("")
-
-    if command_line==("run insert1.py"):
-        print("")
-        os.system('python3 insert1.py')
-        print("")
 
     if command_line==("troll"):
         print("")
@@ -174,222 +121,6 @@ while True:
         print("░░░░░░░░░░░░░░░░░░█▄▄▄▄▄▄▄▄▀")
         print("")
 
-    if command_line==("run oregon_trail.py"):
-        print("")
-        os.system('python3 oregon_trail.py')
-        print("")
-
-    if command_line==("run snake.py"):
-        print("")
-        os.system('python3 snake.py')
-        print("")
-
-    if command_line==("run pong.py"):
-        print("")
-        os.system('python3 pong.py')
-        print("")
-
-    if command_line==("run tetris.py"):
-        print("")
-        print("Use A to go left, D to go right and spacebar to rotate.")
-        os.system('python3 tetris.py')
-        print("")
-
-    if command_line==('run invaders.py'):
-        print("")
-        print("Use the left arrow to go left, the right arrow to go right, and spacebar to shoot.")
-        os.system('python3 invaders.py')
-        print("")
-
-    if command_line==("run paintbrush.py"):
-        print("")
-        os.system('python3 paintbrush.py')
-        print("")
-
-    if command_line==("!devdebug1!"):
-        print("")
-        dev_ver=input("THIS OPTION IS FOR DEVELOPERS AND TESTERS ONLY. IF YOU ARE NOT A DEVELOPER OR TESTER, YOU WILL BE REPORTED TO A HR. CONTINUE? (y/n) ")
-        print("")
-
-        if dev_ver==("n"):
-            print("")
-            print("Command disbanded")
-            print("")
-        
-        if dev_ver==("y"):
-            print("")
-            dev_ver1=input("Enter your provided username: ")
-
-            if dev_ver1==("kg2"):
-                print("")
-                print("Welcome back, Kian.")
-                print("")
-
-                dev_ver2=input("Enter your provided password: ")
-
-                if dev_ver2==("celerysticksfiddlebottom20"):
-                    print("")
-                    print("Welcome to the EYN-DOS development terminal, Kian!")
-                    print("")
-                
-                if dev_ver2!=("celerysticksfiddlebottom20"):
-                    exit()
-            
-            if dev_ver1==("cj9"):
-                print("")
-                print("Welcome back, Cayden.")
-                print("")
-
-                dev_ver3=input("Enter your provided password: ")
-
-                if dev_ver3==("carrotfarmmule90"):
-                    print("")
-                    print("Welcome to the EYN=DOS development terminal, Cayden!")
-                    print("")
-                
-                if dev_ver3!=("carrotfarmmule90"):
-                    exit()
-            
-            if dev_ver1==("ig1"):
-                print("")
-                print("Welcome back, Ian.")
-                print("")
-
-                dev_ver4=input("Enter your provided password: ")
-
-                if dev_ver4==("isaacboatorange30"):
-                    print("")
-                    print("Welcome to the EYN-DOS development terminal, Ian!")
-                    print("")
-
-                if dev_ver4!=("isaacboatorange30"):
-                    exit()
-
-            if dev_ver1==(""):
-                exit()
-
-            while True:
-                command_line1=input("C:\DEVDEBUG1\> ")
-
-                if command_line1==("debug"):
-                    print("")
-                    print("Coming soon...")
-                    print("")
-                
-                if command_line1==("end"):
-                    exit()
-                
-                if command_line1==("eyn_os"):
-                    print("")
-                    print("Welcome to...")
-                    print("                        (Built on EYN-DOS)")
-                    print("                    ██████████████████████████")
-                    print("                    ███░█████░██░░░██░██░░░█░██")
-                    print("██       ██      ██ ██░░█░░░░░░░███░░░██░░░█░░██")
-                    print("     ██      ██     ██░░█████░░░░█░░░░█░█░░█░░██")
-                    print("██       ██      ██ ██░░█░░░░░░░░█░░░░█░░█░█░░██")
-                    print("     ██      ██     ███░█████░░░░█░░░░█░░░██░░██")
-                    print("██       ██      ██ ████████████████████████████")
-                    print("     ██      ██     ███░░░█████░░░░░░█████░░░░██")
-                    print("         ██      ██ ██░░░█░░░░░█░░░░█░░░░░░░░░██")
-                    print("     ██      ██     ██░░░█░░░░░█░░░░░█████░░░░██")
-                    print("                 ██ ██░░░█░░░░░█░░░░░░░░░░█░░░██")
-                    print("             ██     ███░░░█████░░░░░░█████░░░██")
-                    print("                    ██████████████████████████")
-                    print("                     A nostalgic, yet modern")
-                    print("                      O.S...")
-                    print("")
-                    os.system('python3 eyn_os_0_1.py')
-                    print("")
-    
-                if command_line1==("calculate"):
-                    print("")
-                    gc1=input("GUI based or CLI based? (g/c) ")
-
-                    if gc1==("g"):
-                        print("")
-                        os.system('python3 gui_calculator.py')
-                        print("")
-                    
-                    if gc1==("c"):
-                        print("")
-                        os.system('python3 calculator.py')
-                        print("")
-                
-                if command_line1==("time"):
-                    print("")
-                    os.system('python3 clock.py')
-                    print("")
-                
-                if command_line1==("coder"):
-                    print("")
-                    print("Coming soon...")
-                    print("")
-
-                if command_line1==("count"):
-                    print("")
-                    countperm=input("WARNING: counter.py WILL LOCK YOUR PC UNTIL RESTARTED PHYSICALLY. CONTINUE? (y/n) ")
-
-                    if countperm==("n"):
-                        print("")
-                        print("Command disbanded")
-                        print("")
-
-                    if countperm==("y"):
-                        print("")
-                        os.system('python3 counter.py')
-                        print("")
-
-                if command_line1==("eynos01 files"):
-                    print("")
-                    print(" - - - - EYNOS1 - - - - ")
-                    print("")
-                    print("   eyn_os_0_1.py - 3kb")
-                    print("   user.folder - 0kb")
-                    print("")
-                    print(" TOTAL: 3kb")
-                    print("")
-                
-                if command_line1==("dir1 files"):
-                    print("")
-                    print(" - - - - DIR1 - - - - ")
-                    print("")
-                    print("   eyndos.py - 29kb")
-                    print("   calculator.py - 1kb")
-                    print("   minesweeper.py - 9kb")
-                    print("   notebook.py - 1kb")
-                    print("   solitaire.py - 12kb")
-                    print("   test1.py - 1kb")
-                    print("   weight_converter.py - 1kb")
-                    print("   gui_calculator.py - 4kb")
-                    print("   clock.py - 1kb")
-                    print("   oregon_trail.py - 8kb")
-                    print("   snake.py - 4kb")
-                    print("   pong.py - 3kb")
-                    print("   tetris.py - 7kb")
-                    print("   paintbrush.py - 3kb")
-                    print("   test3.py - 15kb")
-                    print("   mouse_detection.py - 1kb")
-                    print("")
-                    print(" TOTAL: 100kb - LEFT: 900kb - 16 Files")
-                    print("")
-
-                if command_line1==("return"):
-                    print("")
-                    print("Returning to main terminal...")
-                    print("")
-                    break
-
-                if command_line1==("help"):
-                    print("")
-                    print("help = Prints a list of available commands, end = Ends the current EYN-DOS session, eyn_os = Runs the latest version of EYN-OS, calculate = Runs a calculator program, time = Runs a clock program, count = Counts infinitely (locks current EYN-DOS session), (directory) files = Prints files and information about the entered directory, return = Returns you to the main EYN-DOS terminal. Attempting to type an unknown command results in a blank response.")
-                    print("")
-
-                if command_line1==("run mouse_detection.py"):
-                    print("")
-                    os.system('python3 mouse_detection.py')
-                    print("")
-
     if command_line==("ver"):
         print("")
         print("█████████   ███     ███   ███      ███            ██████       ██████      ██████")
@@ -398,14 +129,14 @@ while True:
         print("███             ███       ███    █████            ███   ███  ███    ███        ███")
         print("█████████       ███       ███      ███            ██████       ██████     ██████")
         print("")
-        print("                             ████         ████████")
-        print("                          ███ ███              ███")
-        print("                              ███             ███")
-        print("                              ███           ███")
-        print("                              ███          ███")
-        print("                           █████████  ██   ███")
+        print("                             ████         ████████     ████")
+        print("                          ███ ███              ███  ███ ███")
+        print("                              ███             ███       ███")
+        print("                              ███           ███         ███")
+        print("                              ███          ███          ███")
+        print("                           █████████  ██   ███       █████████")
         print("")
-        print("EYN-DOS 1.7 (2022)")
+        print("EYN-DOS 1.71 (2022)")
         print("")
 
     if command_line==("credits"):
@@ -414,11 +145,9 @@ while True:
         print("")
         print("    Primary coder: Kian Gentry (Founder and CEO of J.K Incorporated)")
         print("    Secondary coder: Ian Greeves (Musician and Lead Artist of J.K Incorporated.")
-        print("    Logo designer: Kamil M.")
+        print("    Logo designer: Kamil Makuch")
         print("    Staff commander: Kian Gentry")
-        print("    Everyone involved: Kian Gentry, Ian Greeves, Kamil M. and other J.K Incorporated employees.")
-        print("")
-        print("-----------------------------------------------------------------------------------------")
+        print("    Everyone involved: Kian Gentry, Ian Greeves, Kamil Makuch and other J.K Incorporated employees.")
         print("")
         print("    Honorable mentions:")
         print("")
@@ -431,58 +160,6 @@ while True:
         print("         Linux: Just awesome")
         print("")
         print("         Thank you for using EYN-DOS!")
-        print("")
-
-    if command_line==("run insert2.py"):
-        print("")
-        os.system("python3 insert2.py")
-        print("")
-
-    if command_line==("run insert3.py"):
-        print("")
-        os.system("python3 insert3.py")
-        print("")
-
-    if command_line==("run insert4.py"):
-        print("")
-        os.system("python3 insert4.py")
-        print("")
-    
-    if command_line==("run insert5.py"):
-        print("")
-        os.system("python3 insert5.py")
-        print("")
-    
-    if command_line==("run insert6.py"):
-        print("")
-        os.system("python3 insert6.py")
-        print("")
-    
-    if command_line==("run insert7.py"):
-        print("")
-        os.system("python3 insert7.py")
-        print("")
-    
-    if command_line==("run insert8.py"):
-        print("")
-        os.system("python3 insert8.py")
-        print("")
-    
-    if command_line==("run insert9.py"):
-        print("")
-        os.system("python3 insert9.py")
-        print("")
-
-    if command_line==("browser"):
-        print("")
-        os.system("python3 browser.py")
-        print("")
-
-    if command_line==("run cli_notebook.py"):
-        print("")
-        print("Loading the EYN-DOS notebook terminal...")
-        print("")
-        os.system('python3 cli_notebook.py')
         print("")
 
     if command_line==("cdate"):
@@ -509,37 +186,30 @@ while True:
 
     if command_line==("write"):
         print("")
-        wri_name=input("What do you want to call your new file? (Extension included): ")
-        print("")
-        print("Type what you want your file to contain! (1 line): ")
-        print("")
-        wri_con=input("> ")
-        print("")
-        print("Saving...")
-        print("")
-        with open((wri_name), 'w') as f:
-            f.write("")
-            f.write(wri_con)
-            f.write("")
-        print("Saved.")
+        os.system("python3 write.py")
         print("")
 
     if command_line==("del"):
         print("")
         del_file=input("What file do you want to delete? (Including extension): ")
         print("")
-        if del_file==(wri_name):
+        if del_file==("C.py", 
+        "A.py", 
+        "B.py", 
+        "D.py", 
+        "E.py", 
+        "LICENSE", 
+        "launch.json", 
+        "info.md"):
             print("")
+            print("This is a critical system file. No action will be taken.")
+            print("")
+            break
+        else:
             print("Deleting file...")
-            os.remove(wri_name)
+            os.remove(del_file)
             print("")
             print("File deleted.")
-            print("")
-        else:
-            print("")
-            print("The file entered is invalid.")
-            print("")
-            print("No action will be taken.")
             print("")
 
     if command_line==("size"):
@@ -549,86 +219,6 @@ while True:
         print(os.path.getsize(size_cl)/1024)
         print(" | Kilobytes")
         print("")
-
-    if command_line==("cd DIR2"):
-        print("")
-        while True: 
-            dir2_line=input("C:\DIR2\> ")
-
-            if dir2_line==("cd"):
-                print("")
-                print("Returning to the EYN-DOS main terminal...")
-                print("")
-                break
-            
-            if dir2_line==("dir"):
-                print("")
-                print("No files found!")
-                print("")
-            
-            if dir2_line=="listdir":
-                print("")
-                print("DIR1 - ", float(size)/1024, " Kilobytes")
-                print("")
-                print("DIR2 - ", "0.0", " Kilobytes")
-                print("")
-                print("DIR3 - ", "0.0", " Kilobytes")
-                print("")
-            
-            if dir2_line==("write"):
-                print("")
-                print("Unsupported command for DIR2 in EYN-DOS 1.62.")
-                print("")
-            
-            if dir2_line==("del"):
-                print("")
-                print("No files to delete.")
-                print("")
-            
-            if dir2_line==("read"):
-                print("")
-                print("No files to read.")
-                print("")
-
-    if command_line==("cd DIR3"):
-        print("")
-        while True: 
-            dir3_line=input("C:\DIR3\>")
-
-            if dir3_line==("cd"):
-                print("")
-                print("Returning to the EYN-DOS main terminal...")
-                print("")
-                break
-            
-            if dir3_line==("dir"):
-                print("")
-                print("No files found!")
-                print("")
-            
-            if dir3_line=="listdir":
-                print("")
-                print("DIR1 - ", float(size)/1024, " Kilobytes")
-                print("")
-                print("DIR2 - ", "0.0", " Kilobytes")
-                print("")
-                print("DIR3 - ", "0.0", " Kilobytes")
-                print("")
-            
-            if dir3_line==("write"):
-                print("")
-                print("Unsupported command for DIR3 in EYN-DOS 1.62.")
-                print("")
-            
-            if dir3_line==("del"):
-                print("")
-                print("No files to delete.")
-                print("")
-            
-            if dir3_line==("read"):
-                print("")
-                print("No files to read.")
-                print("")
 
     if command_line==("clear"):
         print("")
@@ -681,22 +271,101 @@ while True:
         print(" | EYN_AD2-NMD = Unable to read/run software due to no essential module detected.")
         print("")
 
-    if command_line==("A:"):
+    if command_line==("A"):
         print("")
         os.system("python3 A.py")
         print("")
 
-    if command_line==("B:"):
+    if command_line==("B"):
         print("")
         os.system("python3 B.py")
         print("")
 
-    if command_line==("D:"):
+    if command_line==("C"):
+        print("")
+        os.system("python3 C.py")
+        print("")
+
+    if command_line==("D"):
         print("")
         os.system("python3 D.py")
         print("")
     
-    if command_line==("E:"):
+    if command_line==("E"):
         print("")
         os.system("python3 E.py")
+        print("")
+
+    if command_line==("run"):
+        print("")
+        run_name=input("What file do you want to run? (extension included): ")
+        print("")
+        if run_name==("C.py"):
+            print("")
+            print("This is already running!")
+            print("")
+        else:
+            os.system("python3 " + run_name)
+            print("")
+
+    if command_line==("cd"):
+        print("")
+        print("(Type 'nul' to return to the EYN-DOS main terminal)")
+        print("")
+        cd_line=input("What directory do you want to go to?: ")
+        print("")
+        if cd_line==("nul"):
+            print("Returning to the EYN-DOS main terminal...")
+            print("")
+        else:
+            chdir(cd_line)
+
+    if command_line==("cwd"):
+        print("")
+        cwd=os.getcwd()
+        print(cwd)
+        print("")
+
+    if command_line==("ctime"):
+        print("")
+        os.system("python3 c-time.py")
+        print("")
+
+    if command_line==("md"):
+        print("")
+        print("(Type 'nul' to return the EYN-DOS main terminal)")
+        print("")
+        md_line=input("What do you want to call the directory?: ")
+        print("")
+        if md_line==("nul"):
+            print("Returning to the EYN-DOS main terminal...")
+            print("")
+        else:
+            print("Creating...")
+            print("")
+            mkdir(md_line)
+            print("Directory created.")
+            print("")
+
+    if command_line==("copy"):
+        print("")
+        cpy_line=input("Where is the file you want to copy?: ")
+        print("")
+        pst_line=input("Where do you want to paste the file?: ")
+        print("")
+        if cpy_line==("nul"):
+            print("Returning to the EYN-DOS main terminal...")
+            print("")
+        else:
+            print("Pasting...")
+            print("")
+            shutil.copyfile(cpy_line, pst_line)
+            print("Pasted.")
+            print("")
+
+    if command_line==("echo"):
+        print("")
+        echo_line=input("What do you want to echo?: ")
+        print("")
+        print(echo_line)
         print("")

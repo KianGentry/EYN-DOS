@@ -11,9 +11,9 @@ while True:
         print("Returning to the EYN-DOS main terminal...")
         exit()
 
-    if notebook_line==("save(file)"):
+    if notebook_line==("save(note)"):
         print("")
-        note_filename=input("What do you want to call your file? (including .txt): ")
+        note_filename=input("What do you want to call your file? (including extension): ")
         print("")
         with open((note_filename), 'w') as f:
             f.write(notebook_line)
