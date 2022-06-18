@@ -1,3 +1,5 @@
+import colorama
+from colorama import Fore
 import shutil
 import os
 from os import chdir, listdir, mkdir
@@ -24,7 +26,7 @@ for path, dirs, files in os.walk(dir_path):
         size += os.path.getsize(fp)
 
 while True:
-    command_line=input("C/} ")
+    command_line=input(Fore.RESET + "C/} ")
 
     if command_line==("help"):
         print("")
@@ -77,9 +79,9 @@ while True:
         print("")
     
     if command_line==("fdisk"):
-        print("")
-        print("ERROR EYN_C3-FNI")
-        print("")
+        print(Fore.BLUE + "████████████████")
+        print("\033[37;44mERROR EYN_C3-FNI\033[m")
+        print(Fore.BLUE + "████████████████")
     
     if command_line==("win"):
         print("")
@@ -129,14 +131,14 @@ while True:
         print("███             ███       ███    █████            ███   ███  ███    ███        ███")
         print("█████████       ███       ███      ███            ██████       ██████     ██████")
         print("")
-        print("                             ████         ████████     ████")
-        print("                          ███ ███              ███  ███ ███")
-        print("                              ███             ███       ███")
-        print("                              ███           ███         ███")
-        print("                              ███          ███          ███")
-        print("                           █████████  ██   ███       █████████")
         print("")
-        print("EYN-DOS 1.71 (2022)")
+        print("                          █████████   ███     ███   ██████")
+        print("                          ███           ███ ███     ███  ███")
+        print("                          █████████       ███       ██████")
+        print("                          ███           ███ ███     ███")
+        print("                          █████████   ███     ███   ███")
+        print("")
+        print("EYN-DOS Experimental (2022)")
         print("")
 
     if command_line==("credits"):
@@ -369,3 +371,21 @@ while True:
         print("")
         print(echo_line)
         print("")
+
+    if command_line==("colortest"):
+        print("")
+        print(Fore.BLUE +            "████████████████████████████████")
+        print(Fore.CYAN +            "████████████████████████████████")
+        print(Fore.GREEN +           "████████████████████████████████")
+        print(Fore.MAGENTA +         "████████████████████████████████")
+        print(Fore.RED +             "████████████████████████████████")
+        print(Fore.YELLOW +          "████████████████████████████████")
+        print(Fore.WHITE +           "████████████████████████████████")
+        print(Fore.LIGHTBLUE_EX +    "████████████████████████████████")
+        print(Fore.LIGHTCYAN_EX +    "████████████████████████████████")
+        print(Fore.LIGHTGREEN_EX +   "████████████████████████████████")
+        print(Fore.LIGHTMAGENTA_EX + "████████████████████████████████")
+        print(Fore.LIGHTRED_EX +     "████████████████████████████████")
+        print(Fore.LIGHTYELLOW_EX +  "████████████████████████████████")
+        print(Fore.LIGHTBLACK_EX +   "████████████████████████████████")
+        print(Fore.RESET + "")
