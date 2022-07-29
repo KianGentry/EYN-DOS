@@ -2,11 +2,6 @@
 
 ---
 
-The modern DOS Operating Environment for PC's with pre-existing operating systems. A nostalgia pleaser.
-
----
----
-
 EYN-DOS is a recreation of classic DOS Operating Systems from the early 80's to late 90's.
 
 ---
