@@ -1,9 +1,13 @@
+# Importing modules required (Download all for proper function) #
+
 import colorama
 from colorama import Fore
 import shutil
 import os
 from os import chdir, listdir, mkdir
 from os.path import isfile, join
+
+# Start of calculating directory size #
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -25,8 +29,12 @@ for path, dirs, files in os.walk(dir_path):
         fp = os.path.join(path, f)
         size += os.path.getsize(fp)
 
+# End of calculating directory size #
+
 while True:
-    command_line=input(Fore.RESET + "C/} ")
+    command_line=input("C/} ")
+
+# All commands below #
 
     if command_line==("help"):
         print("")
@@ -224,7 +232,7 @@ while True:
 
     if command_line==("clear"):
         print("")
-        os.system("clear")
+        os.system("cls")
 
     if command_line==("errorlist"):
         print("")
@@ -307,7 +315,7 @@ while True:
             print("This is already running!")
             print("")
         else:
-            os.system("python3 " + run_name)
+            os.system('py ' + run_name)
             print("")
 
     if command_line==("cd"):
@@ -431,4 +439,7 @@ while True:
         print("R.I.P Terrence Andrew Davis (1969 - 2018)")
         print("")
 
+    # Feel free to add extra commands for yourself! Modding is encouraged. #
+
+    # "Enjoy EYN-DOS!" - J.K Incorporated #
     
