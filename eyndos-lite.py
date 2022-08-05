@@ -1,16 +1,15 @@
 while True:
-    c=input("C> ")
+    c=input(">")
     if c==("w"):
-        w0=input("?> ")
-        w1=input("1> ")
-        with open((w0), 'w') as f:
-            f.writelines([w1])
+        q=input("?>")
+        w=input("1>")
+        with open((q),'w') as f:
+            f.writelines([w])
     if c==("r"):
-        r1=input("?> ")
-        with open(r1) as f:
-            cont = f.read()
-            print(cont)
+        r=input("?>")
+        with open(r) as f:
+            d=f.read()
+            print(d)
             f.close
     if c==("e"):
-        print("Goodbye!")
         exit()

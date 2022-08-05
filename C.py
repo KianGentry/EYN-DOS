@@ -1,6 +1,5 @@
 # Importing modules required (Download all for proper function) #
 
-import colorama
 from colorama import Fore
 import shutil
 import os
@@ -438,6 +437,9 @@ while True:
         print("Some hated him, some loved him. All together, he was still a great man.")
         print("R.I.P Terrence Andrew Davis (1969 - 2018)")
         print("")
+
+    if command_line==("placeholder"):
+        print("placeholder");
 
     # Feel free to add extra commands for yourself! Modding is encouraged. #
 
