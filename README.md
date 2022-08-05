@@ -2,7 +2,7 @@
 
 ---
 
-This branch of EYN-DOS archives the earliest release of EYN-DOS that J.K Incorporated currently has.
+This branch of EYN-DOS archives the earliest release of EYN-DOS that J.K Incorporated currently has. (EYN-DOS 1.1)
 
 ---
 
