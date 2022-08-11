@@ -1,79 +1,103 @@
-import os
-from os import chdir, listdir
-from os.path import isfile, join
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
-
-filesys = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
-
-def get_dir_size(path=dir_path):
-    total = 0
-    with os.scandir(dir_path) as it:
-        for entry in it:
-            if entry.is_file():
-                total += entry.stat().st_size
-            elif entry.is_dir():
-                total += get_dir_size(entry.path)
-    return total/1024
-
-size=0
-for path, dirs, files in os.walk(dir_path):
-    for f in files:
-        fp = os.path.join(path, f)
-        size += os.path.getsize(fp)
+from commands import *
 
 while True:
-    command_lineE=input("E/} ")
+    command_line=input("E/} ")
 
-    if command_lineE==("A"):
-        print("")
-        os.system("python3 A.py")
-        print("")
+    if command_line==("help"):
+        help()
 
-    if command_lineE==("B"):
-        print("")
-        os.system("python3 B.py")
-        print("")
+    if command_line==("listdir"):
+        listdir()
+
+    if command_line==("dir"):
+        dir()
+
+    if command_line==("end"):
+        end()
+
+    if command_line==("lgr"):
+        lgr()
     
-    if command_lineE==("C"):
-        print("")
-        os.system("python3 C.py")
-        print("")
+    if command_line==("fdisk"):
+        errfni()
     
-    if command_lineE==("D"):
-        print("")
-        os.system("python3 D.py")
-        print("")
+    if command_line==("win"):
+        win()
 
-    if command_lineE==("dir"):
-        print("")
-        print("ERROR EYN_E2")
-        print("")
+    if command_line==("count"):
+        count()
 
-    if command_lineE==("listdir"):
-        print("")
-        print("ERROR EYN_E2")
-        print("")
+    if command_line==("troll"):
+        troll()
 
-    if command_lineE==("end"):
-        print("")
-        exit()
+    if command_line==("ver"):
+        ver()
 
-    if command_lineE==("run"):
-        print("")
-        run_name=input("What file do you want to run? (extension included): ")
-        print("")
-        os.system("python3 " + run_name)
-        print("")
+    if command_line==("credits"):
+        credits()
 
-    if command_lineE==("cd"):
-        print("")
-        cd_line=input("What directory do you want to go to?: ")
-        print("")
-        chdir(cd_line)
+    if command_line==("cdate"):
+        cdate()
 
-    if command_lineE==("cwd"):
-        print("")
-        cwd=os.getcwd()
-        print(cwd)
-        print("")
+    if command_line==("read"):
+        read()
+    
+    if command_line==("find"):
+        find()
+
+    if command_line==("write"):
+        write()
+
+    if command_line==("del"):
+        del1()
+
+    if command_line==("size"):
+        size()
+
+    if command_line==("clear"):
+        clear()
+
+    if command_line==("errorlist"):
+        errorlist()
+
+    if command_line==("A"):
+        a()
+
+    if command_line==("B"):
+        b()
+
+    if command_line==("C"):
+        c()
+
+    if command_line==("D"):
+        d()
+    
+    if command_line==("E"):
+        e()
+
+    if command_line==("run"):
+        run()
+
+    if command_line==("cd"):
+        cd()
+
+    if command_line==("cwd"):
+        cwd()
+
+    if command_line==("ctime"):
+        ctime()
+
+    if command_line==("md"):
+        md()
+
+    if command_line==("copy"):
+        copy()
+
+    if command_line==("echo"):
+        echo()
+
+    if command_line==("colortest"):
+        colortest()
+
+    if command_line==("terry"):
+        terry()
