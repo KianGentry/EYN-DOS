@@ -16,7 +16,7 @@ To run EYN-DOS, run it in your host PC's main terminal or run the Python file di
 
 Simply run EYN-DOS by typing "python3 RUNMEFIRST.py" or ".\RUNMEFIRST.py" in your terminal.
 
-Alternatively, you can run "C.py" if you're in a rush.
+Alternatively, you can run "main.py" if you're in a rush.
 "RUNMEFIRST.py" simply runs an intro and tests if the "os" module is functioning.
 
 ---
