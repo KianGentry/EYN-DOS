@@ -6,7 +6,8 @@ This manual will go through crucial information regarding the use of EYN-DOS and
 
 ---
 
-# Commands:
+Commands:
+---
 
 "help" = Prints all commands available in EYN-DOS.
 
@@ -82,21 +83,23 @@ EYN-DOS requires Python 3.x to function. Required modules will be listed below. 
 
 ---
 
-- Modules:
+Modules:
+---
 
-Colorama - Adds color support to EYN-DOS.
+- Colorama - Adds color support to EYN-DOS.
 
-Shutil - Used for copying and pasting files.
+- Shutil - Used for copying and pasting files.
 
-OS - Included with Python. No external installation required.
+- OS - Included with Python. No external installation required.
 
 ---
 
 EYN-DOS is designed to appeal to people who want a lightweight tool for interacting with their PC. EYN-DOS is also designed to appeal to nostalgia nerds (Such as Kian Gentry) who feel nostalgic about computers that ran Disk Operating Systems with a text-based GUI. 
 
-+ Notes:
+Notes:
+---
 
-You don't have to be from the era where you most feel nostalgia from. Many people born from the year 2000 and onwards feel nostalgic about computers that are double their age! This note was inspired by a letter from a viewer of a YouTube channel called LGR. He was a 13 year old viewer that wrote his physical letter on a computer twice his age. We saw this letter and thought, "New generations aren't going to lose nostalgia over older technology." This inspired J.K Incorporated to create a Disk Operating System that is regularly updated for newer generations.
+- You don't have to be from the era where you most feel nostalgia from. Many people born from the year 2000 and onwards feel nostalgic about computers that are double their age! This note was inspired by a letter from a viewer of a YouTube channel called LGR. He was a 13 year old viewer that wrote his physical letter on a computer twice his age. We saw this letter and thought, "New generations aren't going to lose nostalgia over older technology." This inspired J.K Incorporated to create a Disk Operating System that is regularly updated for newer generations.
 
 # Let's Get Started: 
 
@@ -105,13 +108,30 @@ Your main way of interacting with EYN-DOS is a small bit of input text that look
 
 The command-line is the main way of interacting with your PC through a terminal. You type words into the command-line to perform certain functions called commands. These commands can do various things such as read files, write files, and can do pretty much anything that can ever be coded into a function. Commands are what allow you to change things about your PC.
 
+Games and tech demos:
+---
+
+- Invaders - Use the arrow keys to move left and right and spacebar to shoot. "Alien spacecrafts are invading! Quick, send forces to fight them off immediately!"
+
+- The Oregon Trail - A classic game! You will be given many prompts. Answer them with the provided options of answering.
+
+- Paintbrush - A test of a simple drawing system with a pointing device.
+
+- Pong - A recreation of the classic Atari game that took the world by storm. Use the arrow keys to move your paddle up and down to try and hit the ball.
+
+- Raycast Test - A test of a raycasting engine. Pretty self-explanatory. (Engine may be used for future projects. Don't tell anyone I said this!)
+
+- Snake - Basic, classic Snake. Use the arrow keys to move and eat the apples.
+
+- Solitiare - A command-line operated solitaire game. This version of solitaire uses a co-ordinate system in order to move the cards. For example, if a card was on slot A1 B1 and you wanted to move it to A1 B2, you would type "A1 B1 A1 B2".
+
 # It's really that easy to use EYN-DOS!
 
 If you have any issues or complaints about EYN-DOS or anything affiliated with said operating system, please don't hesitate to contact J.K Incorporated and the EYN-DOS team via E-Mail or Discord. E-Mail: eyndos@gmail.com, Discord: EYN-DOS Support#9295. Our E-Mail and Discord systems are automated but by sending the message "human" to the E-Mail or Discord account, you will be automatically redirected to talk with a J.K Incorporated representative right away.
 
 ---
 
-+ Thank you for reading this manual. We hope you have a splendid day.
+# Thank you for reading this manual. We hope you have a splendid day.
 
 ---
 
