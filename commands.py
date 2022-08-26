@@ -75,7 +75,16 @@ def dir():
 
 def end():
     print("")
-    exit()
+    confirm=input("Are you sure you want to end your EYN-DOS session? (y/n): ")
+
+    if confirm==("y"):
+        print("")
+        exit()
+    
+    if confirm==("n"):
+        print("")
+        print("Command aborted.")
+        print("")
 
 def lgr():
     print("")
@@ -144,7 +153,7 @@ def ver():
     print("                          ███           ███ ███     ███")
     print("                          █████████   ███     ███   ███")
     print("")
-    print("EYN-DOS Experimental (2022)")
+    print("EYN-DOS Experimental 1.7+1g (2022)")
     print("")
 
 def credits():
@@ -199,8 +208,10 @@ def write():
 
 def del1():
     print("")
+    print("(Type 'nul' to abort the command.)")
     del_file=input("What file do you want to delete? (Including extension): ")
     print("")
+
     if del_file==(["C.py", 
     "A.py", 
     "B.py", 
@@ -211,7 +222,13 @@ def del1():
     "info.md"]):
         print("")
         print("This is a critical system file. No action will be taken.")
-        print("") 
+        print("")
+
+    elif del_file==("nul"):
+        print("")
+        print("Returning to the EYN-DOS main terminal...")
+        print("")
+
     else:
         print("Deleting file...")
         os.remove(del_file)
@@ -303,6 +320,11 @@ def e():
     os.startfile("E:")
     print("")
 
+def f():
+    print("")
+    os.startfile("F:")
+    print("")
+
 def run():
     print("")
     run_name=input("What file do you want to run? (extension included): ")
@@ -319,7 +341,7 @@ def cd():
     print("")
     print("(Type 'nul' to return to the EYN-DOS main terminal)")
     print("")
-    cd_line=input("What directory do you want to go to?: ")
+    cd_line=input("What sub-directory do you want to go to?: ")
     print("")
     if cd_line==("nul"):
         print("Returning to the EYN-DOS main terminal...")

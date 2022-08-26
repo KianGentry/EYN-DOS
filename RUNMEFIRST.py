@@ -22,4 +22,4 @@ print("")
 print("Type 'help' for a list of commands.")
 print("")
 
-os.system("python3 C.py")
+os.system("py main.py")
