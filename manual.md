@@ -82,7 +82,7 @@ EYN-DOS requires Python 3.x to function. Required modules will be listed below. 
 
 ---
 
-+ Modules:
+- Modules:
 
 Colorama - Adds color support to EYN-DOS.
 
