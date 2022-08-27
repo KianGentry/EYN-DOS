@@ -135,4 +135,4 @@ If you have any issues or complaints about EYN-DOS or anything affiliated with s
 
 ---
 
-J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are copyrighted titles under the BSD-3 Clause "New" or "Revised" License. Any versions of this software created or sold for any price above $0.00 without prior permission is unauthorised and will be shut down and legal action will be taken upon the creators of said unauthorised edits, distrobutions, or promotional use of any properties owned by J.K Incorporated.
+J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are copyrighted titles under the BSD-3 Clause "New" or "Revised" License.
