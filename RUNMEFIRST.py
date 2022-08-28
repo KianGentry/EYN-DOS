@@ -8,7 +8,7 @@ print("")
 print("Loading...")
 print("")
 
-os.system("clear")
+os.system("cls")
 
 print("Copyright (c) 2022, J.K Incorporated")
 print("All rights reserved.")
