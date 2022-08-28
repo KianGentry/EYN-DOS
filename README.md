@@ -86,11 +86,18 @@ EYN-DOS requires Python 3.x to function. Required modules will be listed below. 
 Modules:
 ---
 
-- Colorama - Adds color support to EYN-DOS.
-
 - Shutil - Used for copying and pasting files.
 
 - OS - Included with Python. No external installation required.
+
+Optional Modules: 
+---
+
+- Tkinter - Used for graphical user interfaces and raycasting.
+
+- Turtle - Used for graphical user interfaces and video-games.
+
+- Colorama - Adds color support to EYN-DOS.
 
 ---
 
