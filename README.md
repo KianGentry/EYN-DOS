@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1g).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1h).
 
 ---
 

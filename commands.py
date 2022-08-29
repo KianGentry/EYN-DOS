@@ -156,7 +156,7 @@ def ver():
     print("                          ███           ███ ███     ███")
     print("                          █████████   ███     ███   ███")
     print("")
-    print("EYN-DOS Experimental 1.7+1g (2022)")
+    print("EYN-DOS Experimental 1.7+1h (2022)")
     print("")
 
 def credits():
