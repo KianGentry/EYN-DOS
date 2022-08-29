@@ -50,14 +50,17 @@ def help():
     print("size = Prints the size of the file entered, ")
     print("clear = Clears the screen of all previously printed lines, ")
     print("errorlist = Prints all error codes and their meanings.")
+    print("md = Makes a directory with the name entered.")
+    print("copy = Copy and pastes the file selected in the path entered.")
+    print("echo = Prints the text entered.")
+    print("colortest = Tests if the 'colorma' module is functional.")
+    print("edit = Appends the file entered.")
     print("A = Takes you to the A drive (Floppy disk drive 1)")
     print("B = Takes you to the B drive (Floppy disk drive 2)")
     print("C = Takes you to the C drive (Hard drive)")
     print("D = Takes you to the D drive (Recovery drive)")
-    print("E = Takes you to the E drive (Compact Disc drive)")
-    print("md = Makes a directory with the name entered.")
-    print("copy = Copy and pastes the file selected in the path entered.")
-    print("echo = Prints the text entered.")
+    print("E = Takes you to the E drive (Primary Compact Disc drive)")
+    print("F = Takes you to the F drive (Secondary Compact Disc drive")
     print("")
 
 def listdir():
@@ -329,7 +332,7 @@ def run():
     print("")
     run_name=input("What file do you want to run? (extension included): ")
     print("")
-    if run_name==("C.py"):
+    if run_name==("main.py"):
         print("")
         print("This is already running!")
         print("")
@@ -456,4 +459,9 @@ def terry():
     print("His (racist) rants were due to various mental problems. Later in his life, Terry suffered from homelessness.")
     print("Some hated him, some loved him. All together, he was still a great man.")
     print("R.I.P Terrence Andrew Davis (1969 - 2018)")
+    print("")
+
+def edit():
+    print("")
+    os.system("py append.py")
     print("")

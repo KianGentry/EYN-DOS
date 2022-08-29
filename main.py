@@ -105,6 +105,9 @@ while True:
     elif command_line==("terry"):
         terry()
 
+    elif command_line==("edit"):
+        edit()
+
     else:
         print("")
         print("Invalid command.")

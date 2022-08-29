@@ -33,7 +33,7 @@ Commands:
 
 "find" = Gives you a prompt asking what file you want to find. Type "nul" to abort the command. Type the name of the file you want to find (Including the extension e.g: example.txt) to print the path of the file you want to find. (Has to be in the current working directory or sub-directory)
 
-"write" = Gives you a prompt of what you want to call your file (Including the extension e.g: example.txt). After typing the name of your file, you will be asked to type the contents of your file (25 lines of text available to use).
+"write" = Gives you a prompt of what you want to call your file (Including the extension e.g: example.txt). After typing the name of your file, you will be asked to type the contents of your file. Type "nul0" to exit the command and save the file.
 
 "del" = Gives you a prompt asking what file you want to delete. Type "nul" to abort the command. Type the name of the file you want to delete (Including the extension e.g: example.txt) to delete it.
 
@@ -56,6 +56,8 @@ Commands:
 "colortest" = Prints all colors available in EYN-DOS. If there is no color, (Monochrome) don't worry, it is most likely your terminal settings or lack of the "colorama" module being installed.
 
 "terry" = Prints a tribute to a man that some love and some hate. Rest in peace.
+
+"edit" = Gives you a prompt asking what file you want to edit. Type the file you want to edit (Including extension e.g: example.txt) to append the file (add text onto/edit).
 
 "A" = Takes you to the A drive (Primary floppy disk drive)
 
@@ -86,18 +88,11 @@ EYN-DOS requires Python 3.x to function. Required modules will be listed below. 
 Modules:
 ---
 
+- Colorama - Adds color support to EYN-DOS.
+
 - Shutil - Used for copying and pasting files.
 
 - OS - Included with Python. No external installation required.
-
-Optional Modules: 
----
-
-- Tkinter - Used for graphical user interfaces and raycasting.
-
-- Turtle - Used for graphical user interfaces and video-games.
-
-- Colorama - Adds color support to EYN-DOS.
 
 ---
 
@@ -142,4 +137,4 @@ If you have any issues or complaints about EYN-DOS or anything affiliated with s
 
 ---
 
-J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are copyrighted titles under the BSD-3 Clause "New" or "Revised" License.
+J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
