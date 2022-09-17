@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1h).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1i).
 
 ---
 
@@ -11,7 +11,7 @@ Commands:
 
 "help" = Prints all commands available in EYN-DOS.
 
-"listdir" = Lists all sub-directories.
+"listdir" = Lists all sub-directories. (Unavailable)
 
 "dir" = Lists all files in the current working directory (Including total size).
 
@@ -41,8 +41,6 @@ Commands:
 
 "clear" = Clears the screen of all text present in the terminal.
 
-"errorlist" = Prints all errors that can appear in EYN-DOS.
-
 "count" = Gives you a prompt asking if you are sure if you want to proceed with counting. Type "n" to abort the command. Type "y" to proceed with the counting. This will infinitely count in the terminal until the terminal is forcefully shut down.
 
 "cwd" = Prints the current working directory.
@@ -59,17 +57,17 @@ Commands:
 
 "edit" = Gives you a prompt asking what file you want to edit. Type the file you want to edit (Including extension e.g: example.txt) to append the file (add text onto/edit).
 
-"A" = Takes you to the A drive (Primary floppy disk drive)
+"a" = Takes you to the A drive (Primary floppy disk drive)
 
-"B" = Takes you to the B drive (Secondary floppy disk drive)
+"b" = Takes you to the B drive (Secondary floppy disk drive)
 
-"C" = Takes you to the C drive (Main hard drive/SD card)
+"c" = Takes you to the C drive (Main hard drive/SD card)
 
-"D" = Takes you to the D drive (Recovery drive)
+"d" = Takes you to the D drive (Recovery drive)
 
-"E" = Takes you to the E drive (Primary Compact Disc drive)
+"e" = Takes you to the E drive (Primary Compact Disc drive)
 
-"F" = Takes you to the F drive (Secondary Compact Disc drive)
+"f" = Takes you to the F drive (Secondary Compact Disc drive)
 
 ---
 
