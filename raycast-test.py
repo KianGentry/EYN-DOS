@@ -23,10 +23,10 @@ m = [ [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
       [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] ]
 
 # constants
-WIDTH = 840
-HEIGHT = 460
-MOVSPEED = 0.35
-ROTSPEED = 0.175
+WIDTH = 800
+HEIGHT = 600
+MOVSPEED = 0.5
+ROTSPEED = 0.12
 
 # trig constants
 TGM = (math.cos(ROTSPEED), math.sin(ROTSPEED))

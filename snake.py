@@ -6,7 +6,7 @@ import random
 WIDTH = 500
 HEIGHT = 500
 FOOD_SIZE = 20
-DELAY = 90  # milliseconds
+DELAY = 0  # milliseconds
 
 offsets = {
     "up": (0, 20),

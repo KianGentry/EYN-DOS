@@ -115,8 +115,6 @@ Games and tech demos:
 
 - Invaders - Use the arrow keys to move left and right and spacebar to shoot. "Alien spacecrafts are invading! Quick, send forces to fight them off immediately!"
 
-- The Oregon Trail - A classic game! You will be given many prompts. Answer them with the provided options of answering.
-
 - Paintbrush - A test of a simple drawing system with a pointing device.
 
 - Pong - A recreation of the classic Atari game that took the world by storm. Use the arrow keys to move your paddle up and down to try and hit the ball.

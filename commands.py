@@ -35,32 +35,31 @@ for path, dirs, files in os.walk(dir_path):
 def help():
     print("")
     print("help = Prints commands currently usable, ")
-    print("listdir = Prints a list of available directories, ")
+    print("listdir = Prints a list of available directories (Command unavailable), ")
     print("dir = Prints a list of all available files in the current directory, ")
     print("run = Executes the file entered, ")
     print("end = Closes and resets the EYN-DOS terminal, ")
     print("ver = Prints the EYN-DOS version that is running, ")
     print("credits = Prints a list of all the people who worked on EYN-DOS, ")
-    print("cd (File/Folder location) = Takes you to the directory entered, ")
+    print("cd = Takes you to the directory entered, ")
     print("cdate = Prints the current date and time, ")
     print("read = Prints the contents of the file entered, ")
     print("find = Prints the directory path of the file entered, ")
-    print("write = Writes 25 lines of custom text to the file entered (creates new file), ")
-    print("del = Deletes any newly writtten file entered, ")
+    print("write = Writes custom text to the file entered (creates new file), ")
+    print("del = Deletes any file entered, ")
     print("size = Prints the size of the file entered, ")
     print("clear = Clears the screen of all previously printed lines, ")
-    print("errorlist = Prints all error codes and their meanings.")
-    print("md = Makes a directory with the name entered.")
-    print("copy = Copy and pastes the file selected in the path entered.")
+    print("md = Makes a directory with the name entered, ")
+    print("copy = Copy and pastes the file selected in the path entered, ")
     print("echo = Prints the text entered.")
-    print("colortest = Tests if the 'colorma' module is functional.")
-    print("edit = Appends the file entered.")
-    print("A = Takes you to the A drive (Floppy disk drive 1)")
-    print("B = Takes you to the B drive (Floppy disk drive 2)")
-    print("C = Takes you to the C drive (Hard drive)")
-    print("D = Takes you to the D drive (Recovery drive)")
-    print("E = Takes you to the E drive (Primary Compact Disc drive)")
-    print("F = Takes you to the F drive (Secondary Compact Disc drive")
+    print("colortest = Tests if the 'colorma' module is functional, ")
+    print("edit = Appends (edits) the file entered, ")
+    print("a = Takes you to the A drive (Floppy disk drive 1), ")
+    print("b = Takes you to the B drive (Floppy disk drive 2), ")
+    print("c = Takes you to the C drive (Hard drive), ")
+    print("d = Takes you to the D drive (Recovery drive), ")
+    print("e = Takes you to the E drive (Primary Compact Disc drive), ")
+    print("f = Takes you to the F drive (Secondary Compact Disc drive.")
     print("")
 
 def listdir():
@@ -156,7 +155,7 @@ def ver():
     print("                          ███           ███ ███     ███")
     print("                          █████████   ███     ███   ███")
     print("")
-    print("EYN-DOS Experimental 1.7+1h (2022)")
+    print("EYN-DOS Experimental 1.71+1i (2022)")
     print("")
 
 def credits():
@@ -211,18 +210,23 @@ def write():
 
 def del1():
     print("")
-    print("(Type 'nul' to abort the command.)")
+    print("(Type 'nul0' to abort the command.)")
+    print("")
     del_file=input("What file do you want to delete? (Including extension): ")
     print("")
 
-    if del_file==(["C.py", 
-    "A.py", 
-    "B.py", 
-    "D.py", 
-    "E.py", 
+    if del_file==(["main.py",
+    "write.py",
+    "commands.py",
+    "RUNMEFIRST.py",
+    "append.py",
+    "c-date.py",
+    "c-time.py",
+    "counter.py",
+    "mouse_detection.py",
     "LICENSE", 
     "launch.json", 
-    "info.md"]):
+    "README.md"]):
         print("")
         print("This is a critical system file. No action will be taken.")
         print("")
@@ -250,53 +254,6 @@ def size():
 def clear():
     print("")
     os.system("cls")
-
-def errorlist():
-    print("")
-    print(" --A ERRORS--")
-    print("")
-    print("EYN_A1 = No floppy drive detected.")
-    print(" | EYN_A1-NDI = No floppy diskette inserted.")
-    print("EYN_A2 = Corrupted/unreadable floppy diskette.")
-    print("EYN_A3 = Invalid diskette format/invalid diskette type.")
-    print(' | Additional info = Only 3.5" floppy diskettes are supported.')
-    print("")
-    print(" --B ERRORS--")
-    print("")
-    print("All A Errors apply to the B drive.")
-    print("")
-    print(" --C ERRORS--")
-    print("")
-    print("EYN_C1 = Unable to boot EYN-DOS due to a C drive error.")
-    print(" | EYN_C1-1 = Unable to read a critical system file (Possible cause of EYN_C1).")
-    print("EYN_C2 = Unable to boot EYN-DOS due to a permission issue.")
-    print("EYN_C3 = Feature not supported in EYN-DOS.")
-    print("EYN_C3_FNI = Feature not (yet) included in EYN-DOS.")
-    print("EYN_C4 = Invalid command or file name.")
-    print("")
-    print(" --D ERRORS--")
-    print("")
-    print("EYN_D1 = Recovery not created.")
-    print(" | EYN_D2 = Recovery unable to be created.")
-    print("  | EYN_D2-LNS = Recovery unable to be created due to low/nul storage.")
-    print("")
-    print("All C Errors apply to the D drive.")
-    print("")
-    print(" --E ERRORS--")
-    print("")
-    print("EYN_E1 = Unable to read the E drive due to an E drive error.")
-    print(" | EYN_E1-NDI = No disc inserted.")
-    print("EYN_E2 = Corrupted/unreadable disc.")
-    print("EYN_E3 = Unable to read the E drive due to a permission issue.")
-    print("EYN_E4 = No disc drive detected.")
-    print("")
-    print(" --ADDITIONAL ERRORS--")
-    print("")
-    print("EYN_AD1 = Unable to read the current date/time.")
-    print(" | EYN_AD1-CM = Unable to read the current date/time due to CMOS battery error.")
-    print("EYN_AD2 = Unable to read/run software.")
-    print(" | EYN_AD2-NMD = Unable to read/run software due to no essential module detected.")
-    print("")
 
 def a():
     print("")
@@ -342,11 +299,11 @@ def run():
 
 def cd():
     print("")
-    print("(Type 'nul' to return to the EYN-DOS main terminal)")
+    print("(Type 'nul0' to return to the EYN-DOS main terminal)")
     print("")
     cd_line=input("What sub-directory do you want to go to?: ")
     print("")
-    if cd_line==("nul"):
+    if cd_line==("nul0"):
         print("Returning to the EYN-DOS main terminal...")
         print("")
     else:
@@ -381,11 +338,13 @@ def md():
 
 def copy():
     print("")
+    print("Type 'nul0' to abort the command.")
+    print("")
     cpy_line=input("Where is the file you want to copy?: ")
     print("")
     pst_line=input("Where do you want to paste the file?: ")
     print("")
-    if cpy_line==("nul"):
+    if cpy_line==("nul0"):
         print("Returning to the EYN-DOS main terminal...")
         print("")
     else:

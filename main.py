@@ -1,5 +1,11 @@
 from commands import *
 
+os.system("cls")
+
+print("Copyright (c) 2022, J.K Incorporated")
+print("All rights reserved.")
+print("")
+
 while True:
     command_line=input("/main/} ")
 
@@ -57,25 +63,22 @@ while True:
     elif command_line==("clear"):
         clear()
 
-    elif command_line==("errorlist"):
-        errorlist()
-
-    elif "A" in command_line:
+    elif command_line==("a"):
         a()
 
-    elif "B" in command_line:
+    elif command_line==("b"):
         b()
 
-    elif "C" in command_line:
+    elif command_line==("c"):
         c()
 
-    elif "D" in command_line:
+    elif command_line==("d"):
         d()
     
-    elif "E" in command_line:
+    elif command_line==("e"):
         e()
 
-    elif "F" in command_line:
+    elif command_line==("f"):
         f()
 
     elif command_line==("run"):
