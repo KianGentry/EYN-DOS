@@ -1,5 +1,6 @@
 # Importing Modules
 
+import platform
 from colorama import Fore
 import shutil
 import os
@@ -54,6 +55,7 @@ def help():
     print("echo = Prints the text entered.")
     print("colortest = Tests if the 'colorma' module is functional, ")
     print("edit = Appends (edits) the file entered, ")
+    print("specs = Prints accessible system specifications, ")
     print("a = Takes you to the A drive (Floppy disk drive 1), ")
     print("b = Takes you to the B drive (Floppy disk drive 2), ")
     print("c = Takes you to the C drive (Hard drive), ")
@@ -155,7 +157,7 @@ def ver():
     print("                          ███           ███ ███     ███")
     print("                          █████████   ███     ███   ███")
     print("")
-    print("EYN-DOS Experimental 1.71+1i (2022)")
+    print("EYN-DOS Experimental 1.71+1j (Oct 2022)")
     print("")
 
 def credits():
@@ -423,4 +425,21 @@ def terry():
 def edit():
     print("")
     os.system("py append.py")
+    print("")
+
+def specs():
+    syst=platform.uname()
+
+    print("")
+    print(f"System(s) - {syst.system}" + ", EYN-DOS")
+    print("")
+    print(f"Name - {syst.node}")
+    print("")
+    print(f"Release(s) - {syst.release}" + ", Experimental")
+    print("")
+    print(f"Version(s) - {syst.version}" + ", 1.71+1j")
+    print("")
+    print(f"Machine - {syst.machine}")
+    print("")
+    print(f"Processor(s) - {syst.processor}")
     print("")

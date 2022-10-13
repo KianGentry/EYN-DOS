@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1i).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1j).
 
 ---
 
@@ -11,7 +11,7 @@ Commands:
 
 "help" = Prints all commands available in EYN-DOS.
 
-"listdir" = Lists all sub-directories. (Unavailable)
+"listdir" = Lists all sub-directories.
 
 "dir" = Lists all files in the current working directory (Including total size).
 
@@ -41,6 +41,8 @@ Commands:
 
 "clear" = Clears the screen of all text present in the terminal.
 
+"errorlist" = Prints all errors that can appear in EYN-DOS.
+
 "count" = Gives you a prompt asking if you are sure if you want to proceed with counting. Type "n" to abort the command. Type "y" to proceed with the counting. This will infinitely count in the terminal until the terminal is forcefully shut down.
 
 "cwd" = Prints the current working directory.
@@ -57,17 +59,19 @@ Commands:
 
 "edit" = Gives you a prompt asking what file you want to edit. Type the file you want to edit (Including extension e.g: example.txt) to append the file (add text onto/edit).
 
-"a" = Takes you to the A drive (Primary floppy disk drive)
+"specs" = Prints all the device specifications available without external modules.
 
-"b" = Takes you to the B drive (Secondary floppy disk drive)
+"A" = Takes you to the A drive (Primary floppy disk drive)
 
-"c" = Takes you to the C drive (Main hard drive/SD card)
+"B" = Takes you to the B drive (Secondary floppy disk drive)
 
-"d" = Takes you to the D drive (Recovery drive)
+"C" = Takes you to the C drive (Main hard drive/SD card)
 
-"e" = Takes you to the E drive (Primary Compact Disc drive)
+"D" = Takes you to the D drive (Recovery drive)
 
-"f" = Takes you to the F drive (Secondary Compact Disc drive)
+"E" = Takes you to the E drive (Primary Compact Disc drive)
+
+"F" = Takes you to the F drive (Secondary Compact Disc drive)
 
 ---
 
@@ -90,7 +94,9 @@ Modules:
 
 - Shutil - Used for copying and pasting files.
 
-- OS - Included with Python. No external installation required.
+- OS - Operates main functions. Included with Python, no external installation required.
+
+- Platform - Used for finding device specifications. Included with Python, no external installation required.
 
 ---
 
@@ -103,7 +109,8 @@ Notes:
 
 # Let's Get Started: 
 
-To run EYN-DOS as intended, run the file, "RUNMEFIRST.py". Running the file "main.py" will also work and will simply skip module tests and the introductory logo.
+To run EYN-DOS, run the file "main.py".
+
 Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/main/}". This is the command-line.
 
 The command-line is the main way of interacting with your PC through a terminal. You type words into the command-line to perform certain functions called commands. These commands can do various things such as read files, write files, and can do pretty much anything that can ever be coded into a function. Commands are what allow you to change things about your PC.

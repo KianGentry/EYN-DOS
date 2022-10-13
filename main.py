@@ -111,6 +111,9 @@ while True:
     elif command_line==("edit"):
         edit()
 
+    elif command_line==("specs"):
+        specs()
+
     else:
         print("")
         print("Invalid command.")
