@@ -85,7 +85,7 @@ EYN-DOS requires Python 3.x to function. Required modules will be listed below. 
 
 ---
 
-Modules:
+Requried Modules:
 ---
 
 - Colorama - Adds color support to EYN-DOS.
@@ -95,6 +95,13 @@ Modules:
 - OS - Included with Python. No external installation required.
 
 - Platform - Included with Python. No external installation required.
+
+Optional Modules:
+---
+
+- Tkinter - Used for graphical games and tests.
+
+- Turtle - Used for graphical games.
 
 ---
 
@@ -107,7 +114,7 @@ Notes:
 
 # Let's Get Started: 
 
-To run EYN-DOS, simply run the file named "main.py".
+To run EYN-DOS, simply run the file named, "main.py".
 Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/main/}". This is the command-line.
 
 The command-line is the main way of interacting with your PC through a terminal. You type words into the command-line to perform certain functions called commands. These commands can do various things such as read files, write files, and can do pretty much anything that can ever be coded into a function. Commands are what allow you to change things about your PC.
