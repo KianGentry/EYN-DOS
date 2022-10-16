@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (Experimental 1.7+1j).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.8 - Beta).
 
 ---
 
@@ -11,7 +11,7 @@ Commands:
 
 "help" = Prints all commands available in EYN-DOS.
 
-"listdir" = Lists all sub-directories. (Unavailable)
+"listdir" = Lists all sub-directories (Including total size).
 
 "dir" = Lists all files in the current working directory (Including total size).
 
@@ -59,11 +59,17 @@ Commands:
 
 "specs" = Prints all accquirable system specifications and information (e.g: system name, operating system, etc).
 
+"dirsize" = Gives you a prompt asking what folder (directory) you want to know the size to. Type the name of the folder you want to know the size to to get the directory size in kilobytes.
+
+"newver" = Downloads the newest version of EYN-DOS through GitHub (REQUIRES INTERNET CONNECTION).
+
+"unzip" = Gives you a prompt asking what file you want to unzip. Type the (absolute) path to the zip file and strike enter. Then, another prompt will appear asking where you want to extract all the files/folders. Type the path to where you want to extract the contents of the zip file.
+
 "a" = Takes you to the A drive (Primary floppy disk drive)
 
 "b" = Takes you to the B drive (Secondary floppy disk drive)
 
-"c" = Takes you to the C drive (Main hard drive/SD card)
+"c" = Takes you to the C drive (Main storage device)
 
 "d" = Takes you to the D drive (Recovery drive)
 
@@ -96,8 +102,12 @@ Requried Modules:
 
 - Platform - Included with Python. No external installation required.
 
+- ZipFile - Included with Python. No external installation required.
+
 Optional Modules:
 ---
+
+- Requests - Used in the "newver" command to install the newest version of EYN-DOS.
 
 - Tkinter - Used for graphical games and tests.
 

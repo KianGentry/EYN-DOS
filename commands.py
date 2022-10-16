@@ -1,11 +1,13 @@
 # Importing Modules
 
+import zipfile
 import platform
 from colorama import Fore
 import shutil
 import os
 from os import chdir, listdir, mkdir
 from os.path import isfile, join
+import requests
 
 # Calculating directory size
 
@@ -14,6 +16,16 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 filesys = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
 # Getting directory size
+
+def getFolderSize(folder):
+    total = os.path.getsize(folder)
+    for item in os.listdir(folder):
+        itempath = os.path.join(folder, item)
+        if os.path.isfile(itempath):
+            total += os.path.getsize(itempath)
+        elif os.path.isdir(itempath):
+            total += getFolderSize(itempath)
+    return total/1024
 
 def get_dir_size(dir_path):
     total = 0
@@ -56,6 +68,7 @@ def help():
     print("colortest = Tests if the 'colorma' module is functional, ")
     print("edit = Appends (edits) the file entered, ")
     print("specs = Prints accessible system specifications, ")
+    print("dirsize = Prints the size of the directory entered, ")
     print("a = Takes you to the A drive (Floppy disk drive 1), ")
     print("b = Takes you to the B drive (Floppy disk drive 2), ")
     print("c = Takes you to the C drive (Hard drive), ")
@@ -66,7 +79,8 @@ def help():
 
 def listdir():
     print("")
-    print("ERROR EYN-C3")
+    sd=next(os.walk('.'))[1]
+    print(sd)
     print("")
 
 def dir():
@@ -151,13 +165,13 @@ def ver():
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
     print("")
-    print("                          █████████   ███     ███   ██████")
-    print("                          ███           ███ ███     ███  ███")
-    print("                          █████████       ███       ██████")
-    print("                          ███           ███ ███     ███")
-    print("                          █████████   ███     ███   ███")
+    print("                        █████            ███          ██████")
+    print("                      ██  ███         ███   ███       ███  ███")
+    print("                          ███            ███     ███  ██████")
+    print("                          ███         ███   ███       ███  ███")
+    print("                       █████████  ██     ███          ██████")
     print("")
-    print("EYN-DOS Experimental 1.71+1j (Oct 2022)")
+    print("EYN-DOS 1.8 - Beta (Oct 16 2022)")
     print("")
 
 def credits():
@@ -429,7 +443,6 @@ def edit():
 
 def specs():
     syst=platform.uname()
-
     print("")
     print(f"System(s) - {syst.system}" + ", EYN-DOS")
     print("")
@@ -442,4 +455,27 @@ def specs():
     print(f"Machine - {syst.machine}")
     print("")
     print(f"Processor(s) - {syst.processor}")
+    print("")
+
+def dirsize():
+    print("")
+    folder=input("What folder do you want to know the size to?: ")
+    print("")
+    print(getFolderSize(folder))
+    print(" | Kilobytes")
+    print("")
+
+def newver():
+    print("")
+    URL = "https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/eyndos-experimental.zip"
+    response = requests.get(URL)
+    open("eyndos.zip", "wb").write(response.content)
+
+def unzip():
+    print("")
+    zippath=input("What is the (absolute) path to the zip file you want to extract?: ")
+    print("")
+    zippath2=input("Where do you want to extract the contents to? (Path): ")
+    with zipfile.ZipFile(zippath, 'r') as zip_ref:
+        zip_ref.extractall(zippath2)
     print("")

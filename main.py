@@ -114,6 +114,15 @@ while True:
     elif command_line==("specs"):
         specs()
 
+    elif command_line==("dirsize"):
+        dirsize()
+
+    elif command_line==("newver"):
+        newver()
+
+    elif command_line==("unzip"):
+        unzip()
+
     else:
         print("")
         print("Invalid command.")
