@@ -69,6 +69,8 @@ def help():
     print("edit = Appends (edits) the file entered, ")
     print("specs = Prints accessible system specifications, ")
     print("dirsize = Prints the size of the directory entered, ")
+    print("newver = Downloads the most recent version of EYN-DOS (Requires internet), ")
+    print("unzip = Extracts the contents of a zip file to a specified path,")
     print("a = Takes you to the A drive (Floppy disk drive 1), ")
     print("b = Takes you to the B drive (Floppy disk drive 2), ")
     print("c = Takes you to the C drive (Hard drive), ")
