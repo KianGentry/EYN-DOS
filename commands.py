@@ -450,9 +450,9 @@ def specs():
     print("")
     print(f"Name - {syst.node}")
     print("")
-    print(f"Release(s) - {syst.release}" + ", Experimental")
+    print(f"Release(s) - {syst.release}" + ", Beta")
     print("")
-    print(f"Version(s) - {syst.version}" + ", 1.71+1j")
+    print(f"Version(s) - {syst.version}" + ", 1.8")
     print("")
     print(f"Machine - {syst.machine}")
     print("")
@@ -480,4 +480,9 @@ def unzip():
     zippath2=input("Where do you want to extract the contents to? (Path): ")
     with zipfile.ZipFile(zippath, 'r') as zip_ref:
         zip_ref.extractall(zippath2)
+    print("")
+
+def zip():
+    print("")
+    print("Coming soon...")
     print("")
