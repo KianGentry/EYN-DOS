@@ -2,14 +2,16 @@
 
 import zipfile
 import platform
-from colorama import Fore
+from colorama import *
 import shutil
 import os
-from os import chdir, listdir, mkdir
-from os.path import isfile, join
+from os import *
+from os.path import *
 import requests
 
 # Calculating directory size
+
+cwd1 = os.getcwd()
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -48,7 +50,7 @@ for path, dirs, files in os.walk(dir_path):
 def help():
     print("")
     print("help = Prints commands currently usable, ")
-    print("listdir = Prints a list of available directories (Command unavailable), ")
+    print("listdir = Prints a list of available directories, ")
     print("dir = Prints a list of all available files in the current directory, ")
     print("run = Executes the file entered, ")
     print("end = Closes and resets the EYN-DOS terminal, ")
@@ -71,6 +73,9 @@ def help():
     print("dirsize = Prints the size of the directory entered, ")
     print("newver = Downloads the most recent version of EYN-DOS (Requires internet), ")
     print("unzip = Extracts the contents of a zip file to a specified path,")
+    print("zip = Compresses all files entered into a zip file,")
+    print("pyedit = Runs the default Python editor, ")
+    print("restart = Closes and re-opens EYN-DOS,")
     print("a = Takes you to the A drive (Floppy disk drive 1), ")
     print("b = Takes you to the B drive (Floppy disk drive 2), ")
     print("c = Takes you to the C drive (Hard drive), ")
@@ -81,15 +86,22 @@ def help():
 
 def listdir():
     print("")
-    sd=next(os.walk('.'))[1]
-    print(sd)
+    cwd1 = os.getcwd()
+    for subdir, dirs, files in os.walk(cwd1, topdown=True):
+        del files[:]
+        for dir in dirs:
+            print(dir)
     print("")
 
 def dir():
     print("")
-    print(filesys)
+    cwd1 = os.getcwd()
+    for subdir, dirs, files in os.walk(cwd1, topdown=True):
+        del dirs[:]
+        for file in files:
+            print(file)
     print("")
-    print(get_dir_size(dir_path)) 
+    print(get_dir_size(cwd1)) 
     print(" | Kilobytes")
     print("")
 
@@ -116,6 +128,7 @@ def errfni():
     print(Fore.BLUE + "████████████████")
     print("\033[37;44mERROR EYN_C3-FNI\033[m")
     print(Fore.BLUE + "████████████████")
+    print(Fore.RESET)
     print("")
     
 def win():
@@ -130,7 +143,7 @@ def count():
     
     if count_1==("y"):
         print("")
-        os.system('python3 counter.py')
+        os.system('py counter.py')
         print("")
     
     if count_1==("n"):
@@ -167,13 +180,13 @@ def ver():
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
     print("")
-    print("                        █████            ███          ██████")
-    print("                      ██  ███         ███   ███       ███  ███")
-    print("                          ███            ███     ███  ██████")
-    print("                          ███         ███   ███       ███  ███")
-    print("                       █████████  ██     ███          ██████")
+    print("                                █████            ███")
+    print("                              ██  ███         ███   ███")
+    print("                                  ███            ███")
+    print("                                  ███         ███   ███")
+    print("                               █████████  ██     ███")
     print("")
-    print("EYN-DOS 1.8 - Beta (Oct 16 2022)")
+    print("EYN-DOS 1.8 (Oct 21 2022)")
     print("")
 
 def credits():
@@ -335,7 +348,7 @@ def cwd():
 
 def ctime():
     print("")
-    os.system("python3 c-time.py")
+    os.system("py c-time.py")
     print("")
 
 def md():
@@ -450,7 +463,7 @@ def specs():
     print("")
     print(f"Name - {syst.node}")
     print("")
-    print(f"Release(s) - {syst.release}" + ", Beta")
+    print(f"Release(s) - {syst.release}" + ", Full")
     print("")
     print(f"Version(s) - {syst.version}" + ", 1.8")
     print("")
@@ -484,5 +497,34 @@ def unzip():
 
 def zip():
     print("")
-    print("Coming soon...")
+    nmz=input("What do you want to call your .zip file? (Extension included): ")
     print("")
+    print("What files do you want to zip? (One at a time) (Extensions included):")
+    print("Type 'nul0' to exit and zip the entered files.")
+    print("")
+    while True:
+        flz=input("> ")
+
+        if flz.lower() == "nul0":
+            break
+    
+        with zipfile.ZipFile(nmz, "a") as f:
+            f.write(flz)
+    print("")
+
+def pyedit():	
+    print("")	
+    os.system("py")	
+    print("")
+
+def restart():
+    print("")
+    ryn=input("Are you sure you want to restart your EYN-DOS session? (y/n): ")
+    if ryn==("y"):
+        print("")
+        os.system("py main.py")
+        exit()
+    if ryn==("n"):
+        print("")
+        print("Command aborted.")
+        print("")

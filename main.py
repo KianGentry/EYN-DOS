@@ -123,6 +123,15 @@ while True:
     elif command_line==("unzip"):
         unzip()
 
+    elif command_line==("zip"):
+        zip()
+
+    elif command_line==("pyedit"):
+        pyedit()
+
+    elif command_line==("restart"):
+        restart()
+
     else:
         print("")
         print("Invalid command.")
