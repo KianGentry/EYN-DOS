@@ -2,6 +2,10 @@
 
 ---
 
+# ALERT - J.K Incorporated is asking for volunteers to help work on EYN-DOS & EYN-OS. Amateur knowledge of Python and TKinter is required. If you are interested, contact us at eyndos@gmail.com. #
+
+---
+
 This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.8).
 
 ---
