@@ -1,5 +1,7 @@
 # Importing Modules
 
+import time
+from datetime import datetime
 import zipfile
 import platform
 from colorama import *
@@ -11,7 +13,7 @@ import requests
 
 # Calculating directory size
 
-cwd1 = os.getcwd()
+cwd = os.getcwd()
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -31,12 +33,10 @@ def getFolderSize(folder):
 
 def get_dir_size(dir_path):
     total = 0
-    with os.scandir(dir_path) as it:
+    with os.scandir() as it:
         for entry in it:
             if entry.is_file():
                 total += entry.stat().st_size
-            elif entry.is_dir():
-                total += get_dir_size(entry.path)
     return total/1024
 
 size=0
@@ -76,32 +76,20 @@ def help():
     print("zip = Compresses all files entered into a zip file,")
     print("pyedit = Runs the default Python editor, ")
     print("restart = Closes and re-opens EYN-DOS,")
-    print("a = Takes you to the A drive (Floppy disk drive 1), ")
-    print("b = Takes you to the B drive (Floppy disk drive 2), ")
-    print("c = Takes you to the C drive (Hard drive), ")
-    print("d = Takes you to the D drive (Recovery drive), ")
-    print("e = Takes you to the E drive (Primary Compact Disc drive), ")
-    print("f = Takes you to the F drive (Secondary Compact Disc drive.")
     print("")
 
 def listdir():
     print("")
-    cwd1 = os.getcwd()
-    for subdir, dirs, files in os.walk(cwd1, topdown=True):
-        del files[:]
-        for dir in dirs:
-            print(dir)
+    test=next(os.walk('.'))[1]
+    print(test)
     print("")
 
 def dir():
     print("")
-    cwd1 = os.getcwd()
-    for subdir, dirs, files in os.walk(cwd1, topdown=True):
-        del dirs[:]
-        for file in files:
-            print(file)
+    filenames = next(os.walk(dir_path))[2]
+    print(filenames)
     print("")
-    print(get_dir_size(cwd1)) 
+    print(get_dir_size(cwd)) 
     print(" | Kilobytes")
     print("")
 
@@ -180,13 +168,13 @@ def ver():
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
     print("")
-    print("                                █████            ███")
-    print("                              ██  ███         ███   ███")
-    print("                                  ███            ███")
-    print("                                  ███         ███   ███")
-    print("                               █████████  ██     ███")
+    print("                         █████            ███       █████")
+    print("                       ██  ███         ███   ███  ██  ███")
+    print("                           ███            ███         ███")
+    print("                           ███         ███   ███      ███")
+    print("                        █████████  ██     ███      █████████")
     print("")
-    print("EYN-DOS 1.8 (Oct 21 2022)")
+    print("EYN-DOS 1.81 (Nov 29 2022)")
     print("")
 
 def credits():
@@ -214,19 +202,21 @@ def credits():
 
 def cdate():
     print("")
-    os.system("python3 c-date.py")
+    now = datetime.now()
+    dt_string = now.strftime("%B %d %Y, %H:%M")
+    print(dt_string)
     print("")
 
 def read():
     print("")
     txt_name=input("Enter the name of the file you want to read. (Including extension): ")
     print("")
-    with open(txt_name) as f:
-        contents = f.read()
-        print(contents)
-        f.close
+    f=open(txt_name, 'r')
+    contents = f.read()
+    print(contents)
+    f.close
     print("")
-    
+
 def find():
     print("")
     file_find=input("What file do you want to find? (Including extension): ")
@@ -236,7 +226,7 @@ def find():
 
 def write():
     print("")
-    os.system("python3 write.py")
+    os.system("py write.py")
     print("")
 
 def del1():
@@ -286,36 +276,6 @@ def clear():
     print("")
     os.system("cls")
 
-def a():
-    print("")
-    os.startfile("A:")
-    print("")
-
-def b():
-    print("")
-    os.startfile("B:")
-    print("")
-
-def c():
-    print("")
-    os.startfile("C:")
-    print("")
-
-def d():
-    print("")
-    os.startfile("D:")
-    print("")
-
-def e():
-    print("")
-    os.startfile("E:")
-    print("")
-
-def f():
-    print("")
-    os.startfile("F:")
-    print("")
-
 def run():
     print("")
     run_name=input("What file do you want to run? (extension included): ")
@@ -348,7 +308,9 @@ def cwd():
 
 def ctime():
     print("")
-    os.system("py c-time.py")
+    lt = time.localtime()
+    ctime = time.strftime("%H:%M:%S", lt)
+    print(ctime)
     print("")
 
 def md():
