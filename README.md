@@ -2,7 +2,11 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.8 - Beta).
+# ALERT - J.K Incorporated is asking for volunteers to help work on EYN-DOS & EYN-OS. Amateur knowledge of Python and TKinter is required. If you are interested, contact us at eyndos@gmail.com. #
+
+---
+
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.81 Beta).
 
 ---
 
@@ -64,6 +68,13 @@ Commands:
 "newver" = Downloads the newest version of EYN-DOS through GitHub (REQUIRES INTERNET CONNECTION).
 
 "unzip" = Gives you a prompt asking what file you want to unzip. Type the (absolute) path to the zip file and strike enter. Then, another prompt will appear asking where you want to extract all the files/folders. Type the path to where you want to extract the contents of the zip file.
+
+"zip" = Gives you a prompt asking what you want to call your zip file. Type the name you desire (Including the .zip extension). Then, you are given another prompt asking you to type all files you want contained inside your zip file. Type the names and extensions of the files you want to put inside your zip file.
+
+
+"pyedit" = Simply opens the built-in Python editor.
+
+"restart" = Gives you a prompt asking if you want to restart EYN-DOS. If you enter 'y', EYN-DOS will close and re-open into a fresh state. If you enter 'n', the command will be aborted and you'll go back to the EYN-DOS terminal.
 
 "a" = Takes you to the A drive (Primary floppy disk drive)
 
