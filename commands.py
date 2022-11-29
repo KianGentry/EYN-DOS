@@ -174,7 +174,7 @@ def ver():
     print("                           ███         ███   ███      ███")
     print("                        █████████  ██     ███      █████████")
     print("")
-    print("EYN-DOS 1.81 (Nov 29 2022)")
+    print("EYN-DOS 1.81 Beta (Nov 29 2022)")
     print("")
 
 def credits():
