@@ -76,17 +76,20 @@ def help():
     print("zip = Compresses all files entered into a zip file,")
     print("pyedit = Runs the default Python editor, ")
     print("restart = Closes and re-opens EYN-DOS,")
+    print("prevd = Shows all directories in the previous directory, ")
+    print("prevf = Shows all files in the previous directory, ")
+    print("noneyn = Executes any command entered in your host terminal,")
     print("")
 
 def listdir():
     print("")
-    test=next(os.walk('.'))[1]
-    print(test)
+    dirs=next(os.walk('.'))[1]
+    print(dirs)
     print("")
 
 def dir():
     print("")
-    filenames = next(os.walk(dir_path))[2]
+    filenames = next(os.walk("."))[2]
     print(filenames)
     print("")
     print(get_dir_size(cwd)) 
@@ -168,13 +171,13 @@ def ver():
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
     print("")
-    print("                         █████            ███       █████")
-    print("                       ██  ███         ███   ███  ██  ███")
-    print("                           ███            ███         ███")
-    print("                           ███         ███   ███      ███")
-    print("                        █████████  ██     ███      █████████")
+    print("                              █████           ██████")
+    print("                            ██  ███          ██    ███")
+    print("                                ███           ████████")
+    print("                                ███                ███")
+    print("                             █████████  ██         ███")
     print("")
-    print("EYN-DOS 1.81 Beta (Nov 29 2022)")
+    print("EYN-DOS 1.9 (Nov 30 2022)")
     print("")
 
 def credits():
@@ -236,23 +239,7 @@ def del1():
     del_file=input("What file do you want to delete? (Including extension): ")
     print("")
 
-    if del_file==(["main.py",
-    "write.py",
-    "commands.py",
-    "RUNMEFIRST.py",
-    "append.py",
-    "c-date.py",
-    "c-time.py",
-    "counter.py",
-    "mouse_detection.py",
-    "LICENSE", 
-    "launch.json", 
-    "README.md"]):
-        print("")
-        print("This is a critical system file. No action will be taken.")
-        print("")
-
-    elif del_file==("nul"):
+    if del_file==("nul"):
         print("")
         print("Returning to the EYN-DOS main terminal...")
         print("")
@@ -427,7 +414,7 @@ def specs():
     print("")
     print(f"Release(s) - {syst.release}" + ", Full")
     print("")
-    print(f"Version(s) - {syst.version}" + ", 1.8")
+    print(f"Version(s) - {syst.version}" + ", 1.9")
     print("")
     print(f"Machine - {syst.machine}")
     print("")
@@ -490,3 +477,24 @@ def restart():
         print("")
         print("Command aborted.")
         print("")
+
+def prevdir():
+    print("")
+    test=next(os.walk('..'))[1]
+    print(test)
+    print("")
+
+def prevfiles():
+    print("")
+    filenames = next(os.walk(".."))[2]
+    print(filenames)
+    print("")
+    print(get_dir_size(cwd)) 
+    print(" | Kilobytes")
+    print("")
+
+def noneyn():
+    print("")
+    nonec=input("What non-EYN command do you want to execute?: ")
+    os.system(nonec)
+    print("")
