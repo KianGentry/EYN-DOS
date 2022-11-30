@@ -63,24 +63,6 @@ while True:
     elif command_line==("clear"):
         clear()
 
-    elif command_line==("a"):
-        a()
-
-    elif command_line==("b"):
-        b()
-
-    elif command_line==("c"):
-        c()
-
-    elif command_line==("d"):
-        d()
-    
-    elif command_line==("e"):
-        e()
-
-    elif command_line==("f"):
-        f()
-
     elif command_line==("run"):
         run()
 
@@ -131,6 +113,15 @@ while True:
 
     elif command_line==("restart"):
         restart()
+
+    elif command_line==("prevd"):
+        prevdir()
+
+    elif command_line==("prevf"):
+        prevfiles()
+
+    elif command_line==("noneyn"):
+        noneyn()
 
     else:
         print("")

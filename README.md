@@ -6,7 +6,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.81 Beta).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.9).
 
 ---
 
@@ -15,7 +15,7 @@ Commands:
 
 "help" = Prints all commands available in EYN-DOS.
 
-"listdir" = Lists all sub-directories (Including total size).
+"listdir" = Lists all sub-directories.
 
 "dir" = Lists all files in the current working directory (Including total size).
 
@@ -76,17 +76,11 @@ Commands:
 
 "restart" = Gives you a prompt asking if you want to restart EYN-DOS. If you enter 'y', EYN-DOS will close and re-open into a fresh state. If you enter 'n', the command will be aborted and you'll go back to the EYN-DOS terminal.
 
-"a" = Takes you to the A drive (Primary floppy disk drive)
+"prevd" = Prints a list of all sub-directories in the previous directory.
 
-"b" = Takes you to the B drive (Secondary floppy disk drive)
+"prevf" = Prints a list of all files in the previous directory.
 
-"c" = Takes you to the C drive (Main storage device)
-
-"d" = Takes you to the D drive (Recovery drive)
-
-"e" = Takes you to the E drive (Primary Compact Disc drive)
-
-"f" = Takes you to the F drive (Secondary Compact Disc drive)
+"noneyn" = Gives you a prompt asking what non-EYN commmand you want to execute. Type any command from your host-system's terminal to execute it in EYN-DOS.
 
 ---
 
