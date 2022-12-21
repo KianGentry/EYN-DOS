@@ -1,3 +1,5 @@
+# pretty sure kian made this but i dont know for sure, ill ask him soon
+
 import math
 from tkinter import Tk, Canvas
 

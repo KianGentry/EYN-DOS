@@ -1,12 +1,12 @@
-from commands import *
+from commands import * # imports all definitions (commands) from commands.py
 
-os.system("cls")
+os.system("cls") # clears previous terminal text
 
-print("Copyright (c) 2022, J.K Incorporated")
-print("All rights reserved.")
+print("Copyright (c) 2022, J.K Incorporated") # copyright notice bc legality
+print("All rights reserved.") # what does this mean again, someone tell me
 print("")
 
-while True:
+while True: # basically just a loop of an input, and if the input matches the name of one of the commands, it executes it. the commands are all stored as functions in commands.py. pretty organised if you ask me.
     command_line=input("/main/} ")
 
     if command_line==("help"):
@@ -28,13 +28,13 @@ while True:
         errfni()
     
     elif command_line==("win"):
-        win()
+        win() # no.
 
     elif command_line==("count"):
         count()
 
     elif command_line==("troll"):
-        troll()
+        troll() # teehee
 
     elif command_line==("ver"):
         ver()
@@ -88,7 +88,7 @@ while True:
         colortest()
 
     elif command_line==("terry"):
-        terry()
+        terry() # rest in peace, legend
 
     elif command_line==("edit"):
         edit()
@@ -123,7 +123,13 @@ while True:
     elif command_line==("noneyn"):
         noneyn()
 
-    else:
+    elif command_line==("rim"):
+        rim()
+
+    elif command_line==("christmas"):
+        christmas() # santa claus!
+
+    else: # if command-line input isnt one of the commands,
         print("")
-        print("Invalid command.")
+        print("Invalid command.") # print 'invalid command'
         print("")

@@ -6,7 +6,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (1.9).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.0).
 
 ---
 
@@ -71,7 +71,6 @@ Commands:
 
 "zip" = Gives you a prompt asking what you want to call your zip file. Type the name you desire (Including the .zip extension). Then, you are given another prompt asking you to type all files you want contained inside your zip file. Type the names and extensions of the files you want to put inside your zip file.
 
-
 "pyedit" = Simply opens the built-in Python editor.
 
 "restart" = Gives you a prompt asking if you want to restart EYN-DOS. If you enter 'y', EYN-DOS will close and re-open into a fresh state. If you enter 'n', the command will be aborted and you'll go back to the EYN-DOS terminal.
@@ -81,6 +80,8 @@ Commands:
 "prevf" = Prints a list of all files in the previous directory.
 
 "noneyn" = Gives you a prompt asking what non-EYN commmand you want to execute. Type any command from your host-system's terminal to execute it in EYN-DOS.
+
+"rim" = Gives you a prompt asking what image file you would like to read. Type the filename of the image (Including the extension). This will read the image file and show it on screen.
 
 ---
 
@@ -109,10 +110,13 @@ Requried Modules:
 
 - ZipFile - Included with Python. No external installation required.
 
-Optional Modules:
----
+- Pillow - Used for reading image files.
 
 - Requests - Used in the "newver" command to install the newest version of EYN-DOS.
+
+
+Optional Modules:
+---
 
 - Tkinter - Used for graphical games and tests.
 
