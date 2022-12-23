@@ -1,25 +1,42 @@
-# getting module stuff
+# Importing Modules
 
-from colorama import Fore
+import time
+from datetime import datetime
+import zipfile
+import platform
 import shutil
 import os
-from os import chdir, listdir, mkdir
-from os.path import isfile, join
+from os import *
+from os.path import *
+import requests
+from PIL import Image
 
-# boring file system stuff
+# Calculating directory size
+
+cwd = os.getcwd()
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 filesys = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
+# Getting directory size
+
+def getFolderSize(folder):
+    total = os.path.getsize(folder)
+    for item in os.listdir(folder):
+        itempath = os.path.join(folder, item)
+        if os.path.isfile(itempath):
+            total += os.path.getsize(itempath)
+        elif os.path.isdir(itempath):
+            total += getFolderSize(itempath)
+    return total/1024
+
 def get_dir_size(dir_path):
     total = 0
-    with os.scandir(dir_path) as it:
+    with os.scandir() as it:
         for entry in it:
             if entry.is_file():
                 total += entry.stat().st_size
-            elif entry.is_dir():
-                total += get_dir_size(entry.path)
     return total/1024
 
 size=0
@@ -28,38 +45,60 @@ for path, dirs, files in os.walk(dir_path):
         fp = os.path.join(path, f)
         size += os.path.getsize(fp)
 
-# the actual good part
+# kian did all comments above (and wrote most of the code), idk what that all does, all i know is that it works so im not gonna touch it
 
-def help():
+# all the commands are under here (commented by ian greeves)
+
+def help(): # just prints all the commands. not automated, has to be entered manually.
     print("")
-    print("help = Prints commands currently usable, ")
-    print("dir = Prints a list of all available files in the current directory, ")
-    print("run = Executes the file entered, ")
-    print("end = Closes the EYN-DOS terminal, ")
-    print("ver = Prints the EYN-DOS version that is running, ")
-    print("credits = Prints a list of all the people who worked on EYN-DOS, ")
-    print("cd = Takes you to the directory entered, ")
-    print("read = Prints the contents of the file entered, ")
-    print("find = Prints the directory path of the file entered, ")
-    print("write = Writes custom text to the file entered (creates new file), ")
-    print("del = Deletes any newly writtten file entered, ")
-    print("size = Prints the size of the file entered, ")
-    print("clear = Clears the screen of all previously printed lines, ")
-    print("md = Makes a directory with the name entered.")
-    print("copy = Copy and pastes the file selected in the path entered.")
-    print("edit = Appends the file entered.")
-    print("calculate = 'New command! Old code!' A simple command-line calculator.")
+    print("help = Prints commands currently usable, ") # inception
+    print("listdir = Prints a list of available directories, ") # cool command name, not very common
+    print("dir = Prints a list of all available files in the current directory, ") # idk why its called dir and not files but im not complaining
+    print("run = Executes the Python file entered, ") # i corrected it
+    print("end = Closes and resets the EYN-DOS terminal, ") # yup, it does that
+    print("ver = Prints the EYN-DOS version that is running, ") # i hate having to update the version number here
+    print("credits = Prints a list of all the people who worked on EYN-DOS, ") # me
+    print("cd = Takes you to the directory entered, ") # im getting lazy with these comments, i did them from bottom to top (commands) but top to bottom (inside the commands) so you may see me drastically lose enthusiasm in real time
+    print("cdat = Prints the current date and time, ") # idk why they dont merge cdate and ctime, actually, thats a good idea, ill note it down
+    print("read = Prints the contents of the file entered, ") # fixed!
+    print("find = Prints the directory path of the file entered, ") # underrated
+    print("write = Writes custom text to the file entered (creates new file), ") # i loved working on this command
+    print("del = Deletes any file entered, ") # can delete main.py (dont actually do that)
+    print("size = Prints the size of the file entered, ") # pretty good command, 8/10
+    print("clear = Clears the screen of all previously printed lines, ") # cool for hiding what mischevious activities youve been doing, 7/10
+    print("md = Makes a directory with the name entered, ") # essential
+    print("copy = Copy and pastes the file selected in the path entered, ") # great command, 9/10
+    print("edit = Appends (edits) the file entered, ") # i wouldnt call it 'editing' personally, just sorta like adding onto it
+    print("specs = Prints accessible system specifications, ") # eh, not the best, 4/10
+    print("dirsize = Prints the size of the directory entered, ") # cool, 6/10
+    print("newver = Downloads the most recent version of EYN-DOS Minimal (Requires internet), ") # pairs nicely with the zip and unzip commands, and can be used for alot more, 8/10
+    print("unzip = Extracts the contents of a zip file to a specified path,") # great command, 8/10
+    print("zip = Compresses all files entered into a zip file,") # very cool, 9/10
+    print("pyedit = Runs the default Python editor, ") # reminds me of the pcs with basic installed on them, and pretty useful, 7/10
+    print("restart = Closes and re-opens EYN-DOS,") # really useful for development and debugging, 9/10
+    print("prevd = Shows all directories in the previous directory, ") # sorta useful i guess, 7/10
+    print("prevf = Shows all files in the previous directory, ") # same as above, 7/10
+    print("noneyn = Executes any command entered in your host terminal,") # useful for defeating the purpose of eyndos, 8/10
+    print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
+    print("")
+
+def listdir():
+    print("")
+    dirs=next(os.walk('.'))[1] # finds all sub-directories (1) in the current directory (.)
+    print(dirs) # prints sub-directory names
     print("")
 
 def dir():
     print("")
-    print(filesys)
+    filenames = next(os.walk("."))[2] # finds list of all files (2) in the current directory (.)
+    print(filenames) # prints filenames
     print("")
-    print(get_dir_size(dir_path)) 
+    print(get_dir_size(cwd)) # prints size of current directory
     print(" | Kilobytes")
     print("")
 
 def end():
+    print("")
     exit()
 
 def ver():
@@ -70,88 +109,72 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
-    print("EYN-DOS Minimal (2022)")
+    print("")
+    print("                                █████            ███")
+    print("                              ██     ███      ███   ███")
+    print("                                  ███         ███   ███")
+    print("                               ███            ███   ███")
+    print("                               █████████  ██     ███")
+    print("")
+    print("EYN-DOS Minimal 2.0 (Dec 23 2022)")
     print("")
 
 def credits():
     print("")
-    print("The EYN-DOS Team:")
+    print("Ian Greeves... Yeah, I made the entirety of EYN-DOS Minimal.")
+    print("I'm normally the guy who just comments the code, not writing it!")
+    print("Oh well, I hope you enjoy EYN-DOS Minimal!")
+
+def cdat():
     print("")
-    print("    Primary coder: Kian Gentry (Founder and CEO of J.K Incorporated.)")
-    print("    Secondary coder: Ian Greeves (Musician and I.T Assistant of J.K Incorporated.)")
-    print("    Logo designer: Kamil Makuch (Primary Artist of J.K Incorporated.)")
-    print("    Staff commander: Kian Gentry (Founder and CEO of J.K Incorporated.)")
-    print("    Everyone involved: Kian Gentry, Ian Greeves, Kamil Makuch and other J.K Incorporated employees.")
+    now = datetime.now() # finds todays date
+    dt_string = now.strftime("%B %d %Y") # variable for formatting date into month:day:year, hour:minutes
+    print(dt_string) # prints date
+    lt = time.localtime() # variable for finding time
+    ctime = time.strftime("%H:%M:%S", lt) # variable for formatting the time in an hour:minute:second format
     print("")
-    print("    Honorable mentions:")
-    print("")
-    print("         Robin Andrews: Coder of the 'Snake' game included with EYN-DOS. (Unincluded in EYN-DOS Minimal)")
-    print("         shomikj: Coder of the command line version of 'Solitaire' for EYN-DOS. (Unincluded in EYN-DOS Minimal)")
-    print("         Cayden Jackson: Supporter.")
-    print("         Kamil Makuch: Supporter and artist.")
-    print("         Github, StackOverflow & GeeksForGeeks: Saver of countless hours of research.")
-    print("         You: For using EYN-DOS.")
-    print("         Linux: Just awesome.")
-    print("")
-    print("         Thank you for using EYN-DOS!")
+    print(ctime) # prints time
     print("")
 
 def read():
     print("")
-    txt_name=input("Enter the name of the file you want to read. (Including extension): ")
+    os.system("py read.py")
     print("")
-    with open(txt_name) as f:
-        contents = f.read()
-        print(contents)
-        f.close
-    print("")
-    
+
 def find():
     print("")
-    file_find=input("What file do you want to find? (Including extension): ")
+    file_find=input("What file do you want to find? (Including extension): ") # variable for file to look for
     print("")
-    print(os.path.abspath(file_find))
+    print(os.path.abspath(file_find)) # prints absolute path of file entered
     print("")
 
 def write():
-    fn=input("What do you want to call your new file? (Extension included): ")
     print("")
-    print("Type what you want your file to contain! (Type nul0 to exit): ")
+    os.system("py write.py") # opens write.py
     print("")
-
-    while True:
-        text=input("> ")
-
-        if text.lower() == "nul0":
-            break
-    
-        with open(fn, 'a') as f:
-          f.write(text + "\n")
 
 def del1():
     print("")
     print("(Type 'nul0' to abort the command.)")
     print("")
-    del_file=input("What file do you want to delete? (Including extension): ")
+    del_file=input("What file do you want to delete? (Including extension): ") # variable for name of file to delete
     print("")
-
-    if del_file==("nul0"):
+    if del_file==("nul0"): # if response is nul0
         print("")
-        print("Returning to the EYN-DOS main terminal...")
+        print("Returning to the EYN-DOS main terminal...") # return to command-line
         print("")
-
     else:
         print("Deleting file...")
-        os.remove(del_file)
+        os.remove(del_file) # removes file completely
         print("")
         print("File deleted.")
         print("")
 
 def size():
     print("")
-    size_cl=input("What file do you want the size to? (Including extension): ")
+    size_cl=input("What file do you want the size to? (Including extension): ") # variable for name of file to find size of
     print("")
-    print(os.path.getsize(size_cl)/1024)
+    print(os.path.getsize(size_cl)/1024) # gets size of file in bytes, then divides by 1024 to get kibibytes (kilobytes for compatibility)
     print(" | Kilobytes")
     print("")
 
@@ -161,108 +184,171 @@ def clear():
 
 def run():
     print("")
-    run_name=input("What file do you want to run? (extension included): ")
+    print("(Type 'nul0' to return to the EYN-DOS main terminal)")
     print("")
-    if run_name==("main.py"):
-        print("")
-        print("This is already running!")
+    run_name=input("What file do you want to run? (extension included): ") # variable for python file to run
+    print("")
+    if run_name==("nul0"): # if response is nul0
+        print("Command Aborted.") # abort command
         print("")
     else:
-        os.system('py ' + run_name)
+        os.system('py ' + run_name) # run python file entered
         print("")
 
 def cd():
     print("")
-    print("(Type 'nul' to return to the EYN-DOS main terminal)")
+    print("(Type 'nul0' to return to the EYN-DOS main terminal)")
     print("")
-    cd_line=input("What sub-directory do you want to go to?: ")
+    cd_line=input("What sub-directory do you want to go to?: ") # variable for name of sub-directory
     print("")
-    if cd_line==("nul"):
-        print("Returning to the EYN-DOS main terminal...")
+    if cd_line==("nul0"): # if response is nul0
+        print("Returning to the EYN-DOS main terminal...") # return to command-line
         print("")
     else:
-        chdir(cd_line)
+        chdir(cd_line) # change directory to entered sub-directory name
 
 def cwd():
     print("")
-    cwd=os.getcwd()
-    print(cwd)
+    cwd=os.getcwd() # variable for finding current working directory
+    print(cwd) # prints current working directory
     print("")
 
 def md():
     print("")
-    print("(Type 'nul' to return the EYN-DOS main terminal)")
+    print("(Type 'nul0' to return the EYN-DOS main terminal)")
     print("")
-    md_line=input("What do you want to call the directory?: ")
+    md_line=input("What do you want to call the directory?: ") # variable for directory name
     print("")
-    if md_line==("nul"):
-        print("Returning to the EYN-DOS main terminal...")
+    if md_line==("nul0"): # if response is nul0
+        print("Returning to the EYN-DOS main terminal...") # return to command-line
         print("")
     else:
         print("Creating...")
         print("")
-        mkdir(md_line)
+        mkdir(md_line) # make directory with entered name
         print("Directory created.")
         print("")
 
 def copy():
     print("")
-    cpy_line=input("Where is the file you want to copy?: ")
+    print("Type 'nul0' to abort the command.")
     print("")
-    pst_line=input("Where do you want to paste the file?: ")
+    cpy_line=input("Where is the file you want to copy?: ") # variable for absolute path of file to copy
     print("")
-    if cpy_line==("nul"):
-        print("Returning to the EYN-DOS main terminal...")
+    pst_line=input("Where do you want to paste the file?: ") # variable for path to paste file to
+    print("")
+    if cpy_line==("nul0"): # if nul0 is entered
+        print("Returning to the EYN-DOS main terminal...") # go back to command-line
         print("")
     else:
         print("Pasting...")
         print("")
-        shutil.copyfile(cpy_line, pst_line)
+        shutil.copyfile(cpy_line, pst_line) # copies entered file to path entered
         print("Pasted.")
         print("")
 
 def edit():
-    ef=input("What file do you want to edit? (Including extension): ")
     print("")
-    print("Type what you want to append to your file (Type nul0 to exit): ")
+    os.system("py append.py")
     print("")
 
+def specs():
+    syst=platform.uname()
+    print("")
+    print(f"System(s) - {syst.system}" + ", EYN-DOS") # os name
+    print("")
+    print(f"Name - {syst.node}") # pc name
+    print("")
+    print(f"Release(s) - {syst.release}" + ", Minimal") # release of os
+    print("")
+    print(f"Version(s) - {syst.version}" + ", 2.0") # version of os
+    print("")
+    print(f"Machine - {syst.machine}") # processor distributor/pc manufacturer
+    print("")
+    print(f"Processor(s) - {syst.processor}") # processor model
+    print("")
+
+def dirsize():
+    print("")
+    folder=input("What folder do you want to know the size to?: ") # variable for folder name in current directory
+    print("")
+    print(getFolderSize(folder)) # prints size of the folder entered
+    print(" | Kilobytes")
+    print("")
+
+def newver():
+    print("")
+    URL = "https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/EYN-DOS-Minimal.zip" # eyndos download url
+    response = requests.get(URL) # variable for requesting the content from the url
+    open("eyndos.zip", "wb").write(response.content) # writes content from url (download page) to 'eyndos.zip'
+
+def unzip():
+    print("")
+    zippath=input("What is the (absolute) path to the zip file you want to extract?: ") # variable for absolute path for zip file
+    print("")
+    zippath2=input("Where do you want to extract the contents to? (Path): ") # variable for regular path of where to extract files
+    with zipfile.ZipFile(zippath, 'r') as zip_ref: # opens zip file in 'read' mode
+        zip_ref.extractall(zippath2) # extracts all contents into the path entered
+    print("")
+
+def zip():
+    print("")
+    nmz=input("What do you want to call your .zip file? (Extension included): ") # variable for file name
+    print("")
+    print("What files do you want to zip? (One at a time) (Extensions included):")
+    print("Type 'nul0' to exit and zip the entered files.")
+    print("")
     while True:
-        efw=input("> ")
-    
-        if efw.lower() == "nul0":
+        flz=input("> ") # whatever filename is typed is saved in the zip file
+        if flz.lower() == "nul0": # if filename is nul0, create the zip file with all entered filenames before
             break
-    
-        with open(ef, "a") as f:
-            f.write(efw)
+        with zipfile.ZipFile(nmz, "a") as f: # opens created zipfile in 'append' mode
+            f.write(flz) # adds all files entered into the zip file
+    print("")
 
-def calculate():
-    print("+ = Addition")
-    print("- = Subtraction")
-    print("x = Multiplication")
-    print("/ = Division")
-    print("^ = To the power of")
+def pyedit():	
+    print("")	
+    os.system("py")	
+    print("")
 
-    Number1=input("Number1: ")
-    Math_Symbol=input("Math Symbol: ")
-    Number2=input("Number2: ")
+def restart():
+    print("")
+    ryn=input("Are you sure you want to restart your EYN-DOS session? (y/n): ") # variable for user response
+    if ryn==("y"): # if response is y
+        print("")
+        os.system("py main.py") # open main file
+        exit() # exits the first opened main file (current)
+    if ryn==("n"): # if response is n 
+        print("")
+        print("Command aborted.") # continue with command line
+        print("")
 
-    if Math_Symbol==("+"):
-      sam=float(Number1) + float(Number2)
-      print("Addition Answer: "+str(sam))
+def prevdir():
+    print("")
+    pdirs=next(os.walk('..'))[1] # finds all directories (1) in the previous directory (..)
+    print(pdirs)
+    print("")
 
-    if Math_Symbol==("-"):
-       sum=float(Number1) - float(Number2)
-       print("Subtraction Answer: "+str(sum))
+def prevfiles():
+    print("")
+    filenames = next(os.walk(".."))[2] # find all filenames (2) in the previous directory (..)
+    print(filenames) # prints the filenames
+    print("")
+    print(get_dir_size(cwd)) # finds the size of all the files in the current directory
+    print(" | Kilobytes")
+    print("")
 
-    if Math_Symbol==("x"):
-       som=float(Number1) * float(Number2)
-       print("Multiplication Answer: "+str(som))
+def noneyn():
+    print("")
+    nonec=input("What non-EYN command do you want to execute?: ") # variable of what host-system command to execute
+    os.system(nonec) # executes the variable in the host-terminal
+    print("")
 
-    if Math_Symbol==("/"):
-       sim=float(Number1) / float(Number2)
-       print("Division Answer: "+str(sim))
+def rim():
+    print("")
+    img=input("What image do you want to read? (Including extension): ") # variable for image name
+    print("")
+    im=Image.open(img, mode='r') # opens image name in current directory in 'read' mode
+    im.show() # shows the image
 
-    if Math_Symbol==("^"):
-       sem=float(Number1) ** float(Number2)
-       print ("N1 to the power of N2 Answer: "+str(sem))
+# thanks for reading my silly little comments. have a good day (or night if youre like me and are making code comments at midnight)
