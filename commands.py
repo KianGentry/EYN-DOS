@@ -171,13 +171,13 @@ def ver():
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
     print("")
-    print("                                █████            ███")
-    print("                              ██     ███      ███   ███")
-    print("                                  ███         ███   ███")
-    print("                               ███            ███   ███")
-    print("                               █████████  ██     ███")
+    print("                          █████            ███        ████")
+    print("                        ██     ███      ███   ███   ██ ███")
+    print("                            ███         ███   ███      ███")
+    print("                         ███            ███   ███      ███")
+    print("                         █████████  ██     ███      █████████")
     print("")
-    print("EYN-DOS 2.0 (Dec 21 2022)") # Christmas time!
+    print("EYN-DOS 2.01 (Jan 20 2023)")
     print("")
 
 def credits():
@@ -254,7 +254,12 @@ def size():
 
 def clear():
     print("")
-    os.system("cls")
+    ps=platform.system()
+    
+    if ps==("Windows"):
+        os.system("cls")
+    else:
+        os.system("clear")
 
 def run():
     print("")
@@ -498,9 +503,5 @@ def rim():
     im=Image.open(img, mode='r') # opens image name in current directory in 'read' mode
     im.show() # shows the image
 
-def christmas():
-    print("")
-    print("Merry Christmas!") # santa time!
-    print("")
 
 # thanks for reading my silly little comments. have a good day (or night if youre like me and are making code comments at midnight)
