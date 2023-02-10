@@ -6,7 +6,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.01).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.1).
 
 ---
 
@@ -82,6 +82,8 @@ Commands:
 "noneyn" = Gives you a prompt asking what non-EYN commmand you want to execute. Type any command from your host-system's terminal to execute it in EYN-DOS.
 
 "rim" = Gives you a prompt asking what image file you would like to read. Type the filename of the image (Including the extension). This will read the image file and show it on screen.
+
+"ren" = Gives you a prompt asking what file/folder you would want to rename. After entering the desired file/folder, another prompt will appear, asking now what you'd like to call the file.
 
 ---
 

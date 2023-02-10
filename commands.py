@@ -171,13 +171,13 @@ def ver():
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
     print("")
-    print("                          █████            ███        ████")
-    print("                        ██     ███      ███   ███   ██ ███")
-    print("                            ███         ███   ███      ███")
-    print("                         ███            ███   ███      ███")
-    print("                         █████████  ██     ███      █████████")
+    print("                               █████           ████")
+    print("                             ██     ███      ██ ███")
+    print("                                 ███            ███")
+    print("                              ███               ███")
+    print("                              █████████  ██  █████████")
     print("")
-    print("EYN-DOS 2.01 (Jan 20 2023)")
+    print("EYN-DOS 2.1 (Feb 3 2023)")
     print("")
 
 def credits():
@@ -503,5 +503,12 @@ def rim():
     im=Image.open(img, mode='r') # opens image name in current directory in 'read' mode
     im.show() # shows the image
 
-
-# thanks for reading my silly little comments. have a good day (or night if youre like me and are making code comments at midnight)
+def ren():
+    print("")
+    renx=input("What file do you want to rename?: ") # variable for original file/folder to rename
+    print("")
+    reny=input("What do you want to rename the file?: ") # variable for what to rename it to
+    print("")
+    os.rename(renx, reny) # renames the file entered to the new name entered
+    print("File renamed.")
+    print("")
