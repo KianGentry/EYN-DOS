@@ -413,7 +413,7 @@ def specs():
     print("")
     print(f"Release(s) - {syst.release}" + ", Full") # release of os
     print("")
-    print(f"Version(s) - {syst.version}" + ", 2.0") # version of os
+    print(f"Version(s) - {syst.version}" + ", 2.1") # version of os
     print("")
     print(f"Machine - {syst.machine}") # processor distributor/pc manufacturer
     print("")
@@ -512,3 +512,5 @@ def ren():
     os.rename(renx, reny) # renames the file entered to the new name entered
     print("File renamed.")
     print("")
+
+# EYN-DOS: March 15 2022 - Present (Febrary 2023)
