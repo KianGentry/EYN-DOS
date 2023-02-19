@@ -1,5 +1,7 @@
 from commands import * # imports all definitions (commands) from commands.py
 
+
+
 ps=platform.system() # checks host os name
 if ps==("Windows"): # if name is windows
     os.system("cls") # use windows clear command
@@ -7,7 +9,7 @@ else: # if its smt else (bash)
     os.system("clear") # use bash clear command
 
 
-print("Copyright (c) 2022, J.K Incorporated, All Rights Reserved.") # copyright notice bc legality
+print("Copyright (c) 2023, J.K Incorporated, All Rights Reserved.") # copyright notice bc legality
 print("Type 'help' for a list of commands.")
 print("")
 
