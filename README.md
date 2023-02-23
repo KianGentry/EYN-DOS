@@ -91,7 +91,7 @@ We may have some commands that aren't listed in this list. Find them yourself!
 
 ---
 
-EYN-DOS requires Python 3.x to function. Required modules will be listed below. EYN-DOS natively supports Windows Host Operating Systems and Linux Host Operating Systems.
+EYN-DOS requires Python 3.x to function. Required modules will be listed below. EYN-DOS natively supports Windows Host Operating Systems and Linux Host Operating Systems (E-Mail the EYN-DOS team to recieve the Linux builds).
 
 ---
 
@@ -124,10 +124,7 @@ Optional Modules:
 
 EYN-DOS is designed to appeal to people who want a lightweight tool for interacting with their PC. EYN-DOS is also designed to appeal to nostalgia nerds (Such as Kian Gentry) who feel nostalgic about computers that ran Disk Operating Systems with a text-based GUI. 
 
-Notes:
 ---
-
-- You don't have to be from the era where you most feel nostalgia from. Many people born from the year 2000 and onwards feel nostalgic about computers that are double their age! This note was inspired by a letter from a viewer of a YouTube channel called LGR. He was a 13 year old viewer that wrote his physical letter on a computer twice his age. We saw this letter and thought, "New generations aren't going to lose nostalgia over older technology." This inspired J.K Incorporated to create a Disk Operating System that is regularly updated for newer generations.
 
 # Let's Get Started: 
 
@@ -146,8 +143,6 @@ Games and tech demos:
 - Pong - A recreation of the classic Atari game that took the world by storm. Use the arrow keys to move your paddle up and down to try and hit the ball.
 
 - Raycast Test - A test of a raycasting engine. Pretty self-explanatory. (Engine may be used for future projects. Don't tell anyone I said this!)
-
-- Snake - Basic, classic Snake. Use the arrow keys to move and eat the apples.
 
 - Solitiare - A command-line operated solitaire game. This version of solitaire uses a co-ordinate system in order to move the cards. For example, if a card was on slot A1 B1 and you wanted to move it to A1 B2, you would type "A1 B1 A1 B2".
 
