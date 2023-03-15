@@ -11,6 +11,14 @@ from os import *
 from os.path import *
 import requests
 from PIL import Image
+from dir import *
+
+ps=platform.system() # checks host os name
+
+if ps==("Windows"): # if name is windows
+    osrunner = "py" # use py in terminal
+else: # if its smt else (bash)
+    osrunner = "python3" # use python3 in terminal
 
 # Calculating directory size
 
@@ -30,7 +38,7 @@ def getFolderSize(folder):
             total += os.path.getsize(itempath)
         elif os.path.isdir(itempath):
             total += getFolderSize(itempath)
-    return total/1024
+    return total
 
 def get_dir_size(dir_path):
     total = 0
@@ -38,7 +46,7 @@ def get_dir_size(dir_path):
         for entry in it:
             if entry.is_file():
                 total += entry.stat().st_size
-    return total/1024
+    return total
 
 size=0
 for path, dirs, files in os.walk(dir_path):
@@ -55,7 +63,7 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("help = Prints commands currently usable, ") # inception
     print("listdir = Prints a list of available directories, ") # cool command name, not very common
     print("dir = Prints a list of all available files in the current directory, ") # idk why its called dir and not files but im not complaining
-    print("run = Executes the file entered, ") # correction, it executes the python file entered
+    print("run = Executes the Python file entered, ") # cool but could be merged with noneyn
     print("end = Closes and resets the EYN-DOS terminal, ") # yup, it does that
     print("ver = Prints the EYN-DOS version that is running, ") # i hate having to update the version number here
     print("credits = Prints a list of all the people who worked on EYN-DOS, ") # i mean, yeah, pretty self-explanatory
@@ -98,7 +106,7 @@ def dir():
     print(filenames) # prints filenames
     print("")
     print(get_dir_size(cwd)) # prints size of current directory
-    print(" | Kilobytes")
+    print(" | Bytes")
     print("")
 
 def end():
@@ -135,7 +143,8 @@ def count(): # this command is so pointless but i love it
     print("")
     if count_1==("y"): # if response is y
         print("")
-        os.system('py counter.py') # run counter.py
+        chdir(drnm)
+        os.system(osrunner + "counter.py") # opens counter.py
         print("")
     if count_1==("n"): # if response is n
         print("")
@@ -170,14 +179,13 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
+    print("                               █████           █████")
+    print("                             ██     ███      ██     ███")
+    print("                                 ███             ███")
+    print("                              ███             ███")
+    print("                              █████████  ██   █████████")
     print("")
-    print("                               █████           ████")
-    print("                             ██     ███      ██ ███")
-    print("                                 ███            ███")
-    print("                              ███               ███")
-    print("                              █████████  ██  █████████")
-    print("")
-    print("EYN-DOS 2.1 (Feb 3 2023)")
+    print("EYN-DOS 2.2 (Mar 15 2023) (EYN-DOS 1 Year Anniversary!)")
     print("")
 
 def credits():
@@ -185,7 +193,7 @@ def credits():
     print("The EYN-DOS Team:")
     print("")
     print("    Primary coder: Kian Gentry (Founder and CEO of J.K Incorporated)") # boss man
-    print("    Secondary coder: Ian Greeves (Musician and Lead Artist of J.K Incorporated.") # look, its me!
+    print("    Secondary coder: Ian Greeves (Junior Programmer of J.K Incorporated.") # look, its me!
     print("    Logo designer: Kamil Makuch") # great guy
     print("    Staff commander: Kian Gentry") # boss man again
     print("    Everyone involved: Kian Gentry, Ian Greeves, Kamil Makuch and other J.K Incorporated employees.") # 'other' being the janitors
@@ -212,7 +220,23 @@ def cdate():
 
 def read():
     print("")
-    os.system("py read.py")
+    print("(Type 'nul0' to abort the command.)")
+    print("")
+    dec=input("Where is the file you want to read (Path)? (Leave blank for cwd): ")
+    if dec==(""):
+        print("")
+        os.system(osrunner + " read.py") # opens read.py
+    elif dec==("nul0"):
+        print("")
+        print("Returning to EYN-DOS main terminal...") # aborts command
+    elif dec==("eyn"):
+        print("")
+        chdir(drnm) # changes directory to eyn-dos root
+        os.system(osrunner + " read.py") # opens read.py
+    else:
+        chdir(dec) # changes directory to one entered
+        print("")
+        os.system(osrunner + " read.py") # opens read.py
     print("")
 
 def find():
@@ -224,7 +248,7 @@ def find():
 
 def write():
     print("")
-    os.system("py write.py") # opens write.py
+    os.system(osrunner + " write.py") # opens write.py
     print("")
 
 def del1():
@@ -248,16 +272,14 @@ def size():
     print("")
     size_cl=input("What file do you want the size to? (Including extension): ") # variable for name of file to find size of
     print("")
-    print(os.path.getsize(size_cl)/1024) # gets size of file in bytes, then divides by 1024 to get kibibytes (kilobytes for compatibility)
-    print(" | Kilobytes")
+    print(os.path.getsize(size_cl)) # gets size of file in bytes
+    print(" | Bytes")
     print("")
 
 def clear():
     print("")
-    ps=platform.system()
-    
-    if ps==("Windows"):
-        os.system("cls")
+    if ps==("Windows"): # if name is windows
+        os.system("cls") # use windows clear command
     else:
         os.system("clear")
 
@@ -271,7 +293,7 @@ def run():
         print("Command Aborted.") # abort command
         print("")
     else:
-        os.system('py ' + run_name) # run python file entered
+        os.system(osrunner + run_name) # runs the python file entered
         print("")
 
 def cd():
@@ -401,7 +423,7 @@ def terry():
 
 def edit():
     print("")
-    os.system("py append.py") # opens append.py
+    os.system(osrunner + " append.py")
     print("")
 
 def specs():
@@ -460,7 +482,7 @@ def zip():
 
 def pyedit():	
     print("")	
-    os.system("py")	
+    os.system(osrunner)
     print("")
 
 def restart():
@@ -468,7 +490,8 @@ def restart():
     ryn=input("Are you sure you want to restart your EYN-DOS session? (y/n): ") # variable for user response
     if ryn==("y"): # if response is y
         print("")
-        os.system("py main.py") # open main file
+        chdir(drnm)
+        os.system(osrunner + " main.py")
         exit() # exits the first opened main file (current)
     if ryn==("n"): # if response is n 
         print("")
@@ -487,7 +510,7 @@ def prevfiles():
     print(filenames) # prints the filenames
     print("")
     print(get_dir_size(cwd)) # finds the size of all the files in the current directory
-    print(" | Kilobytes")
+    print(" | Bytes")
     print("")
 
 def noneyn():
@@ -513,4 +536,10 @@ def ren():
     print("File renamed.")
     print("")
 
-# EYN-DOS: March 15 2022 - Present (Febrary 2023)
+def eyndir():
+    print("")
+    print("Returning to EYN-DOS main directory...")
+    chdir(drnm)
+    print("")
+
+# EYN-DOS: March 15 2022 - Present (March 15 2023) (1 year!!!)

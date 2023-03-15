@@ -1,13 +1,23 @@
-from commands import * # imports all definitions (commands) from commands.py
-
-
+import os
+import platform
 
 ps=platform.system() # checks host os name
+
+if ps==("Windows"): # if name is windows
+    osrunner = "py" # use py in terminal
+else: # if its smt else (bash)
+    osrunner = "python3" # use python3 in terminal
+
+os.system(osrunner + " writedir.py")
+
+from commands import * # imports all definitions (commands) from commands.py
+
+print(ps)
+
 if ps==("Windows"): # if name is windows
     os.system("cls") # use windows clear command
 else: # if its smt else (bash)
     os.system("clear") # use bash clear command
-
 
 print("Copyright (c) 2023, J.K Incorporated, All Rights Reserved.") # copyright notice bc legality
 print("Type 'help' for a list of commands.")
@@ -135,6 +145,9 @@ while True: # basically just a loop of an input, and if the input matches the na
 
     elif command_line==("ren"):
         ren()
+
+    elif command_line==("eyndir"):
+        eyndir()
 
     else: # if command-line input isnt one of the commands,
         print("")

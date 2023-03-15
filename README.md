@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.1).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.2).
 
 ---
 
@@ -14,8 +14,8 @@ Commands:
 "listdir" = Lists all sub-directories.
 
 "dir" = Lists all files in the current working directory (Including total size).
-
-"run" = Gives you a prompt asking what file you want to run. Type "nul" to abort the command. Type the name of the file you want to run (Including the extension e.g: example.txt).
+s)
+"run" = Gives you a prompt asking what file you want to run. Type "nul" to abort the command. Type the name of the file you want to run (Including the extension e.g: example.py) (Only runs Python file).
 
 "end" = Gives you a prompt asking if you are sure you want to end your EYN-DOS session. Type "y" to end your session. Type "n" to abort the command.
 
@@ -81,6 +81,8 @@ Commands:
 
 "ren" = Gives you a prompt asking what file/folder you would want to rename. After entering the desired file/folder, another prompt will appear, asking now what you'd like to call the file.
 
+"eyndir" = Changes the directory to the directory where EYN-DOS was originally ran from. Simple, but handy.
+
 ---
 
 We may have some commands that aren't listed in this list. Find them yourself!
@@ -91,7 +93,7 @@ We may have some commands that aren't listed in this list. Find them yourself!
 
 ---
 
-EYN-DOS requires Python 3.x to function. Required modules will be listed below. EYN-DOS natively supports Windows Host Operating Systems and Linux Host Operating Systems (E-Mail the EYN-DOS team to recieve the Linux builds).
+EYN-DOS requires Python 3.x to function. Required modules will be listed below. EYN-DOS natively supports Windows Host Operating Systems and Linux Host Operating Systems.
 
 ---
 
@@ -124,7 +126,10 @@ Optional Modules:
 
 EYN-DOS is designed to appeal to people who want a lightweight tool for interacting with their PC. EYN-DOS is also designed to appeal to nostalgia nerds (Such as Kian Gentry) who feel nostalgic about computers that ran Disk Operating Systems with a text-based GUI. 
 
+Notes:
 ---
+
+- You don't have to be from the era where you most feel nostalgia from. Many people born from the year 2000 and onwards feel nostalgic about computers that are double their age! This note was inspired by a letter from a viewer of a YouTube channel called LGR. He was a 13 year old viewer that wrote his physical letter on a computer twice his age. We saw this letter and thought, "New generations aren't going to lose nostalgia over older technology." This inspired J.K Incorporated to create a Disk Operating System that is regularly updated for newer generations.
 
 # Let's Get Started: 
 
