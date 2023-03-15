@@ -293,7 +293,7 @@ def run():
         print("Command Aborted.") # abort command
         print("")
     else:
-        os.system(osrunner + run_name) # runs the python file entered
+        os.system(osrunner + " " + run_name) # runs the python file entered
         print("")
 
 def cd():
