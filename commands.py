@@ -69,6 +69,7 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("credits = Prints a list of all the people who worked on EYN-DOS, ") # i mean, yeah, pretty self-explanatory
     print("cd = Takes you to the directory entered, ") # im getting lazy with these comments, i did them from bottom to top (commands) but top to bottom (inside the commands) so you may see me drastically lose enthusiasm in real time
     print("cdate = Prints the current date and time, ") # idk why they dont merge cdate and ctime, actually, thats a good idea, ill note it down
+    print("ctime = Prints the current time, including seconds,")
     print("read = Prints the contents of the file entered, ") # fixed!
     print("find = Prints the directory path of the file entered, ") # underrated
     print("write = Writes custom text to the file entered (creates new file), ") # i loved working on this command
@@ -92,6 +93,8 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("prevf = Shows all files in the previous directory, ") # same as above, 7/10
     print("noneyn = Executes any command entered in your host terminal,") # useful for defeating the purpose of eyndos, 8/10
     print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
+    print("eyndir = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
+    print("pip = Provides an EYN-ified version of pip (Python's package manager),")
     print("")
 
 def listdir():
@@ -179,13 +182,13 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print("")
-    print("                               █████           █████")
-    print("                             ██     ███      ██     ███")
-    print("                                 ███             ███")
-    print("                              ███             ███")
-    print("                              █████████  ██   █████████")
+    print("                           █████           █████       ████")
+    print("                         ██     ███      ██     ███  ██ ███")
+    print("                             ███             ███        ███")
+    print("                          ███             ███           ███")
+    print("                          █████████  ██   █████████  █████████")
     print("")
-    print("EYN-DOS 2.2 (Mar 15 2023) (EYN-DOS 1 Year Anniversary!)")
+    print("EYN-DOS 2.21 (Apr 9 2023)")
     print("")
 
 def credits():
@@ -435,7 +438,7 @@ def specs():
     print("")
     print(f"Release(s) - {syst.release}" + ", Full") # release of os
     print("")
-    print(f"Version(s) - {syst.version}" + ", 2.1") # version of os
+    print(f"Version(s) - {syst.version}" + ", 2.21") # version of os
     print("")
     print(f"Machine - {syst.machine}") # processor distributor/pc manufacturer
     print("")
@@ -542,4 +545,17 @@ def eyndir():
     chdir(drnm)
     print("")
 
-# EYN-DOS: March 15 2022 - Present (March 15 2023) (1 year!!!)
+def pip():
+    print("")
+    print("What Python package do you want to install?")
+    print("(Type 'nul0' to return.)")
+    print("")
+    pkgn=input("?> ")
+    print("")
+    if pkgn==("nul0"):
+        print("Returning to the EYN-DOS terminal...")
+        print("")
+    else:
+        os.system("pip install " + pkgn)
+
+# EYN-DOS: March 15 2022 - Present (April 9 2023)

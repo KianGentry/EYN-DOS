@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.2).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.21).
 
 ---
 
@@ -27,7 +27,7 @@ s)
 
 "cdate" = Prints the current date. (D/M/Y)
 
-"ctime" = Prints the current time. (H/M)
+"ctime" = Prints the current time. (H/M/S)
 
 "read" = Gives you a prompt asking what file you want to read. Type "nul" to abort the command. Type the name of the file you want to read (Including the extension e.g: example.txt) to print the contents of the entered file.
 
@@ -83,6 +83,8 @@ s)
 
 "eyndir" = Changes the directory to the directory where EYN-DOS was originally ran from. Simple, but handy.
 
+"pip" = Quite self-explanatory to someone familiar with Python. This command provides a dedicated way to use pip (Python's package manager) through EYN-DOS.
+
 ---
 
 We may have some commands that aren't listed in this list. Find them yourself!
@@ -113,6 +115,8 @@ Requried Modules:
 - Pillow - Used for reading image files.
 
 - Requests - Used in the "newver" command to install the newest version of EYN-DOS.
+
+- Datetime - Used in the "ctime" and "cdate" commands to tell the time and date respectively.
 
 
 Optional Modules:

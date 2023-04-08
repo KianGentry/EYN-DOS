@@ -149,6 +149,9 @@ while True: # basically just a loop of an input, and if the input matches the na
     elif command_line==("eyndir"):
         eyndir()
 
+    elif command_line==("pip"):
+        pip()
+
     else: # if command-line input isnt one of the commands,
         print("")
         print("Invalid command.") # print 'invalid command'

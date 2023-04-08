@@ -1,15 +1,14 @@
 while True:
-    c=input(">")
-    if c==("w"):
-        q=input("?>")
-        w=input("1>")
-        with open((q),'w') as f:
-            f.writelines([w])
-    if c==("r"):
-        r=input("?>")
+    c=input("")
+    if c==("/"):
+        q=input("n")
+        w=input(">")
+        with open(q,'w') as f:
+            f.write(w)
+    if c==("-"):
+        r=input(">")
         with open(r) as f:
-            d=f.read()
-            print(d)
+            print(f.read())
             f.close
-    if c==("e"):
+    if c==("."):
         exit()
