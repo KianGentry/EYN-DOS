@@ -1,13 +1,30 @@
+import os
+import platform
+
+# Finding the OS name
+
+ps=platform.system() # checks host os name
+
+if ps==("Windows"): # if name is windows
+    osrunner = "py" # use py in terminal
+else: # if its smt else (bash)
+    osrunner = "python3" # use python3 in terminal
+
+os.system(osrunner + " writedir.py")
+
+# Actual main.py below
+
 from commands import * # imports all definitions (commands) from commands.py
 
-os.system("cls") # clears previous terminal text
+print(ps)
 
-print("Copyright (c) 2022, J.K Incorporated") # copyright notice bc legality
-print("All rights reserved.") # what does this mean again, someone tell me
-print("")
+if ps==("Windows"): # if name is windows
+    os.system("cls") # use windows clear command
+else: # if its smt else (bash)
+    os.system("clear") # use bash clear command
 
 while True: # basically just a loop of an input, and if the input matches the name of one of the commands, it executes it. the commands are all stored as functions in commands.py. pretty organised if you ask me.
-    command_line=input("/main/} ")
+    command_line=input("/mini/} ")
 
     if command_line==("help"):
         help()
@@ -27,8 +44,8 @@ while True: # basically just a loop of an input, and if the input matches the na
     elif command_line==("credits"):
         credits()
 
-    elif command_line==("cdat"):
-        cdat()
+    elif command_line==("cdate"):
+        cdate()
 
     elif command_line==("read"):
         read()
@@ -98,6 +115,15 @@ while True: # basically just a loop of an input, and if the input matches the na
 
     elif command_line==("rim"):
         rim()
+
+    elif command_line==("ren"):
+        ren()
+    
+    elif command_line==("eyndir"):
+        eyndir()
+
+    elif command_line==("pip"):
+        pip()
 
     else: # if command-line input isnt one of the commands,
         print("")

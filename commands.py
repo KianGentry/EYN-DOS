@@ -4,12 +4,21 @@ import time
 from datetime import datetime
 import zipfile
 import platform
+from colorama import *
 import shutil
 import os
 from os import *
 from os.path import *
 import requests
 from PIL import Image
+from dir import * # importing variablefrom dir.py (variable written to dir.py from writedir.py)
+
+ps=platform.system() # checks host os name
+
+if ps==("Windows"): # if name is windows
+    osrunner = "py" # use py in terminal
+else: # if its smt else (bash)
+    osrunner = "python3" # use python3 in terminal
 
 # Calculating directory size
 
@@ -29,7 +38,7 @@ def getFolderSize(folder):
             total += os.path.getsize(itempath)
         elif os.path.isdir(itempath):
             total += getFolderSize(itempath)
-    return total/1024
+    return total
 
 def get_dir_size(dir_path):
     total = 0
@@ -37,7 +46,7 @@ def get_dir_size(dir_path):
         for entry in it:
             if entry.is_file():
                 total += entry.stat().st_size
-    return total/1024
+    return total
 
 size=0
 for path, dirs, files in os.walk(dir_path):
@@ -54,12 +63,13 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("help = Prints commands currently usable, ") # inception
     print("listdir = Prints a list of available directories, ") # cool command name, not very common
     print("dir = Prints a list of all available files in the current directory, ") # idk why its called dir and not files but im not complaining
-    print("run = Executes the Python file entered, ") # i corrected it
+    print("run = Executes the Python file entered, ") # cool but could be merged with noneyn
     print("end = Closes and resets the EYN-DOS terminal, ") # yup, it does that
     print("ver = Prints the EYN-DOS version that is running, ") # i hate having to update the version number here
-    print("credits = Prints a list of all the people who worked on EYN-DOS, ") # me
+    print("credits = Prints a list of all the people who worked on EYN-DOS, ") # i mean, yeah, pretty self-explanatory
     print("cd = Takes you to the directory entered, ") # im getting lazy with these comments, i did them from bottom to top (commands) but top to bottom (inside the commands) so you may see me drastically lose enthusiasm in real time
-    print("cdat = Prints the current date and time, ") # idk why they dont merge cdate and ctime, actually, thats a good idea, ill note it down
+    print("cdate = Prints the current date and time, ") # idk why they dont merge cdate and ctime, actually, thats a good idea, ill note it down
+    print("ctime = Prints the current time, including seconds,")
     print("read = Prints the contents of the file entered, ") # fixed!
     print("find = Prints the directory path of the file entered, ") # underrated
     print("write = Writes custom text to the file entered (creates new file), ") # i loved working on this command
@@ -68,10 +78,13 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("clear = Clears the screen of all previously printed lines, ") # cool for hiding what mischevious activities youve been doing, 7/10
     print("md = Makes a directory with the name entered, ") # essential
     print("copy = Copy and pastes the file selected in the path entered, ") # great command, 9/10
+    print("echo = Prints the text entered.") # im pretty bored writing these comments, its like midnight and i wanna go to bed, but im determined to do this
+    print("colortest = Tests if the 'colorma' module is functional, ") # works 89% of the time
+    print("terry = Tribute to a legend. Rest in peace.")
     print("edit = Appends (edits) the file entered, ") # i wouldnt call it 'editing' personally, just sorta like adding onto it
     print("specs = Prints accessible system specifications, ") # eh, not the best, 4/10
     print("dirsize = Prints the size of the directory entered, ") # cool, 6/10
-    print("newver = Downloads the most recent version of EYN-DOS Minimal (Requires internet), ") # pairs nicely with the zip and unzip commands, and can be used for alot more, 8/10
+    print("newver = Downloads the most recent version of EYN-DOS (Requires internet), ") # pairs nicely with the zip and unzip commands, and can be used for alot more, 8/10
     print("unzip = Extracts the contents of a zip file to a specified path,") # great command, 8/10
     print("zip = Compresses all files entered into a zip file,") # very cool, 9/10
     print("pyedit = Runs the default Python editor, ") # reminds me of the pcs with basic installed on them, and pretty useful, 7/10
@@ -80,6 +93,8 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("prevf = Shows all files in the previous directory, ") # same as above, 7/10
     print("noneyn = Executes any command entered in your host terminal,") # useful for defeating the purpose of eyndos, 8/10
     print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
+    print("eyndir = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
+    print("pip = Provides an EYN-ified version of pip (Python's package manager),")
     print("")
 
 def listdir():
@@ -94,51 +109,62 @@ def dir():
     print(filenames) # prints filenames
     print("")
     print(get_dir_size(cwd)) # prints size of current directory
-    print(" | Kilobytes")
+    print(" | Bytes")
     print("")
 
 def end():
     print("")
-    exit()
+    confirm=input("Are you sure you want to end your EYN-DOS session? (y/n): ") # variable for confirming exit
+    print("")
+    if confirm==("y"): # if response is y
+        exit() # exit eyndos
+    if confirm==("n"): # if response is n
+        print("Command aborted.") # abort command
+        print("")
 
 def ver():
     print("")
-    print("█████████   ███     ███   ███      ███            ██████       ██████      ██████")
-    print("███           ███ ███     ██████   ███            ███   ███  ███    ███  ███")
-    print("█████████       ███       ███  ███ ███   ██████   ███   ███  ███    ███    ██████")
-    print("███             ███       ███    █████            ███   ███  ███    ███        ███")
-    print("█████████       ███       ███      ███            ██████       ██████     ██████")
+    print("██ ███   █████   ██    ███   █████    ██")
+    print(" ███ ██ ██  ███         ███ ██   ██")
+    print(" ██   ██     ██  ██     █████     ██  ██")
+    print(" ██         ██  ██  █   ███      ██  ██  █")
+    print("███         ███  ███   ███       ███  ███")
     print("")
-    print("")
-    print("                                █████            ███")
-    print("                              ██     ███      ███   ███")
-    print("                                  ███         ███   ███")
-    print("                               ███            ███   ███")
-    print("                               █████████  ██     ███")
-    print("")
-    print("EYN-DOS Minimal 2.0 (Dec 23 2022)")
+    print("EYN-DOS Mini (221) (Apr 9 2023)")
     print("")
 
 def credits():
     print("")
-    print("Ian Greeves... Yeah, I made the entirety of EYN-DOS Minimal.")
-    print("I'm normally the guy who just comments the code, not writing it!")
-    print("Oh well, I hope you enjoy EYN-DOS Minimal!")
+    print("Ian Greeves... Yeah, it's just me. The code comment guy.") # Hey, I wrote that 2 minutes ago!
+    print("I apologise for my improvised, yanderedev-ish code. ")
+    print("Most of it is from EYN-DOS 2.21 but I've added a few of my own bits and bobs.")
+    print("")
 
-def cdat():
+def cdate():
     print("")
     now = datetime.now() # finds todays date
-    dt_string = now.strftime("%B %d %Y") # variable for formatting date into month:day:year, hour:minutes
+    dt_string = now.strftime("%B %d %Y, %H:%M") # variable for formatting date into month:day:year, hour:minutes
     print(dt_string) # prints date
-    lt = time.localtime() # variable for finding time
-    ctime = time.strftime("%H:%M:%S", lt) # variable for formatting the time in an hour:minute:second format
-    print("")
-    print(ctime) # prints time
     print("")
 
 def read():
     print("")
-    os.system("py read.py")
+    print("(Type 'nul0' to abort the command.)")
+    dec=input("Where is the file you want to read (Path)? (Leave blank for cwd): ")
+    if dec==(""):
+        print("")
+        os.system(osrunner + " read.py") # opens read.py
+    elif dec==("nul0"):
+        print("")
+        print("Returning to EYN-DOS main terminal...") # aborts command
+    elif dec==("eyn"):
+        print("")
+        chdir(drnm) # changes directory to eyn-dos root
+        os.system(osrunner + " read.py") # opens read.py
+    else:
+        chdir(dec) # changes directory to one entered
+        print("")
+        os.system(osrunner + " read.py") # opens read.py
     print("")
 
 def find():
@@ -150,7 +176,7 @@ def find():
 
 def write():
     print("")
-    os.system("py write.py") # opens write.py
+    os.system(osrunner + " write.py") # opens write.py
     print("")
 
 def del1():
@@ -174,13 +200,16 @@ def size():
     print("")
     size_cl=input("What file do you want the size to? (Including extension): ") # variable for name of file to find size of
     print("")
-    print(os.path.getsize(size_cl)/1024) # gets size of file in bytes, then divides by 1024 to get kibibytes (kilobytes for compatibility)
-    print(" | Kilobytes")
+    print(os.path.getsize(size_cl)) # gets size of file in bytes
+    print(" | Bytes")
     print("")
 
 def clear():
     print("")
-    os.system("cls")
+    if ps==("Windows"): # if name is windows
+        os.system("cls") # use windows clear command
+    else:
+        os.system("clear")
 
 def run():
     print("")
@@ -192,7 +221,7 @@ def run():
         print("Command Aborted.") # abort command
         print("")
     else:
-        os.system('py ' + run_name) # run python file entered
+        os.system(osrunner + " " + run_name) # runs the python file entered
         print("")
 
 def cd():
@@ -211,6 +240,13 @@ def cwd():
     print("")
     cwd=os.getcwd() # variable for finding current working directory
     print(cwd) # prints current working directory
+    print("")
+
+def ctime():
+    print("")
+    lt = time.localtime() # variable for finding time
+    ctime = time.strftime("%H:%M:%S", lt) # variable for formatting the time in an hour:minute:second format
+    print(ctime) # prints time
     print("")
 
 def md():
@@ -247,9 +283,36 @@ def copy():
         print("Pasted.")
         print("")
 
+def colortest():
+    print("")
+    print(Fore.BLUE +            "████████████████████████████████") # prints all text in colour after 'fore'
+    print(Fore.CYAN +            "████████████████████████████████")
+    print(Fore.GREEN +           "████████████████████████████████")
+    print(Fore.MAGENTA +         "████████████████████████████████")
+    print(Fore.RED +             "████████████████████████████████")
+    print(Fore.YELLOW +          "████████████████████████████████")
+    print(Fore.WHITE +           "████████████████████████████████")
+    print(Fore.LIGHTBLUE_EX +    "████████████████████████████████")
+    print(Fore.LIGHTCYAN_EX +    "████████████████████████████████")
+    print(Fore.LIGHTGREEN_EX +   "████████████████████████████████")
+    print(Fore.LIGHTMAGENTA_EX + "████████████████████████████████")
+    print(Fore.LIGHTRED_EX +     "████████████████████████████████")
+    print(Fore.LIGHTYELLOW_EX +  "████████████████████████████████")
+    print(Fore.LIGHTBLACK_EX +   "████████████████████████████████")
+    print(Fore.RESET + "")
+
+def terry():
+    print("")
+    print("A tribute to one of the greatest programmers ever, Terry A. Davis (Inventor & Programmer for TempleOS.)")
+    print("While he might have been quite controversial, there's no denying he was a very smart guy.")
+    print("His rants were due to various mental problems, such as schizophrenia. Later in his life, Terry suffered from homelessness.")
+    print("Some hated him, some loved him. All together, he was still a great man.")
+    print("R.I.P Terrence Andrew Davis (1969 - 2018)") # rest in peace, legend
+    print("")
+
 def edit():
     print("")
-    os.system("py append.py")
+    os.system(osrunner + " append.py")
     print("")
 
 def specs():
@@ -261,7 +324,7 @@ def specs():
     print("")
     print(f"Release(s) - {syst.release}" + ", Minimal") # release of os
     print("")
-    print(f"Version(s) - {syst.version}" + ", 2.0") # version of os
+    print(f"Version(s) - {syst.version}" + ", 2.21") # version of os
     print("")
     print(f"Machine - {syst.machine}") # processor distributor/pc manufacturer
     print("")
@@ -273,14 +336,8 @@ def dirsize():
     folder=input("What folder do you want to know the size to?: ") # variable for folder name in current directory
     print("")
     print(getFolderSize(folder)) # prints size of the folder entered
-    print(" | Kilobytes")
+    print(" | Bytes")
     print("")
-
-def newver():
-    print("")
-    URL = "https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/EYN-DOS-Minimal.zip" # eyndos download url
-    response = requests.get(URL) # variable for requesting the content from the url
-    open("eyndos.zip", "wb").write(response.content) # writes content from url (download page) to 'eyndos.zip'
 
 def unzip():
     print("")
@@ -308,7 +365,7 @@ def zip():
 
 def pyedit():	
     print("")	
-    os.system("py")	
+    os.system(osrunner)
     print("")
 
 def restart():
@@ -316,7 +373,8 @@ def restart():
     ryn=input("Are you sure you want to restart your EYN-DOS session? (y/n): ") # variable for user response
     if ryn==("y"): # if response is y
         print("")
-        os.system("py main.py") # open main file
+        chdir(drnm)
+        os.system(osrunner + " main.py")
         exit() # exits the first opened main file (current)
     if ryn==("n"): # if response is n 
         print("")
@@ -335,7 +393,7 @@ def prevfiles():
     print(filenames) # prints the filenames
     print("")
     print(get_dir_size(cwd)) # finds the size of all the files in the current directory
-    print(" | Kilobytes")
+    print(" | Bytes")
     print("")
 
 def noneyn():
@@ -351,4 +409,33 @@ def rim():
     im=Image.open(img, mode='r') # opens image name in current directory in 'read' mode
     im.show() # shows the image
 
-# thanks for reading my silly little comments. have a good day (or night if youre like me and are making code comments at midnight)
+def ren():
+    print("")
+    renx=input("What file do you want to rename?: ") # variable for original file/folder to rename
+    print("")
+    reny=input("What do you want to rename the file?: ") # variable for what to rename it to
+    print("")
+    os.rename(renx, reny) # renames the file entered to the new name entered
+    print("File renamed.")
+    print("")
+
+def eyndir():
+    print("")
+    print("Returning to EYN-DOS main directory...")
+    chdir(drnm)
+    print("")
+
+def pip():
+    print("")
+    print("What Python package do you want to install?")
+    print("(Type 'nul0' to return.)")
+    print("")
+    pkgn=input("?> ")
+    print("")
+    if pkgn==("nul0"):
+        print("Returning to the EYN-DOS terminal...")
+        print("")
+    else:
+        os.system("pip install " + pkgn)
+
+# EYN-DOS: March 15 2022 - Present (April 11 2023)

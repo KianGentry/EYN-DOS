@@ -1,4 +1,4 @@
-# Welcome to EYN-DOS Minimal!
+# Welcome to EYN-DOS Minimal (221)!
 
 ---
 
@@ -26,4 +26,4 @@ If you have any issues or complaints about EYN-DOS Minimal or anything affiliate
 
 ---
 
-J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
+J.K Incorporated, the J.K Incorporated logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
