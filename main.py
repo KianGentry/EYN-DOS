@@ -21,10 +21,11 @@ else: # if its smt else (bash)
 
 print("Copyright (c) 2023, J.K Incorporated, All Rights Reserved.") # copyright notice bc legality
 print("Type 'help' for a list of commands.")
-print("")
+print()
 
 while True: # basically just a loop of an input, and if the input matches the name of one of the commands, it executes it. the commands are all stored as functions in commands.py. pretty organised if you ask me.
-    command_line=input("/main.py/} ")
+    command_line=input(lb+"/main/} "+wh)
+    print(r+"")
 
     if command_line==("help"):
         help()
@@ -153,6 +154,5 @@ while True: # basically just a loop of an input, and if the input matches the na
         pip()
 
     else: # if command-line input isnt one of the commands,
-        print("")
-        print("Invalid command.") # print 'invalid command'
+        print(Fore.LIGHTRED_EX+"Invalid command.") # print 'invalid command'
         print("")

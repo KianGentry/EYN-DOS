@@ -2,7 +2,7 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.21).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.22).
 
 ---
 
@@ -14,7 +14,7 @@ Commands:
 "listdir" = Lists all sub-directories.
 
 "dir" = Lists all files in the current working directory (Including total size).
-s)
+
 "run" = Gives you a prompt asking what file you want to run. Type "nul" to abort the command. Type the name of the file you want to run (Including the extension e.g: example.py) (Only runs Python file).
 
 "end" = Gives you a prompt asking if you are sure you want to end your EYN-DOS session. Type "y" to end your session. Type "n" to abort the command.
@@ -138,7 +138,7 @@ Notes:
 # Let's Get Started: 
 
 To run EYN-DOS, simply run the file named, "main.py".
-Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/main/}". This is the command-line.
+Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/main/} ". This is the command-line.
 
 The command-line is the main way of interacting with your PC through a terminal. You type words into the command-line to perform certain functions called commands. These commands can do various things such as read files, write files, and can do pretty much anything that can ever be coded into a function. Commands are what allow you to change things about your PC.
 

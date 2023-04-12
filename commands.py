@@ -12,7 +12,32 @@ from os.path import *
 import requests
 from PIL import Image
 from dir import *
+import psutil
 
+# Color/Colour variables (so i dont have to write them every single time)
+
+wh=Fore.WHITE
+b=Fore.BLACK
+bl=Fore.BLUE
+cy=Fore.CYAN
+gr=Fore.GREEN
+ma=Fore.MAGENTA
+re=Fore.RED
+ye=Fore.YELLOW
+lb=Fore.LIGHTBLUE_EX
+lc=Fore.LIGHTCYAN_EX
+lg=Fore.LIGHTGREEN_EX
+lm=Fore.LIGHTMAGENTA_EX
+lr=Fore.LIGHTRED_EX
+ly=Fore.LIGHTYELLOW_EX
+lb=Fore.LIGHTBLACK_EX
+lw=Fore.LIGHTWHITE_EX
+r=Fore.RESET
+
+# finding system (os) name and making variables for the py command
+# (Cross compatability (between windows and linux) reasons)
+
+syst=platform.uname()
 ps=platform.system() # checks host os name
 
 if ps==("Windows"): # if name is windows
@@ -59,7 +84,6 @@ for path, dirs, files in os.walk(dir_path):
 # all the commands are under here (commented by ian greeves)
 
 def help(): # just prints all the commands. not automated, has to be entered manually.
-    print("")
     print("help = Prints commands currently usable, ") # inception
     print("listdir = Prints a list of available directories, ") # cool command name, not very common
     print("dir = Prints a list of all available files in the current directory, ") # idk why its called dir and not files but im not complaining
@@ -95,67 +119,57 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
     print("eyndir = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
     print("pip = Provides an EYN-ified version of pip (Python's package manager),")
-    print("")
+    print()
 
 def listdir():
-    print("")
     dirs=next(os.walk('.'))[1] # finds all sub-directories (1) in the current directory (.)
     print(dirs) # prints sub-directory names
-    print("")
+    print()
 
 def dir():
-    print("")
     filenames = next(os.walk("."))[2] # finds list of all files (2) in the current directory (.)
     print(filenames) # prints filenames
-    print("")
+    print()
     print(get_dir_size(cwd)) # prints size of current directory
     print(" | Bytes")
-    print("")
+    print()
 
 def end():
-    print("")
     confirm=input("Are you sure you want to end your EYN-DOS session? (y/n): ") # variable for confirming exit
-    print("")
+    print()
     if confirm==("y"): # if response is y
         exit() # exit eyndos
     if confirm==("n"): # if response is n
         print("Command aborted.") # abort command
-        print("")
+        print()
 
 def lgr():
-    print("")
     print("Hey, that's a good YouTube channel!") # lgr is pretty good tbh
-    print("")
+    print()
     
 def errfni():
-    print("")
     print(Fore.BLUE + "████████████████") # makes all text the colour entered after 'Fore.'
     print("\033[37;44mERROR EYN_C3-FNI\033[m") # idk what this does tbh
     print(Fore.BLUE + "████████████████") 
     print(Fore.RESET) # text colour resets
-    print("")
+    print()
     
 def win():
-    print("")
     print("No.") # dont even think about it
-    print("")
+    print()
 
 def count(): # this command is so pointless but i love it
-    print("")
-    count_1=input("WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n) ") # variable for confirming counting
-    print("")
+    count_1=input(Fore.LIGHTRED_EX+"WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n) ") # variable for confirming counting
+    print()
     if count_1==("y"): # if response is y
-        print("")
         chdir(drnm)
         os.system(osrunner + "counter.py") # opens counter.py
-        print("")
+        print()
     if count_1==("n"): # if response is n
-        print("")
         print("Command disbanded") # return to terminal
-        print("")
+        print()
 
 def troll():
-    print("")
     print("░░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄▄")
     print("░░░░░█░░░░░░░░░░░░░░░░░░▀▀▄")
     print("░░░░█░░░░░░░░░░░░░░░░░░░░░░█")
@@ -172,37 +186,35 @@ def troll():
     print("░░░░░░░░░░▀▀▄▄░░░░░░░░░░░░░░░█")
     print("░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█")
     print("░░░░░░░░░░░░░░░░░░█▄▄▄▄▄▄▄▄▀") # trolly
-    print("")
+    print()
 
 def ver():
-    print("")
-    print("█████████   ███     ███   ███      ███            ██████       ██████      ██████")
+    print(lm+"█████████   ███     ███   ███      ███            ██████       ██████      ██████")
     print("███           ███ ███     ██████   ███            ███   ███  ███    ███  ███")
     print("█████████       ███       ███  ███ ███   ██████   ███   ███  ███    ███    ██████")
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
-    print("")
-    print("                           █████           █████       ████")
-    print("                         ██     ███      ██     ███  ██ ███")
-    print("                             ███             ███        ███")
-    print("                          ███             ███           ███")
-    print("                          █████████  ██   █████████  █████████")
-    print("")
-    print("EYN-DOS 2.21 (Apr 9 2023)")
-    print("")
+    print()
+    print("                       █████           █████       ████")
+    print("                     ██     ███      ██     ███  ██    ███")
+    print("                         ███             ███        ███")
+    print("                      ███             ███        ███")
+    print("                      █████████  ██   █████████  █████████")
+    print()
+    print(wh+"EYN-DOS 2.22 (Apr 12 2023)")
+    print()
 
 def credits():
-    print("")
     print("The EYN-DOS Team:")
-    print("")
+    print()
     print("    Primary coder: Kian Gentry (Founder and CEO of J.K Incorporated)") # boss man
     print("    Secondary coder: Ian Greeves (Junior Programmer of J.K Incorporated.") # look, its me!
     print("    Logo designer: Kamil Makuch") # great guy
     print("    Staff commander: Kian Gentry") # boss man again
     print("    Everyone involved: Kian Gentry, Ian Greeves, Kamil Makuch and other J.K Incorporated employees.") # 'other' being the janitors
-    print("")
+    print()
     print("    Honorable mentions:")
-    print("")
+    print()
     print("         Robin Andrews: Coder of the 'Snake' game included with EYN-DOS.") 
     print("         shomikj: Coder of the command line version of 'Solitaire' for EYN-DOS.")
     print("         Cayden Jackson: Supporter.") # short guy
@@ -210,352 +222,303 @@ def credits():
     print("         Github, StackOverflow & GeeksForGeeks: Saver of countless hours of research.") # i use these too often for my own good
     print("         You: For using EYN-DOS.") # aww thats cute
     print("         Linux: Just awesome") # only reason i dont use linux now is to be able to run exes with good performance
-    print("")
+    print()
     print("         Thank you for using EYN-DOS!") # really, thank you!
-    print("")
+    print()
 
 def cdate():
-    print("")
     now = datetime.now() # finds todays date
     dt_string = now.strftime("%B %d %Y, %H:%M") # variable for formatting date into month:day:year, hour:minutes
     print(dt_string) # prints date
-    print("")
+    print()
 
 def read():
-    print("")
     print("(Type 'nul0' to abort the command.)")
-    print("")
     dec=input("Where is the file you want to read (Path)? (Leave blank for cwd): ")
     if dec==(""):
-        print("")
+        print()
         os.system(osrunner + " read.py") # opens read.py
     elif dec==("nul0"):
-        print("")
+        print()
         print("Returning to EYN-DOS main terminal...") # aborts command
     elif dec==("eyn"):
-        print("")
+        print()
         chdir(drnm) # changes directory to eyn-dos root
         os.system(osrunner + " read.py") # opens read.py
     else:
         chdir(dec) # changes directory to one entered
-        print("")
+        print()
         os.system(osrunner + " read.py") # opens read.py
-    print("")
+    print()
 
 def find():
-    print("")
     file_find=input("What file do you want to find? (Including extension): ") # variable for file to look for
-    print("")
+    print()
     print(os.path.abspath(file_find)) # prints absolute path of file entered
-    print("")
+    print()
 
 def write():
-    print("")
     os.system(osrunner + " write.py") # opens write.py
-    print("")
+    print()
 
 def del1():
-    print("")
     print("(Type 'nul0' to abort the command.)")
-    print("")
     del_file=input("What file do you want to delete? (Including extension): ") # variable for name of file to delete
-    print("")
+    print()
     if del_file==("nul0"): # if response is nul0
-        print("")
+        print()
         print("Returning to the EYN-DOS main terminal...") # return to command-line
-        print("")
+        print()
     else:
         print("Deleting file...")
         os.remove(del_file) # removes file completely
-        print("")
+        print()
         print("File deleted.")
-        print("")
+        print()
 
 def size():
-    print("")
     size_cl=input("What file do you want the size to? (Including extension): ") # variable for name of file to find size of
-    print("")
+    print()
     print(os.path.getsize(size_cl)) # gets size of file in bytes
     print(" | Bytes")
-    print("")
+    print()
 
 def clear():
-    print("")
     if ps==("Windows"): # if name is windows
         os.system("cls") # use windows clear command
     else:
         os.system("clear")
 
 def run():
-    print("")
     print("(Type 'nul0' to return to the EYN-DOS main terminal)")
-    print("")
     run_name=input("What file do you want to run? (extension included): ") # variable for python file to run
-    print("")
+    print()
     if run_name==("nul0"): # if response is nul0
         print("Command Aborted.") # abort command
-        print("")
+        print()
     else:
         os.system(osrunner + " " + run_name) # runs the python file entered
-        print("")
+        print()
 
 def cd():
-    print("")
     print("(Type 'nul0' to return to the EYN-DOS main terminal)")
-    print("")
     cd_line=input("What sub-directory do you want to go to?: ") # variable for name of sub-directory
-    print("")
+    print()
     if cd_line==("nul0"): # if response is nul0
         print("Returning to the EYN-DOS main terminal...") # return to command-line
-        print("")
+        print()
     else:
         chdir(cd_line) # change directory to entered sub-directory name
 
 def cwd():
-    print("")
     cwd=os.getcwd() # variable for finding current working directory
     print(cwd) # prints current working directory
-    print("")
+    print()
 
 def ctime():
-    print("")
     lt = time.localtime() # variable for finding time
     ctime = time.strftime("%H:%M:%S", lt) # variable for formatting the time in an hour:minute:second format
     print(ctime) # prints time
-    print("")
+    print()
 
 def md():
-    print("")
     print("(Type 'nul0' to return the EYN-DOS main terminal)")
-    print("")
+    print()
     md_line=input("What do you want to call the directory?: ") # variable for directory name
-    print("")
+    print()
     if md_line==("nul0"): # if response is nul0
         print("Returning to the EYN-DOS main terminal...") # return to command-line
-        print("")
+        print()
     else:
         print("Creating...")
-        print("")
+        print()
         mkdir(md_line) # make directory with entered name
         print("Directory created.")
-        print("")
+        print()
 
 def copy():
-    print("")
     print("Type 'nul0' to abort the command.")
-    print("")
+    print()
     cpy_line=input("Where is the file you want to copy?: ") # variable for absolute path of file to copy
-    print("")
+    print()
     pst_line=input("Where do you want to paste the file?: ") # variable for path to paste file to
-    print("")
+    print()
     if cpy_line==("nul0"): # if nul0 is entered
         print("Returning to the EYN-DOS main terminal...") # go back to command-line
-        print("")
+        print()
     else:
         print("Pasting...")
-        print("")
+        print()
         shutil.copyfile(cpy_line, pst_line) # copies entered file to path entered
         print("Pasted.")
-        print("")
-
-def echo():
-    print("")
-    echo_line=input("What do you want to echo?: ") # variable for text to print
-    print("")
-    print(echo_line) # prints text entered
-    print("")
+        print()
 
 def colortest():
-    print("")
-    print(Fore.BLUE +            "████████████████████████████████") # prints all text in colour after 'fore'
-    print(Fore.CYAN +            "████████████████████████████████")
-    print(Fore.GREEN +           "████████████████████████████████")
-    print(Fore.MAGENTA +         "████████████████████████████████")
-    print(Fore.RED +             "████████████████████████████████")
-    print(Fore.YELLOW +          "████████████████████████████████")
-    print(Fore.WHITE +           "████████████████████████████████")
-    print(Fore.LIGHTBLUE_EX +    "████████████████████████████████")
-    print(Fore.LIGHTCYAN_EX +    "████████████████████████████████")
-    print(Fore.LIGHTGREEN_EX +   "████████████████████████████████")
-    print(Fore.LIGHTMAGENTA_EX + "████████████████████████████████")
-    print(Fore.LIGHTRED_EX +     "████████████████████████████████")
-    print(Fore.LIGHTYELLOW_EX +  "████████████████████████████████")
-    print(Fore.LIGHTBLACK_EX +   "████████████████████████████████")
-    print(Fore.RESET + "")
+    print(bl + "████████████████████████████████") # prints all text in colour after 'fore'
+    print(cy + "████████████████████████████████")
+    print(gr + "████████████████████████████████")
+    print(ma + "████████████████████████████████")
+    print(re + "████████████████████████████████")
+    print(ye + "████████████████████████████████")
+    print(wh + "████████████████████████████████")
+    print(lb + "████████████████████████████████")
+    print(lc + "████████████████████████████████")
+    print(lg + "████████████████████████████████")
+    print(lm + "████████████████████████████████")
+    print(lr + "████████████████████████████████")
+    print(ly + "████████████████████████████████")
+    print(lb + "████████████████████████████████")
+    print(r + "")
 
 def terry():
-    print("")
-    print("^^^~~7!~!!!^^~^^~~!!!^:..... .....          .^!!!!!!!!!!!!!!!!!!!")
-    print("^^^^^7J?7~^^^~~^^:........ .............      :!!!!!!!!!!!!!!!!!!")
-    print(":::^^^!J7~~~^:...... ..:^!?YJ!!!77!~^^.......  .^!!!~~~~~~~~~!!!!")
-    print("::::::^~77^.....  .^75GB####BBBBBBGPP5J7~^^^:.. .:!!~~~~~~~~~~!!!")
-    print("::::::::~^.....:!5B&&&&&&&#####BBBBGGGPPP5?7??~.. .^~!!~~~~~!!!!!")
-    print("^:::::::^^...^JB##&&&&&&&&&##B###BBBBBGGPPP5?7?~:::^!!~!!!!!!!!!!")
-    print("^^^^:::.^^^~P####&&&&&&&##########BBGGGP5Y7!!~~!:^P555?7777777777")
-    print("^^^^^^:.^~?B#&&&&&&#&&####&&&&&&BPYYG&G7^~?YYY?~::5PPP5J?????????")
-    print("^^^^^^^:.^P##&&&&&&######&&&##PJ~:.^P&G?5BBBGP5J^.?5GGGPJ????????")
-    print("^^^^^^^^:.?###&########&&#BG5?.     :^::~G##BGP5J!7?PBBG5????????")
-    print("^^^^^^^^^..5B#######&&&&&##G^          .7B###BGP5YJ??BPP5J???????")
-    print("^^^^^^^^^:.:PBB###########G?.        .~5######BGPYYJ?YGBP7!J?????")
-    print("^^^^^^^^^:::^YBB#GJ7?J??7!JP5~.   .:7G&&&&&&&#BBGPP5J?5B5..7?7!~!")
-    print("^^^^^^^^^^::::!J?^::.  ..!BBGGPYJ5G#&&&##&&&&##BBBGGPYJ?!...:..::")
-    print("^^^^^^^^^^::::::7J^       JBBGGGBBBB###&########BBBGGP5J??!:....:")
-    print("^^^^^^^^^^^:::^:.:.      .7B#BGGGGGGB##&&######BBBBBBBP5J7?!~:...")
-    print("^^^^^^^^^^^^^^::.    ..:~YBG#BBBGGGBBG####&&##BBGBBBBBGG577777777")
-    print("^^^^^^^^^^^^^^^^^^.::^JB####B#&&#BGGGGB########BGGGBBBBG57J?777JY")
-    print("^^^^^^^^^^^^^~~^^^^^^^~YB###BBGGPPG##BBBB##BBB##BGGBGGGP??5YJJ??J")
-    print("^^^^^^^^^^^^~~~~~~^^^^^^!5BBBBGPPB##########B####GGGGGPY7PP5YYYYY")
-    print("^^^^^^^^^^^^~~~~~~^^^^^~^~YBBB##GBB####BBPPGB####BPGGP57YPPP5555P")
-    print("^^^^^^^^^^^^~~~~~^^^^^^^~~~75GG#GGGGPGGGBB#####B##BGG57!YPGPP5555")
-    print("^^^^^^^^^^^^~~~~~~~~~~~~~~~^.~5GBGGPGBBB##BBBBB###BG57~J5PGGPPPP7")
-    print("^^^^^^^^^^^^~~~~~~~~~!!!!!~7:..!5GBGGGGGGGBB##&&&&BG?~?Y5PP55YY?~")
-    print("^^^^^^^^^^^^~~~~~~~~~~!!!!!7~^^.:~7Y5PPGGB##&&&&&#P7~7YYYY55YY577")
-    print("^^^^^^^^^^^^~~~~~~~~~~~~!~^!!^^^^^. .!PB######BGPJ^^7???JY55PPJ7J")
-    print("^^^^^^^^^^^^~~~~~~~~~~!7!~:~~^~!!^~:.  ^YPPP5J7~:..:~?Y5PGGGGY~~7")
-    print("^^^^^^^^^^^^^~~~~~~~~!7J?!:~!~^~!!!^:^.  .:. .::^^!~~JYB###BJ7^~!")
-    print("^^^^^^^^^^^^^^^^^^~~~!!7JY!^7!!^^~!!!~^^:^:..^?JJ!~!7JPPBBBJ77^^~")
-    print("::::::::::::::::^~7!!!!!!!?!~^~~^^^~?!!!!7!!^^777??J?J5PBBJ~~~??J")
-    print("               .~?J7~~!^^~!?7~^!~^::~^~^~!7?^^~~!!!7!~755?~~~7J7J")
-    print("")
+    print()
+    print(wh + "~~~~^^^^^::^^^^^^^..::7PPY!~^^~~~?YYYYPJ????????J?")
+    print("YYYYJJ?^....~JYPP7::..^Y7:       .?PP55555YYYJJJ??")
+    print("~!~!!!!^~~^..^:?#?.               :PPP55555YYYJJJ?")
+    print("J???J?JJJJYJ?7?J~:.               ^GPPPP5555YYYJJJ")
+    print("^~^^^^^^^^^!7?YYY?~  ....         ^5PPPP5555YYYJJJ")
+    print("::::::.....:^~!?PGJ.!7?PG?~^        .:!55555YYYJJ?")
+    print(":..^^^::::::::::^~^75GGGPP5?^.:..      .7555YYYJJJ")
+    print("^::^^^::::::~~~^^^^~Y#GG5GB!:^^::..      77!!~!~~!")
+    print("::::.      .^~~~~~~~!PGBGPY~~^^^^:::    ^~~^^.:.::")
+    print(".....   .. :^~~~~~^~~!GBGY!~^^^^^^^:.   ..::::....")
+    print("         ::^^^^:::^^^^~JJ!^^^^:^^^::        ...   ")
+    print(" J.      :!~~^:   ..:^^^^^::::::^:::..        .  .")
+    print(" ?: .....^PB5^      :::^::::^^^^:::~!~:...    ....")
+    print(" ::~JYYYJ5BP?:.... ........:7Y57:..^!!~:     ~&&#B")
+    print("  .....^JG&&&&&&&####BBBGGPPPP^^....:^^:     ?@@@@")
+    print(" .::...75B@BYY555555555555PG##:.....::^.  .:.5@@@&")
+    print(" ::::.:7Y#@PJYYYYYYYJJJ??7!J#B:  ...::.  .:..B@@&&")
+    print(".^^^^:^?J#&P5PPPPPPP55YJ?77J#B:  ...::  .::..B@@@&")
+    print(":^^^^^~JJ&&GGGBBBBBGGP5YJ?7Y#G~. ..::.  ....:P###&")
+    print("::^^^:^JG@&BB##&@&#BBGG5YJ?5#G~  .:... .:::.:~!777")
+    print(".::^^.~P5@&&##&@@&#BBGG5YJJG#G?. ....  ::::::^~~~~")
+    print(":^:^^~?5P@@@@@@@@@@@@&&&&###&GY::?!!!~:^^^::?#BP5Y")
+    print("^^~^~~!75#&##&&&&&&&&&@&&&@@&5Y^:JBBGP?^^^^:P@&BBP")
+    print("^~~~~!!!!!!~~~~~~~~~~~~!!!7?!^:::^YGGG5~^^^^B@&&&&")
+    print("^^!!~~~!!!!!!~^^^^::::.:..:::.....^!??7^:::^&&&&&&")
+    print("::^~~~~~!!!!!~~^^^^::::::::::::::^::^^^^:..!&&&&##")
+    print()
     print("A tribute to one of the greatest programmers ever, Terry A. Davis (Inventor & Programmer for TempleOS.)")
     print("While he might have been quite controversial, there's no denying he was a very smart guy.")
     print("His rants were due to various mental problems, such as schizophrenia. Later in his life, Terry suffered from homelessness.")
     print("Some hated him, some loved him. All together, he was still a great man.")
     print("R.I.P Terrence Andrew Davis (1969 - 2018)") # rest in peace, legend
-    print("")
+    print()
 
 def edit():
-    print("")
     os.system(osrunner + " append.py")
-    print("")
+    print()
 
 def specs():
-    syst=platform.uname()
-    print("")
-    print(f"System(s) - {syst.system}" + ", EYN-DOS") # os name
-    print("")
-    print(f"Name - {syst.node}") # pc name
-    print("")
-    print(f"Release(s) - {syst.release}" + ", Full") # release of os
-    print("")
-    print(f"Version(s) - {syst.version}" + ", 2.21") # version of os
-    print("")
-    print(f"Machine - {syst.machine}") # processor distributor/pc manufacturer
-    print("")
-    print(f"Processor(s) - {syst.processor}") # processor model
-    print("")
+    load1, load5, load15=psutil.getloadavg() # gets cpu average from 15 minutes
+    cpu_usage = (load15/os.cpu_count()) * 100 # divides average across all cores
+    print(f"{syst.node}:") # pc name
+    print()
+    print("CPU Usage: ", cpu_usage,"%") # prints usage
+    print()
+    print("RAM Usage: ", psutil.virtual_memory()[2],"%") # uhhh just gets the memory usage in percentage
+    print("RAM Usage (Bytes): ", psutil.virtual_memory()[3]) # gets memory usage in bytes
+    print()
 
 def dirsize():
-    print("")
     folder=input("What folder do you want to know the size to?: ") # variable for folder name in current directory
-    print("")
+    print()
     print(getFolderSize(folder)) # prints size of the folder entered
-    print(" | Kilobytes")
-    print("")
+    print(" | Bytes")
+    print()
 
 def newver():
-    print("")
     URL = "https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/Main.zip" # eyndos download url
     response = requests.get(URL) # variable for requesting the content from the url
     open("eyndos.zip", "wb").write(response.content) # writes content from url (download page) to 'eyndos.zip'
 
 def unzip():
-    print("")
     zippath=input("What is the (absolute) path to the zip file you want to extract?: ") # variable for absolute path for zip file
-    print("")
+    print()
     zippath2=input("Where do you want to extract the contents to? (Path): ") # variable for regular path of where to extract files
     with zipfile.ZipFile(zippath, 'r') as zip_ref: # opens zip file in 'read' mode
         zip_ref.extractall(zippath2) # extracts all contents into the path entered
-    print("")
+    print()
 
 def zip():
-    print("")
     nmz=input("What do you want to call your .zip file? (Extension included): ") # variable for file name
-    print("")
+    print()
     print("What files do you want to zip? (One at a time) (Extensions included):")
     print("Type 'nul0' to exit and zip the entered files.")
-    print("")
+    print()
     while True:
         flz=input("> ") # whatever filename is typed is saved in the zip file
         if flz.lower() == "nul0": # if filename is nul0, create the zip file with all entered filenames before
             break
         with zipfile.ZipFile(nmz, "a") as f: # opens created zipfile in 'append' mode
             f.write(flz) # adds all files entered into the zip file
-    print("")
+    print()
 
-def pyedit():	
-    print("")	
+def pyedit():
     os.system(osrunner)
-    print("")
+    print()
 
 def restart():
-    print("")
     ryn=input("Are you sure you want to restart your EYN-DOS session? (y/n): ") # variable for user response
     if ryn==("y"): # if response is y
-        print("")
+        print()
         chdir(drnm)
         os.system(osrunner + " main.py")
         exit() # exits the first opened main file (current)
     if ryn==("n"): # if response is n 
-        print("")
+        print()
         print("Command aborted.") # continue with command line
-        print("")
+        print()
 
 def prevdir():
-    print("")
     pdirs=next(os.walk('..'))[1] # finds all directories (1) in the previous directory (..)
     print(pdirs)
-    print("")
+    print()
 
 def prevfiles():
-    print("")
     filenames = next(os.walk(".."))[2] # find all filenames (2) in the previous directory (..)
     print(filenames) # prints the filenames
-    print("")
+    print()
     print(get_dir_size(cwd)) # finds the size of all the files in the current directory
     print(" | Bytes")
-    print("")
+    print()
 
 def noneyn():
-    print("")
     nonec=input("What non-EYN command do you want to execute?: ") # variable of what host-system command to execute
     os.system(nonec) # executes the variable in the host-terminal
-    print("")
+    print()
 
 def rim():
-    print("")
     img=input("What image do you want to read? (Including extension): ") # variable for image name
-    print("")
+    print()
     im=Image.open(img, mode='r') # opens image name in current directory in 'read' mode
     im.show() # shows the image
 
 def ren():
-    print("")
     renx=input("What file do you want to rename?: ") # variable for original file/folder to rename
-    print("")
+    print()
     reny=input("What do you want to rename the file?: ") # variable for what to rename it to
-    print("")
+    print()
     os.rename(renx, reny) # renames the file entered to the new name entered
     print("File renamed.")
-    print("")
+    print()
 
 def eyndir():
-    print("")
     print("Returning to EYN-DOS main directory...")
     chdir(drnm)
-    print("")
+    print()
 
 def pip():
-    print("")
     print("What Python package do you want to install?")
     print("(Type 'nul0' to return.)")
-    print("")
+    print()
     pkgn=input("?> ")
-    print("")
+    print()
     if pkgn==("nul0"):
         print("Returning to the EYN-DOS terminal...")
-        print("")
+        print()
     else:
         os.system("pip install " + pkgn)
 
-# EYN-DOS: March 15 2022 - Present (April 9 2023)
+# EYN-DOS: March 15 2022 - Present (April 12 2023)
