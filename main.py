@@ -24,7 +24,7 @@ print("Type 'help' for a list of commands.")
 print()
 
 while True: # basically just a loop of an input, and if the input matches the name of one of the commands, it executes it. the commands are all stored as functions in commands.py. pretty organised if you ask me.
-    command_line=input(lb+"/main/} "+wh)
+    command_line=input(lbl+"/main/} "+wh)
     print(r+"")
 
     if command_line==("help"):
