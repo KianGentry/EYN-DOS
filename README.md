@@ -2,14 +2,10 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.22).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.3).
 
 ---
-![image](https://user-images.githubusercontent.com/101657439/231563244-f05c32d4-b8b4-493a-af6a-d11b5fd48bec.png)
-![image](https://user-images.githubusercontent.com/101657439/231563645-1b47cb36-4c36-4409-8c99-2ba4f0fd4480.png)
-![image](https://user-images.githubusercontent.com/101657439/231563550-9c71121d-ba75-4a45-a016-95fe1b23f705.png)
 
----
 Commands:
 ---
 
@@ -122,6 +118,9 @@ Requried Modules:
 
 - Datetime - Used in the "ctime" and "cdate" commands to tell the time and date respectively.
 
+- Termcolor - Used in the command-line input to make the cursor blink. That's basically it.
+
+- Logging - Included with Python. No external installation required.
 
 Optional Modules:
 ---
@@ -142,7 +141,7 @@ Notes:
 # Let's Get Started: 
 
 To run EYN-DOS, simply run the file named, "main.py".
-Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/main/} ". This is the command-line.
+Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/! ". This is the command-line.
 
 The command-line is the main way of interacting with your PC through a terminal. You type words into the command-line to perform certain functions called commands. These commands can do various things such as read files, write files, and can do pretty much anything that can ever be coded into a function. Commands are what allow you to change things about your PC.
 

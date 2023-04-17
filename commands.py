@@ -13,6 +13,14 @@ import requests
 from PIL import Image
 from dir import *
 import psutil
+from termcolor import colored
+import logging
+
+# uhhh
+
+lvl1=logging.DEBUG # uhhhhhh
+fmt="[%(levelname)s] %(asctime)s - %(message)s" # uhhhhhhhhhhhhhhhhh
+logging.basicConfig(level=lvl1, format=fmt) # uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 
 # Color/Colour variables (so i dont have to write them every single time)
 
@@ -119,6 +127,7 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
     print("eyndir = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
     print("pip = Provides an EYN-ified version of pip (Python's package manager),")
+    print("tr = Takes you to the root directory of your system ('C:' for Windows, '/' for Linux)")
     print()
 
 def listdir():
@@ -148,18 +157,15 @@ def lgr():
     print()
     
 def errfni():
-    print(Fore.BLUE + "████████████████") # makes all text the colour entered after 'Fore.'
-    print("\033[37;44mERROR EYN_C3-FNI\033[m") # idk what this does tbh
-    print(Fore.BLUE + "████████████████") 
-    print(Fore.RESET) # text colour resets
+    print(f"{lr}"), logging.error("FNI")
     print()
-    
+
 def win():
     print("No.") # dont even think about it
     print()
 
 def count(): # this command is so pointless but i love it
-    count_1=input(Fore.LIGHTRED_EX+"WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n) ") # variable for confirming counting
+    count_1=input(f"{lr}WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n) ") # variable for confirming counting
     print()
     if count_1==("y"): # if response is y
         chdir(drnm)
@@ -189,19 +195,19 @@ def troll():
     print()
 
 def ver():
-    print(lm+"█████████   ███     ███   ███      ███            ██████       ██████      ██████")
+    print(f"{lm}█████████   ███     ███   ███      ███            ██████       ██████      ██████")
     print("███           ███ ███     ██████   ███            ███   ███  ███    ███  ███")
     print("█████████       ███       ███  ███ ███   ██████   ███   ███  ███    ███    ██████")
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print()
-    print("                       █████           █████       ████")
-    print("                     ██     ███      ██     ███  ██    ███")
-    print("                         ███             ███        ███")
-    print("                      ███             ███        ███")
-    print("                      █████████  ██   █████████  █████████")
+    print("                            █████           ██████   ")
+    print("                          ██     ███      ██     ███")
+    print("                              ███             ████  ")
+    print("                           ███            ██     ███")
+    print("                           █████████  ██    ██████")
     print()
-    print(wh+"EYN-DOS 2.22 (Apr 12 2023)")
+    print(f"{wh}EYN-DOS 2.3 (Apr 17 2023)")
     print()
 
 def credits():
@@ -221,7 +227,8 @@ def credits():
     print("         Kamil Makuch: Supporter and artist.") # the man again
     print("         Github, StackOverflow & GeeksForGeeks: Saver of countless hours of research.") # i use these too often for my own good
     print("         You: For using EYN-DOS.") # aww thats cute
-    print("         Linux: Just awesome") # only reason i dont use linux now is to be able to run exes with good performance
+    print("         Linux: Just awesome") # mhm
+    print("         Terrance Davis: Inspiration")
     print()
     print("         Thank you for using EYN-DOS!") # really, thank you!
     print()
@@ -253,7 +260,7 @@ def read():
 
 def find():
     file_find=input("What file do you want to find? (Including extension): ") # variable for file to look for
-    print()
+    pr
     print(os.path.abspath(file_find)) # prints absolute path of file entered
     print()
 
@@ -354,25 +361,25 @@ def copy():
         print()
 
 def colortest():
-    print(bl + "████████████████████████████████") # prints all text in colour after 'fore'
-    print(cy + "████████████████████████████████")
-    print(gr + "████████████████████████████████")
-    print(ma + "████████████████████████████████")
-    print(re + "████████████████████████████████")
-    print(ye + "████████████████████████████████")
-    print(wh + "████████████████████████████████")
-    print(lb + "████████████████████████████████")
-    print(lc + "████████████████████████████████")
-    print(lg + "████████████████████████████████")
-    print(lm + "████████████████████████████████")
-    print(lr + "████████████████████████████████")
-    print(ly + "████████████████████████████████")
-    print(lb + "████████████████████████████████")
-    print(r + "")
+    print(f"{bl}████████████████████████████████") # prints all text in colour after 'f"'
+    print(f"{cy}████████████████████████████████")
+    print(f"{gr}████████████████████████████████")
+    print(f"{ma}████████████████████████████████")
+    print(f"{re}████████████████████████████████")
+    print(f"{ye}████████████████████████████████")
+    print(f"{wh}████████████████████████████████")
+    print(f"{lbl}████████████████████████████████")
+    print(f"{lc}████████████████████████████████")
+    print(f"{lg}████████████████████████████████")
+    print(f"{lm}████████████████████████████████")
+    print(f"{lr}████████████████████████████████")
+    print(f"{ly}████████████████████████████████")
+    print(f"{lb}████████████████████████████████")
+    print(f"{r}")
 
 def terry():
     print()
-    print(wh + "~~~~^^^^^::^^^^^^^..::7PPY!~^^~~~?YYYYPJ????????J?")
+    print(f"{wh}~~~~^^^^^::^^^^^^^..::7PPY!~^^~~~?YYYYPJ????????J?")
     print("YYYYJJ?^....~JYPP7::..^Y7:       .?PP55555YYYJJJ??")
     print("~!~!!!!^~~^..^:?#?.               :PPP55555YYYJJJ?")
     print("J???J?JJJJYJ?7?J~:.               ^GPPPP5555YYYJJJ")
@@ -521,4 +528,14 @@ def pip():
     else:
         os.system("pip install " + pkgn)
 
-# EYN-DOS: March 15 2022 - Present (April 12 2023)
+def tr():
+    if ps==("Windows"): # if name is windows
+        os.chdir("C:")
+        print("Taking you to the 'C:' directory...")
+        print()
+    else: # if its smt else (bash)
+        os.chdir("/")
+        print("Taking you to the '/' directory...")
+        print()
+
+# EYN-DOS: March 15 2022 - Present (April 17 2023)

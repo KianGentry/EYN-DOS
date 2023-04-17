@@ -12,7 +12,7 @@ os.system(osrunner + " writedir.py")
 
 from commands import * # imports all definitions (commands) from commands.py
 
-print(ps)
+logging.debug(ps) # prints success of dir.py printing
 
 if ps==("Windows"): # if name is windows
     os.system("cls") # use windows clear command
@@ -23,9 +23,11 @@ print("Copyright (c) 2023, J.K Incorporated, All Rights Reserved.") # copyright 
 print("Type 'help' for a list of commands.")
 print()
 
+inp=colored(f"{ly}!", attrs=["blink"])
+
 while True: # basically just a loop of an input, and if the input matches the name of one of the commands, it executes it. the commands are all stored as functions in commands.py. pretty organised if you ask me.
-    command_line=input(lbl+"/main/} "+wh)
-    print(r+"")
+    command_line=input(f"{lbl}{os.getcwd()}{inp} {wh}")
+    print(f"{r}") # resets color
 
     if command_line==("help"):
         help()
@@ -153,6 +155,9 @@ while True: # basically just a loop of an input, and if the input matches the na
     elif command_line==("pip"):
         pip()
 
+    elif command_line==("tr"):
+        tr()
+
     else: # if command-line input isnt one of the commands,
-        print(Fore.LIGHTRED_EX+"Invalid command.") # print 'invalid command'
-        print("")
+        print(f"{lr}"), logging.error("Invalid command.") # log the error 'invalid command'
+        print(f"{r}")
