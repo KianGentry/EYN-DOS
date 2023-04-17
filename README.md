@@ -5,6 +5,9 @@
 This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.3).
 
 ---
+![image](https://user-images.githubusercontent.com/101657439/232568778-f201bf7a-ad63-4def-a298-939dd1ae2199.png)
+![image](https://user-images.githubusercontent.com/101657439/232568868-8e912e88-c8db-4cb5-a135-0f662a77cab5.png)
+---
 
 Commands:
 ---
