@@ -2,11 +2,8 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.3).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.4).
 
----
-![image](https://user-images.githubusercontent.com/101657439/232568778-f201bf7a-ad63-4def-a298-939dd1ae2199.png)
-![image](https://user-images.githubusercontent.com/101657439/232568868-8e912e88-c8db-4cb5-a135-0f662a77cab5.png)
 ---
 
 Commands:
@@ -87,6 +84,10 @@ Commands:
 "eyndir" = Changes the directory to the directory where EYN-DOS was originally ran from. Simple, but handy.
 
 "pip" = Quite self-explanatory to someone familiar with Python. This command provides a dedicated way to use pip (Python's package manager) through EYN-DOS.
+
+"tr" = Changes your directory to your host operating-system's root directory ('C:\' on Windows, '/' on Linux).
+
+"rr" = Takes you to your host operating-system's home directory ('C:\Users\user' on Windows, '/home/user' on Linux).
 
 ---
 

@@ -127,7 +127,8 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
     print("eyndir = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
     print("pip = Provides an EYN-ified version of pip (Python's package manager),")
-    print("tr = Takes you to the root directory of your system ('C:' for Windows, '/' for Linux)")
+    print("tr = Takes you to the root directory of your system ('C:' for Windows, '/' for Linux),")
+    print("rr = Takes you to your user folder ('This PC' for Windows, '~' for Linux),")
     print()
 
 def listdir():
@@ -144,8 +145,8 @@ def dir():
     print()
 
 def end():
-    confirm=input("Are you sure you want to end your EYN-DOS session? (y/n): ") # variable for confirming exit
-    print()
+    confirm=input(f"{r}Are you sure you want to end your EYN-DOS session? (y/n): {wh}") # variable for confirming exit
+    print(f"{r}")
     if confirm==("y"): # if response is y
         exit() # exit eyndos
     if confirm==("n"): # if response is n
@@ -165,11 +166,11 @@ def win():
     print()
 
 def count(): # this command is so pointless but i love it
-    count_1=input(f"{lr}WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n) ") # variable for confirming counting
-    print()
+    count_1=input(f"{lr}WARNING: THIS WILL MAKE EYN-DOS UNUSABLE FOR THE REST OF THE SESSION. CONTINUE? (y/n): {wh}") # variable for confirming counting
+    print(f"{r}")
     if count_1==("y"): # if response is y
         chdir(drnm)
-        os.system(osrunner + "counter.py") # opens counter.py
+        os.system(f"{osrunner}counter.py") # opens counter.py
         print()
     if count_1==("n"): # if response is n
         print("Command disbanded") # return to terminal
@@ -201,13 +202,13 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print()
-    print("                            █████           ██████   ")
-    print("                          ██     ███      ██     ███")
-    print("                              ███             ████  ")
-    print("                           ███            ██     ███")
-    print("                           █████████  ██    ██████")
+    print("                             █████             ████")
+    print("                           ██     ███        ██ ███")
+    print("                               ███         ██   ███")
+    print("                            ███            ████████")
+    print("                            █████████  ██       ███")
     print()
-    print(f"{wh}EYN-DOS 2.3 (Apr 17 2023)")
+    print(f"{wh}EYN-DOS 2.4 (Apr 21 2023)")
     print()
 
 def credits():
@@ -227,8 +228,8 @@ def credits():
     print("         Kamil Makuch: Supporter and artist.") # the man again
     print("         Github, StackOverflow & GeeksForGeeks: Saver of countless hours of research.") # i use these too often for my own good
     print("         You: For using EYN-DOS.") # aww thats cute
-    print("         Linux: Just awesome") # mhm
-    print("         Terrance Davis: Inspiration")
+    print("         Linux: Just awesome.") # mhm
+    print("         Terrance Davis: Inspiration.")
     print()
     print("         Thank you for using EYN-DOS!") # really, thank you!
     print()
@@ -241,39 +242,37 @@ def cdate():
 
 def read():
     print("(Type 'nul0' to abort the command.)")
-    dec=input("Where is the file you want to read (Path)? (Leave blank for cwd): ")
+    dec=input(f"{r}Where is the file you want to read (Path)? (Leave blank for cwd): {wh}")
+    print(f"{r}")
     if dec==(""):
-        print()
-        os.system(osrunner + " read.py") # opens read.py
+        os.system(f"{osrunner} read.py") # opens read.py
     elif dec==("nul0"):
         print()
         print("Returning to EYN-DOS main terminal...") # aborts command
     elif dec==("eyn"):
-        print()
         chdir(drnm) # changes directory to eyn-dos root
-        os.system(osrunner + " read.py") # opens read.py
+        os.system(f"{osrunner} read.py") # opens read.py
     else:
         chdir(dec) # changes directory to one entered
-        print()
-        os.system(osrunner + " read.py") # opens read.py
+        os.system(f"{osrunner} read.py") # opens read.py
     print()
 
 def find():
-    file_find=input("What file do you want to find? (Including extension): ") # variable for file to look for
-    pr
+    file_find=input(f"{r}What file do you want to find? (Including extension): {wh}") # variable for file to look for
+    print(f"{r}")
     print(os.path.abspath(file_find)) # prints absolute path of file entered
     print()
 
 def write():
-    os.system(osrunner + " write.py") # opens write.py
+    os.system(f"{osrunner} write.py") # opens write.py
     print()
 
 def del1():
     print("(Type 'nul0' to abort the command.)")
-    del_file=input("What file do you want to delete? (Including extension): ") # variable for name of file to delete
     print()
+    del_file=input(f"{r}What file do you want to delete? (Including extension): {wh}") # variable for name of file to delete
+    print(f"{r}")
     if del_file==("nul0"): # if response is nul0
-        print()
         print("Returning to the EYN-DOS main terminal...") # return to command-line
         print()
     else:
@@ -284,7 +283,7 @@ def del1():
         print()
 
 def size():
-    size_cl=input("What file do you want the size to? (Including extension): ") # variable for name of file to find size of
+    size_cl=input(f"{r}What file do you want the size to? (Including extension): {wh}") # variable for name of file to find size of
     print()
     print(os.path.getsize(size_cl)) # gets size of file in bytes
     print(" | Bytes")
@@ -298,19 +297,21 @@ def clear():
 
 def run():
     print("(Type 'nul0' to return to the EYN-DOS main terminal)")
-    run_name=input("What file do you want to run? (extension included): ") # variable for python file to run
     print()
+    run_name=input(f"What file do you want to run? (extension included): {wh}") # variable for python file to run
+    print(f"{r}")
     if run_name==("nul0"): # if response is nul0
         print("Command Aborted.") # abort command
         print()
     else:
-        os.system(osrunner + " " + run_name) # runs the python file entered
+        os.system(f"{osrunner}{run_name}") # runs the python file entered
         print()
 
 def cd():
     print("(Type 'nul0' to return to the EYN-DOS main terminal)")
-    cd_line=input("What sub-directory do you want to go to?: ") # variable for name of sub-directory
     print()
+    cd_line=input(f"What sub-directory do you want to go to?: {wh}") # variable for name of sub-directory
+    print(f"{r}")
     if cd_line==("nul0"): # if response is nul0
         print("Returning to the EYN-DOS main terminal...") # return to command-line
         print()
@@ -331,8 +332,8 @@ def ctime():
 def md():
     print("(Type 'nul0' to return the EYN-DOS main terminal)")
     print()
-    md_line=input("What do you want to call the directory?: ") # variable for directory name
-    print()
+    md_line=input(f"What do you want to call the directory?: {wh}") # variable for directory name
+    print(f"{r}")
     if md_line==("nul0"): # if response is nul0
         print("Returning to the EYN-DOS main terminal...") # return to command-line
         print()
@@ -346,10 +347,10 @@ def md():
 def copy():
     print("Type 'nul0' to abort the command.")
     print()
-    cpy_line=input("Where is the file you want to copy?: ") # variable for absolute path of file to copy
-    print()
-    pst_line=input("Where do you want to paste the file?: ") # variable for path to paste file to
-    print()
+    cpy_line=input(f"Where is the file you want to copy?: {wh}") # variable for absolute path of file to copy
+    print(f"{r}")
+    pst_line=input(f"Where do you want to paste the file?: {wh}") # variable for path to paste file to
+    print(f"{r}")
     if cpy_line==("nul0"): # if nul0 is entered
         print("Returning to the EYN-DOS main terminal...") # go back to command-line
         print()
@@ -414,7 +415,7 @@ def terry():
     print()
 
 def edit():
-    os.system(osrunner + " append.py")
+    os.system(f"{osrunner} append.py")
     print()
 
 def specs():
@@ -429,7 +430,7 @@ def specs():
     print()
 
 def dirsize():
-    folder=input("What folder do you want to know the size to?: ") # variable for folder name in current directory
+    folder=input(f"What folder do you want to know the size to?: {wh}") # variable for folder name in current directory
     print()
     print(getFolderSize(folder)) # prints size of the folder entered
     print(" | Bytes")
@@ -439,14 +440,16 @@ def newver():
     URL = "https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/Main.zip" # eyndos download url
     response = requests.get(URL) # variable for requesting the content from the url
     open("eyndos.zip", "wb").write(response.content) # writes content from url (download page) to 'eyndos.zip'
+    print("Newest EYN-DOS version successfully saved to 'eyndos.zip'.")
+    print()
 
 def unzip():
-    zippath=input("What is the (absolute) path to the zip file you want to extract?: ") # variable for absolute path for zip file
+    zippath=input(f"What is the (absolute) path to the zip file you want to extract?: {wh}") # variable for absolute path for zip file
     print()
-    zippath2=input("Where do you want to extract the contents to? (Path): ") # variable for regular path of where to extract files
+    zippath2=input(f"Where do you want to extract the contents to? (Path): {wh}") # variable for regular path of where to extract files
     with zipfile.ZipFile(zippath, 'r') as zip_ref: # opens zip file in 'read' mode
         zip_ref.extractall(zippath2) # extracts all contents into the path entered
-    print()
+    print(f"{r}")
 
 def zip():
     nmz=input("What do you want to call your .zip file? (Extension included): ") # variable for file name
@@ -455,23 +458,23 @@ def zip():
     print("Type 'nul0' to exit and zip the entered files.")
     print()
     while True:
-        flz=input("> ") # whatever filename is typed is saved in the zip file
+        flz=input(f"> {wh}") # whatever filename is typed is saved in the zip file
         if flz.lower() == "nul0": # if filename is nul0, create the zip file with all entered filenames before
             break
         with zipfile.ZipFile(nmz, "a") as f: # opens created zipfile in 'append' mode
             f.write(flz) # adds all files entered into the zip file
-    print()
+    print(f"{r}")
 
 def pyedit():
     os.system(osrunner)
     print()
 
 def restart():
-    ryn=input("Are you sure you want to restart your EYN-DOS session? (y/n): ") # variable for user response
+    ryn=input(f"Are you sure you want to restart your EYN-DOS session? (y/n): {wh}") # variable for user response
     if ryn==("y"): # if response is y
         print()
         chdir(drnm)
-        os.system(osrunner + " main.py")
+        os.system(f"{osrunner} main.py")
         exit() # exits the first opened main file (current)
     if ryn==("n"): # if response is n 
         print()
@@ -492,21 +495,22 @@ def prevfiles():
     print()
 
 def noneyn():
-    nonec=input("What non-EYN command do you want to execute?: ") # variable of what host-system command to execute
+    nonec=input(f"What non-EYN command do you want to execute?: {wh}") # variable of what host-system command to execute
+    print(f"{r}") 
     os.system(nonec) # executes the variable in the host-terminal
     print()
 
 def rim():
-    img=input("What image do you want to read? (Including extension): ") # variable for image name
-    print()
+    img=input(f"What image do you want to read? (Including extension): {wh}") # variable for image name
+    print(f"{r}")
     im=Image.open(img, mode='r') # opens image name in current directory in 'read' mode
     im.show() # shows the image
 
 def ren():
-    renx=input("What file do you want to rename?: ") # variable for original file/folder to rename
-    print()
-    reny=input("What do you want to rename the file?: ") # variable for what to rename it to
-    print()
+    renx=input(f"What file do you want to rename?: {wh}") # variable for original file/folder to rename
+    print(f"{r}")
+    reny=input(f"What do you want to rename the file?: {wh}") # variable for what to rename it to
+    print(f"{r}")
     os.rename(renx, reny) # renames the file entered to the new name entered
     print("File renamed.")
     print()
@@ -520,13 +524,13 @@ def pip():
     print("What Python package do you want to install?")
     print("(Type 'nul0' to return.)")
     print()
-    pkgn=input("?> ")
-    print()
+    pkgn=input(f"?> {wh}")
+    print(f"{r}")
     if pkgn==("nul0"):
         print("Returning to the EYN-DOS terminal...")
         print()
     else:
-        os.system("pip install " + pkgn)
+        os.system(f"pip install {pkgn}")
 
 def tr():
     if ps==("Windows"): # if name is windows
@@ -538,4 +542,14 @@ def tr():
         print("Taking you to the '/' directory...")
         print()
 
-# EYN-DOS: March 15 2022 - Present (April 17 2023)
+def rr():
+    usrd=os.path.expanduser('~')
+    os.chdir(usrd)
+    if ps==("Windows"): # if name is windows
+        print("Taking you to 'This PC'...")
+        print()
+    else: # if its smt else (bash)
+        print("Taking you to '~'...")
+        print()
+
+# EYN-DOS: March 15 2022 - Present (April 21 2023)

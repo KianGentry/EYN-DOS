@@ -8,7 +8,7 @@ if ps==("Windows"): # if name is windows
 else: # if its smt else (bash)
     osrunner = "python3" # use python3 in terminal
 
-os.system(osrunner + " writedir.py")
+os.system(f"{osrunner} writedir.py")
 
 from commands import * # imports all definitions (commands) from commands.py
 
@@ -19,7 +19,7 @@ if ps==("Windows"): # if name is windows
 else: # if its smt else (bash)
     os.system("clear") # use bash clear command
 
-print("Copyright (c) 2023, J.K Incorporated, All Rights Reserved.") # copyright notice bc legality
+print(f"{r}Copyright (c) 2023, J.K Incorporated, All Rights Reserved.") # copyright notice bc legality
 print("Type 'help' for a list of commands.")
 print()
 
@@ -27,7 +27,7 @@ inp=colored(f"{ly}!", attrs=["blink"])
 
 while True: # basically just a loop of an input, and if the input matches the name of one of the commands, it executes it. the commands are all stored as functions in commands.py. pretty organised if you ask me.
     command_line=input(f"{lbl}{os.getcwd()}{inp} {wh}")
-    print(f"{r}") # resets color
+    print(f"{r}")
 
     if command_line==("help"):
         help()
@@ -157,6 +157,16 @@ while True: # basically just a loop of an input, and if the input matches the na
 
     elif command_line==("tr"):
         tr()
+
+    elif command_line==("rr"):
+        rr()
+
+    elif command_line==("dbg"):
+        print("Welcome to the 'dbg' command!")
+        print("This command is used in EYN-DOS development to test new commands and features before being fully integrated.")
+        print("This command may be of no use to the average user, but to the development team, it's really handy!")
+        print("We hope you enjoy EYN-DOS!")
+        print()
 
     else: # if command-line input isnt one of the commands,
         print(f"{lr}"), logging.error("Invalid command.") # log the error 'invalid command'
