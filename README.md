@@ -1,5 +1,8 @@
 # Welcome to the EYN-DOS Instruction Manual! 
-
+---
+![image](https://user-images.githubusercontent.com/101657439/236628890-a789a437-3061-4804-9070-2b781b363147.png)
+![image](https://user-images.githubusercontent.com/101657439/236628916-d04fea59-205d-4228-9ada-1dfed111713f.png)
+![image](https://user-images.githubusercontent.com/101657439/236628940-a6d23b13-2721-4a06-ae46-1559bd006ee3.png)
 ---
 
 This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.5).
