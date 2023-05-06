@@ -16,7 +16,7 @@ import psutil
 from termcolor import colored
 import logging
 
-# uhhh
+# format for logging errors n that
 
 lvl1=logging.DEBUG # uhhhhhh
 fmt="[%(levelname)s] %(asctime)s - %(message)s" # uhhhhhhhhhhhhhhhhh
@@ -114,7 +114,7 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("colortest = Tests if the 'colorma' module is functional, ") # works 89% of the time
     print("terry = Tribute to a legend. Rest in peace.")
     print("edit = Appends (edits) the file entered, ") # i wouldnt call it 'editing' personally, just sorta like adding onto it
-    print("specs = Prints accessible system specifications, ") # eh, not the best, 4/10
+    print("usage = Prints the current CPU and RAM usage, ") # eh, not the best, 4/10
     print("dirsize = Prints the size of the directory entered, ") # cool, 6/10
     print("newver = Downloads the most recent version of EYN-DOS (Requires internet), ") # pairs nicely with the zip and unzip commands, and can be used for alot more, 8/10
     print("unzip = Extracts the contents of a zip file to a specified path,") # great command, 8/10
@@ -202,13 +202,13 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print()
-    print("                             █████             ████")
-    print("                           ██     ███        ██ ███")
-    print("                               ███         ██   ███")
-    print("                            ███            ████████")
-    print("                            █████████  ██       ███")
+    print("                               █████         ████████")
+    print("                             ██     ███      ██")
+    print("                                 ███         ███████")
+    print("                              ███                  ██")
+    print("                              █████████  ██  ███████")
     print()
-    print(f"{wh}EYN-DOS 2.4 (Apr 21 2023)")
+    print(f"{wh}EYN-DOS 2.5 (May 6 2023)")
     print()
 
 def credits():
@@ -241,20 +241,7 @@ def cdate():
     print()
 
 def read():
-    print("(Type 'nul0' to abort the command.)")
-    dec=input(f"{r}Where is the file you want to read (Path)? (Leave blank for cwd): {wh}")
-    print(f"{r}")
-    if dec==(""):
-        os.system(f"{osrunner} read.py") # opens read.py
-    elif dec==("nul0"):
-        print()
-        print("Returning to EYN-DOS main terminal...") # aborts command
-    elif dec==("eyn"):
-        chdir(drnm) # changes directory to eyn-dos root
-        os.system(f"{osrunner} read.py") # opens read.py
-    else:
-        chdir(dec) # changes directory to one entered
-        os.system(f"{osrunner} read.py") # opens read.py
+    os.system(f"{osrunner} read.py") # opens read.py
     print()
 
 def find():
@@ -304,7 +291,7 @@ def run():
         print("Command Aborted.") # abort command
         print()
     else:
-        os.system(f"{osrunner}{run_name}") # runs the python file entered
+        os.system(f"{osrunner} {run_name}") # runs the python file entered
         print()
 
 def cd():
@@ -421,7 +408,7 @@ def edit():
 def specs():
     load1, load5, load15=psutil.getloadavg() # gets cpu average from 15 minutes
     cpu_usage = (load15/os.cpu_count()) * 100 # divides average across all cores
-    print(f"{syst.node}:") # pc name
+    print(f"{syst.node} Usage:") # pc name
     print()
     print("CPU Usage: ", cpu_usage,"%") # prints usage
     print()
@@ -437,8 +424,8 @@ def dirsize():
     print()
 
 def newver():
-    URL = "https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/Main.zip" # eyndos download url
-    response = requests.get(URL) # variable for requesting the content from the url
+    URL="https://github.com/JK-Incorporated/EYN-DOS/archive/refs/heads/Main.zip" # eyndos download url
+    response=requests.get(URL) # variable for requesting the content from the url
     open("eyndos.zip", "wb").write(response.content) # writes content from url (download page) to 'eyndos.zip'
     print("Newest EYN-DOS version successfully saved to 'eyndos.zip'.")
     print()
@@ -552,4 +539,4 @@ def rr():
         print("Taking you to '~'...")
         print()
 
-# EYN-DOS: March 15 2022 - Present (April 21 2023)
+# EYN-DOS: March 15 2022 - Present (May 6 2023)

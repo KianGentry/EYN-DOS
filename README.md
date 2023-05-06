@@ -2,13 +2,10 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.4).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.5).
 
 ---
-![image](https://user-images.githubusercontent.com/101657439/233684880-c012d581-9ad6-4130-a0ff-3eda0cf5e8b0.png)
-![image](https://user-images.githubusercontent.com/101657439/233684758-a2790ac0-c766-4576-99ab-57952376f6b5.png)
-![image](https://user-images.githubusercontent.com/101657439/233685007-a6f530fc-0e13-4f25-8fd9-733263b9797d.png)
----
+
 Commands:
 ---
 
@@ -60,7 +57,7 @@ Commands:
 
 "edit" = Gives you a prompt asking what file you want to edit. Type the file you want to edit (Including extension e.g: example.txt) to append the file (add text onto/edit).
 
-"specs" = Prints all accquirable system specifications and information (e.g: system name, operating system, etc).
+"usage" = Prints the current CPU and RAM usage.
 
 "dirsize" = Gives you a prompt asking what folder (directory) you want to know the size to. Type the name of the folder you want to know the size to to get the directory size in kilobytes.
 
@@ -88,9 +85,9 @@ Commands:
 
 "pip" = Quite self-explanatory to someone familiar with Python. This command provides a dedicated way to use pip (Python's package manager) through EYN-DOS.
 
-"tr" = Changes your directory to your host operating-system's root directory ('C:\' on Windows, '/' on Linux).
+"root" = Changes your directory to your host operating-system's root directory ('C:\' on Windows, '/' on Linux).
 
-"rr" = Takes you to your host operating-system's home directory ('C:\Users\user' on Windows, '/home/user' on Linux).
+"home" = Takes you to your host operating-system's home directory ('C:\Users\user' on Windows, '/home/user' on Linux).
 
 ---
 
