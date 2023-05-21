@@ -1,11 +1,8 @@
 # Welcome to the EYN-DOS Instruction Manual! 
----
-![image](https://user-images.githubusercontent.com/101657439/236628890-a789a437-3061-4804-9070-2b781b363147.png)
-![image](https://user-images.githubusercontent.com/101657439/236628916-d04fea59-205d-4228-9ada-1dfed111713f.png)
-![image](https://user-images.githubusercontent.com/101657439/236628940-a6d23b13-2721-4a06-ae46-1559bd006ee3.png)
+
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.5).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.51).
 
 ---
 
@@ -137,13 +134,11 @@ Optional Modules:
 - Turtle - Used for graphical games.
 
 ---
+### Intermission:
 
-EYN-DOS is designed to appeal to people who want a lightweight tool for interacting with their PC. EYN-DOS is also designed to appeal to nostalgia nerds (Such as Kian Gentry) who feel nostalgic about computers that ran Disk Operating Systems with a text-based GUI. 
+EYN-DOS is designed to appeal to people who want a lightweight tool for interacting with their PC.
 
-Notes:
 ---
-
-- You don't have to be from the era where you most feel nostalgia from. Many people born from the year 2000 and onwards feel nostalgic about computers that are double their age! This note was inspired by a letter from a viewer of a YouTube channel called LGR. He was a 13 year old viewer that wrote his physical letter on a computer twice his age. We saw this letter and thought, "New generations aren't going to lose nostalgia over older technology." This inspired J.K Incorporated to create a Disk Operating System that is regularly updated for newer generations.
 
 # Let's Get Started: 
 
