@@ -7,7 +7,6 @@ This manual will go through crucial information regarding the use of EYN-DOS and
 ---
 
 ![The 'ver' command.](image.png)
-![The 'help' command.](image-3.png)
 ![The 'credits' command.](image-2.png)
 
 ---
