@@ -98,14 +98,14 @@ for path, dirs, files in os.walk(dir_path):
 
 def help(): # just prints all the commands. not automated, has to be entered manually.
     print("help = Prints commands currently usable, ") # inception
-    print("listdir = Prints a list of available directories, ") # cool command name, not very common
+    print("ld = Prints a list of available directories, ") # cool command name, not very common
     print("dir = Prints a list of all available files in the current directory, ") # idk why its called dir and not files but im not complaining
     print("run = Executes the Python file entered, ") # cool but could be merged with noneyn
     print("end = Closes and resets the EYN-DOS terminal, ") # yup, it does that
     print("ver = Prints the EYN-DOS version that is running, ") # i hate having to update the version number here
     print("credits = Prints a list of all the people who worked on EYN-DOS, ") # i mean, yeah, pretty self-explanatory
     print("cd = Takes you to the directory entered, ") # im getting lazy with these comments, i did them from bottom to top (commands) but top to bottom (inside the commands) so you may see me drastically lose enthusiasm in real time
-    print("cdate = Prints the current date and time, ") # idk why they dont merge cdate and ctime, actually, thats a good idea, ill note it down
+    print("cdate = Prints the current date and time, ") # idk why they dont merge cdate and ctime, actually, thats a good idea, ill note it down (no i wont)
     print("ctime = Prints the current time, including seconds,")
     print("read = Prints the contents of the file entered, ") # fixed!
     print("find = Prints the directory path of the file entered, ") # underrated
@@ -114,7 +114,7 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("size = Prints the size of the file entered, ") # pretty good command, 8/10
     print("clear = Clears the screen of all previously printed lines, ") # cool for hiding what mischevious activities youve been doing, 7/10
     print("md = Makes a directory with the name entered, ") # essential
-    print("copy = Copy and pastes the file selected in the path entered, ") # great command, 9/10
+    print("copy = Copy and pastes the file selected in the path entered, ") # great command, 9/10 (doesnt work lmao)
     print("echo = Prints the text entered.") # im pretty bored writing these comments, its like midnight and i wanna go to bed, but im determined to do this
     print("colortest = Tests if the 'colorma' module is functional, ") # works 89% of the time
     print("terry = Tribute to a legend. Rest in peace.")
@@ -124,13 +124,13 @@ def help(): # just prints all the commands. not automated, has to be entered man
     print("newver = Downloads the most recent version of EYN-DOS (Requires internet), ") # pairs nicely with the zip and unzip commands, and can be used for alot more, 8/10
     print("unzip = Extracts the contents of a zip file to a specified path,") # great command, 8/10
     print("zip = Compresses all files entered into a zip file,") # very cool, 9/10
-    print("pyedit = Runs the default Python editor, ") # reminds me of the pcs with basic installed on them, and pretty useful, 7/10
+    print("python = Runs the default Python editor, ") # reminds me of the pcs with basic installed on them, and pretty useful, 7/10
     print("restart = Closes and re-opens EYN-DOS,") # really useful for development and debugging, 9/10
     print("prevd = Shows all directories in the previous directory, ") # sorta useful i guess, 7/10
     print("prevf = Shows all files in the previous directory, ") # same as above, 7/10
-    print("noneyn = Executes any command entered in your host terminal,") # useful for defeating the purpose of eyndos, 8/10
+    print("n = Executes any command entered in your host terminal,") # useful for defeating the purpose of eyndos, 8/10
     print("rim = Shows the contents of the image entered,") # cool novelty, not really useful, 6/10
-    print("eyndir = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
+    print("ed = Changes the directory to the EYN-DOS root directory,") # i cant be bothered commenting this
     print("pip = Provides an EYN-ified version of pip (Python's package manager),")
     print("home = Takes you to the root directory of your system ('C:' for Windows, '/' for Linux),")
     print("root = Takes you to your user folder ('This PC' for Windows, '~' for Linux),")
@@ -154,6 +154,7 @@ def end():
     print(f"{r}")
     if cnfrm==("y"): # if response is y
         exit() # exit eyndos
+        os.system("exit")
     if cnfrm==("n"): # if response is n
         print("Command aborted.") # abort command
         print()
@@ -175,7 +176,7 @@ def count(): # this command is so pointless but i love it
     print(f"{r}")
     if c1==("y"): # if response is y
         chdir(drnm)
-        os.system(f"{osrunner} counter.py") # opens counter.py
+        os.system(f"{osr} counter.py") # opens counter.py
         print()
     if c1==("n"): # if response is n
         print("Command disbanded") # return to terminal
@@ -207,13 +208,13 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print()
-    print("                          █████         ████████    ████")
-    print("                        ██     ███      ██        ██ ███")
-    print("                            ███         ███████      ███")
-    print("                         ███                  ██     ███")
-    print("                         █████████  ██  ███████    ███████")
+    print("                        █████         ████████    █████")
+    print("                      ██     ███      ██        ██     ███")
+    print("                          ███         ███████       ███")
+    print("                       ███                  ██   ███")
+    print("                       █████████  ██  ███████    █████████")
     print()
-    print(f"{wh}EYN-DOS 2.51 (May 21 2023)")
+    print(f"{wh}EYN-DOS 2.52 (June 13 2023)")
     print()
 
 def credits():
@@ -229,7 +230,7 @@ def credits():
     print()
     print("         Robin Andrews: Coder of the 'Snake' game included with EYN-DOS.") 
     print("         shomikj: Coder of the command line version of 'Solitaire' for EYN-DOS.")
-    print("         Cayden Jackson: Supporter.") # short guy
+    #print("         Cayden Jackson: Supporter.") # :(
     print("         Kamil Makuch: Supporter and artist.") # the man again
     print("         Github, StackOverflow & GeeksForGeeks: Saver of countless hours of research.") # i use these too often for my own good
     print("         You: For using EYN-DOS.") # aww thats cute
@@ -260,11 +261,11 @@ def write():
     print()
 
 def del1():
-    print("(Type 'nul0' to abort the command)")
+    print("(Type 'e' to abort the command)")
     print()
     df=input(f"{r}What file do you want to delete? (Including extension){inp2} {wh}") # variable for name of file to delete
     print(f"{r}")
-    if df==("nul0"): # if response is nul0
+    if df==("e"): # if response is nul0
         print("Returning to the EYN-DOS main terminal...") # return to command-line
         print()
     else:
@@ -343,7 +344,7 @@ def copy():
     print(f"{r}")
     pst=input(f"Where do you want to paste the file?{inp2} {wh}") # variable for path to paste file to
     print(f"{r}")
-    if cpy==("e"): # if e is entered
+    if cpy or pst==("e"): # if e is entered
         print("Returning to the EYN-DOS main terminal...") # go back to command-line
         print()
     else:
@@ -550,4 +551,4 @@ def dbg():
     print("We hope you enjoy EYN-DOS!")
     print()
 
-# EYN-DOS: March 15 2022 - Present (May 21 2023)
+# EYN-DOS: March 15 2022 - Present (June 13 2023)

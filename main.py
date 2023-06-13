@@ -8,7 +8,7 @@ if ps==("Windows"):  # if name is windows
 else:  # if its smt else (bash)
     osr="python3"  # use python3 in terminal
 
-os.system(f"{osr} writedir.py")
+os.system(f"{osr} writesd.py")
 
 from commands import *  # imports all definitions (commands) from commands.py
 
@@ -31,7 +31,7 @@ while True:  # basically just a loop of an input, and if the input matches the n
     if command_line==("help"):
         help()
 
-    elif command_line==("listdir"):
+    elif command_line==("ld"):
         listdir()
 
     elif command_line==("dir"):
@@ -127,7 +127,7 @@ while True:  # basically just a loop of an input, and if the input matches the n
     elif command_line==("zip"):
         zip()
 
-    elif command_line==("pyedit"):
+    elif command_line==("python"):
         pyedit()
 
     elif command_line==("restart"):
@@ -139,7 +139,7 @@ while True:  # basically just a loop of an input, and if the input matches the n
     elif command_line==("prevf"):
         prevfiles()
 
-    elif command_line==("noneyn"):
+    elif command_line==("n"):
         noneyn()
 
     elif command_line==("rim"):
@@ -148,7 +148,7 @@ while True:  # basically just a loop of an input, and if the input matches the n
     elif command_line==("ren"):
         ren()
 
-    elif command_line==("eyndir"):
+    elif command_line==("ed"):
         eyndir()
 
     elif command_line==("pip"):
@@ -161,11 +161,7 @@ while True:  # basically just a loop of an input, and if the input matches the n
         rr()
 
     elif command_line==("dbg"):
-        print("Welcome to the 'dbg' command!")
-        print("This command is used in EYN-DOS development to test new commands and features before being fully integrated.")
-        print("This command may be of no use to the average user, but to the development team, it's really handy!")
-        print("We hope you enjoy EYN-DOS!")
-        print()
+        dbg()
 
     else:  # if command-line input isnt one of the commands,
         print(f"{lr}"),logging.error("Invalid command.")  # log the error 'invalid command'

@@ -2,7 +2,27 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.51).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.52).
+
+---
+
+![The 'ver' command.](image.png)
+![The 'help' command.](image-3.png)
+![The 'credits' command.](image-2.png)
+
+---
+
+Installation:
+---
+
+First, run "main.py" after first extracting the EYN-DOS '.zip' file to your desired location. This will write to the Bash and Batch scripts (eyn.sh, eyn.bat).
+After the files have been written to, you will enter EYN-DOS for the first time.
+This process is extremely quick on modern hardware, so the script writing procedure could be undetectable.
+
+Now, running either the Bash or Batch scripts (for Linux and Windows respectively) will run EYN-DOS.
+You can move these scripts wherever you like, so you can run EYN-DOS from any location.
+
+On Linux (untested on Windows), you can even have EYN-DOS run automatically when booting your terminal!
 
 ---
 
@@ -11,7 +31,7 @@ Commands:
 
 "help" = Prints all commands available in EYN-DOS.
 
-"listdir" = Lists all sub-directories.
+"ld" = Lists all sub-directories.
 
 "dir" = Lists all files in the current working directory (Including total size).
 
@@ -67,7 +87,7 @@ Commands:
 
 "zip" = Gives you a prompt asking what you want to call your zip file. Type the name you desire (Including the .zip extension). Then, you are given another prompt asking you to type all files you want contained inside your zip file. Type the names and extensions of the files you want to put inside your zip file.
 
-"pyedit" = Simply opens the built-in Python editor.
+"python" = Simply opens the built-in Python terminal.
 
 "restart" = Gives you a prompt asking if you want to restart EYN-DOS. If you enter 'y', EYN-DOS will close and re-open into a fresh state. If you enter 'n', the command will be aborted and you'll go back to the EYN-DOS terminal.
 
@@ -75,13 +95,13 @@ Commands:
 
 "prevf" = Prints a list of all files in the previous directory.
 
-"noneyn" = Gives you a prompt asking what non-EYN commmand you want to execute. Type any command from your host-system's terminal to execute it in EYN-DOS.
+"n" = Gives you a prompt asking what non-EYN commmand you want to execute. Type any command from your host-system's terminal to execute it in EYN-DOS.
 
 "rim" = Gives you a prompt asking what image file you would like to read. Type the filename of the image (Including the extension). This will read the image file and show it on screen.
 
 "ren" = Gives you a prompt asking what file/folder you would want to rename. After entering the desired file/folder, another prompt will appear, asking now what you'd like to call the file.
 
-"eyndir" = Changes the directory to the directory where EYN-DOS was originally ran from. Simple, but handy.
+"ed" = Changes the directory to the directory where EYN-DOS was originally ran from. Simple, but handy.
 
 "pip" = Quite self-explanatory to someone familiar with Python. This command provides a dedicated way to use pip (Python's package manager) through EYN-DOS.
 
@@ -137,32 +157,40 @@ Optional Modules:
 ### Intermission:
 
 EYN-DOS is designed to appeal to people who want a lightweight tool for interacting with their PC.
+EYN-DOS is also designed to have a pleasing affect on the eyes, whilst still retaining the "technical" look of a terminal.
 
 ---
 
 # Let's Get Started: 
 
-To run EYN-DOS, simply run the file named, "main.py".
-Your main way of interacting with EYN-DOS is a small bit of input text that looks like this, "/! ". This is the command-line.
+To run EYN-DOS, simply run the file named, "main.py" (or one of the shell/batch scripts written after first-run).
+Your main way of interacting with EYN-DOS is a small bit of input text that looks a bit like this, "/! ". This is the command-line.
 
 The command-line is the main way of interacting with your PC through a terminal. You type words into the command-line to perform certain functions called commands. These commands can do various things such as read files, write files, and can do pretty much anything that can ever be coded into a function. Commands are what allow you to change things about your PC.
 
-Games and tech demos:
+Games:
 ---
 
 - Invaders - Use the arrow keys to move left and right and spacebar to shoot. "Alien spacecrafts are invading! Quick, send forces to fight them off immediately!"
 
-- Paintbrush - A test of a simple drawing system with a pointing device.
-
 - Pong - A recreation of the classic Atari game that took the world by storm. Use the arrow keys to move your paddle up and down to try and hit the ball.
-
-- Raycast Test - A test of a raycasting engine. Pretty self-explanatory. (Engine may be used for future projects. Don't tell anyone I said this!)
 
 - Solitiare - A command-line operated solitaire game. This version of solitaire uses a co-ordinate system in order to move the cards. For example, if a card was on slot A1 B1 and you wanted to move it to A1 B2, you would type "A1 B1 A1 B2".
 
+Other programs:
+---
+
+- Calculator - Just a simple command-line calculator. (The first program ever written for EYN-DOS, by the way)
+
+- Clock - A digital clock that uses a graphical user interface.
+
+- EYN-DOS Lite - Totalling in at 283 bytes, EYN-DOS Lite just *barely* makes the definition of an operating environment. (Being able to read and write files)
+
+- Paintbrush - A test of a simple drawing system with a pointing device.
+
 # It's really that easy to use EYN-DOS!
 
-If you have any issues or complaints about EYN-DOS or anything affiliated with said operating system, please don't hesitate to contact J.K Incorporated and the EYN-DOS team via E-Mail or Discord. E-Mail: eyndos@gmail.com, Discord: EYN-DOS Support#9295. Our E-Mail and Discord systems are automated but by sending the message "human" to the E-Mail or Discord account, you will be automatically redirected to talk with a J.K Incorporated representative right away.
+If you have any issues or complaints about EYN-DOS or anything affiliated with said operating system, please don't hesitate to contact J.K Incorporated and the EYN-DOS team via E-Mail. E-Mail: eyndos@gmail.com. Our E-Mail system is automated, but by sending the message "human" to the E-Mail address, you will be automatically redirected to talk with a J.K Incorporated representative as soon as possible.
 
 ---
 
@@ -170,4 +198,4 @@ If you have any issues or complaints about EYN-DOS or anything affiliated with s
 
 ---
 
-J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo and other J.K Incorporated affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
+J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo, and other J.K Incorporated affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
