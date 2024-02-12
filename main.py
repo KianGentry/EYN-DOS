@@ -10,7 +10,7 @@ else:  # if its smt else (bash)
 
 os.system(f"{osr} writesd.py")
 
-from commands import *  # imports all definitions (commands) from commands.py
+from commands import *  # imports all definitions/classes from commands.py
 
 logging.debug(ps)  # prints success of dir.py printing
 
@@ -19,7 +19,7 @@ if ps==("Windows"):  # if name is windows
 else:  # if its smt else (prob bash)
     os.system("clear")  # use bash clear command
 
-print(f"{r}Copyright (c) 2023, J.K Incorporated, All Rights Reserved.")  # copyright notice bc legality
+print(f"{r}Copyright (c) 2024, J.K Incorporated, BSD 3-Clause License.")  # cool copyright!!!
 print("Type 'help' for a list of commands.")
 print()
 
@@ -101,7 +101,7 @@ while True:  # basically just a loop of an input, and if the input matches the n
         copy()
 
     elif command_line==("echo"):
-        echo()
+        errfni()
 
     elif command_line==("colortest"):
         colortest()
@@ -163,6 +163,5 @@ while True:  # basically just a loop of an input, and if the input matches the n
     elif command_line==("dbg"):
         dbg()
 
-    else:  # if command-line input isnt one of the commands,
-        print(f"{lr}"),logging.error("Invalid command.")  # log the error 'invalid command'
-        print(f"{r}")
+    else:  # if command-line input isnt one of the commands, js use bash as a fallback
+        os.system(command_line)

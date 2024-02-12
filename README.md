@@ -2,19 +2,20 @@
 
 ---
 
-This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.52).
+This manual will go through crucial information regarding the use of EYN-DOS and everything included with the version of EYN-DOS we will be discussing today (2.6).
 
 ---
 
-![The 'ver' command.](image.png)
-![The 'credits' command.](image-2.png)
+![The 'ver' command.](image-2.png)
+![The 'credits' command.](image-1.png)
 
 ---
 
 Installation:
 ---
 
-First, run "main.py" after first extracting the EYN-DOS '.zip' file to your desired location. This will write to the Bash and Batch scripts (eyn.sh, eyn.bat).
+Firstly, make sure to install all modules needed for EYN-DOS before attempting runtime. The modules required are as follows: Colorama, Shutil, Pillow (PIL), Requests, DateTime, and TermColor. Install these via the "pip" package manager included with Python, or using your systems package manager to install the modules (Typically in the format of 'python-modulename').
+After this, run "main.py" after first extracting the EYN-DOS '.zip' file to your desired location (or after cloning the GitHub repository using the web URL). This will write to the Bash and Batch scripts (eyn.sh, eyn.bat) as-well as writing the current installation directory to a file called "dir.py".
 After the files have been written to, you will enter EYN-DOS for the first time.
 This process is extremely quick on modern hardware, so the script writing procedure could be undetectable.
 

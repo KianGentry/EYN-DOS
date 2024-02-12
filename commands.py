@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 import zipfile
 import platform
-from colorama import *
+from colorama import Fore
 import shutil
 import os
 from os import *
@@ -53,10 +53,11 @@ if ps==("Windows"): # if name is windows
 else: # if its smt else (bash)
     osr = "python3" # use python3 in terminal
 
-# that little yellow, blinking '!' thats used everywhere
+# that little coloured, blinking '!' thats used everywhere
 
 inp=colored(f"{ly}!",attrs=["blink"])
 inp2=colored(f"{lc}!",attrs=["blink"])
+inp3=colored(f"{bl}!",attrs=["blink"])
 
 # Calculating directory size
 
@@ -208,13 +209,13 @@ def ver():
     print("███             ███       ███    █████            ███   ███  ███    ███        ███")
     print("█████████       ███       ███      ███            ██████       ██████     ██████")
     print()
-    print("                        █████         ████████    █████")
-    print("                      ██     ███      ██        ██     ███")
-    print("                          ███         ███████       ███")
-    print("                       ███                  ██   ███")
-    print("                       █████████  ██  ███████    █████████")
+    print("                                █████           ██████")
+    print("                              ██     ███      ██      ")
+    print("                                  ███         ███████")
+    print("                               ███            ██     ██")
+    print("                               █████████  ██   ██████")
     print()
-    print(f"{wh}EYN-DOS 2.52 (June 13 2023)")
+    print(f"{wh}EYN-DOS 2.6 (February 12th 2024)")
     print()
 
 def credits():
@@ -416,10 +417,10 @@ def specs():
     cpuu=(load15/os.cpu_count()) * 100 # divides average across all cores
     print(f"{syst.node} Usage:") # pc name
     print()
-    print("CPU Usage: ", cpuu,"%") # prints usage
+    print("CPU (1) Usage: ", cpuu,"%") # prints usage
     print()
     print("RAM Usage: ", psutil.virtual_memory()[2],"%") # uhhh just gets the memory usage in percentage
-    print("RAM Usage (Bytes): ", psutil.virtual_memory()[3]) # gets memory usage in bytes
+    print("RAM Usage (MiB): ", round(psutil.virtual_memory()[3]/1000000,1)) # gets memory usage in bytes
     print()
 
 def dirsize():
@@ -516,7 +517,7 @@ def pip():
     print("What Python package do you want to install?")
     print("(Type 'nul0' to return)")
     print()
-    pkgn=input(f"?> {wh}")
+    pkgn=input(f"{inp3} {wh}")
     print(f"{r}")
     if pkgn==("nul0"):
         print("Returning to the EYN-DOS terminal...")
@@ -551,4 +552,4 @@ def dbg():
     print("We hope you enjoy EYN-DOS!")
     print()
 
-# EYN-DOS: March 15 2022 - Present (June 13 2023)
+# EYN-DOS: March 15 2022 - Present (November 30 2023)
