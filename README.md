@@ -17,7 +17,7 @@ This version of EYN-DOS is not recommended for everyday use and is only recommen
 
 ---
 
-While this version of EYN-DOS is optimal for small hard-drives, it is not optimal for regular consumers. J.K Incorporated strongly recommends you use the latest version of EYN-DOS at https://github.com/JK-Incorporated/EYN-DOS. 
+While this version of EYN-DOS is optimal for small hard-drives, it is not optimal for regular consumers. J.K Incorporated strongly recommends you use the latest version of EYN-DOS at https://github.com/KianGentry/EYN-DOS. 
 ---
 
 --- 
