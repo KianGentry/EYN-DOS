@@ -198,4 +198,4 @@ If you have any issues or complaints about EYN-DOS or anything affiliated with s
 
 ---
 
-J.K Incorporated, the J.K Incorporated logo, J.K Music, the J.K Music logo, EYN-DOS, the EYN-DOS logo, and other J.K Incorporated affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
+EYN-DOS, the EYN-DOS logo, and other K. Gentry affiliations are protected titles under the BSD-3 Clause "New" or "Revised" License.
